@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cómo Mantener tu PC en Buen Estado y Prevenir Fallos - Reparaciones G García</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#1e40af", secondary: "#3b82f6" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; } /* Placeholder */
+      html { scroll-padding-top: 100px; /* Header offset */ }
+      body { font-family: 'Montserrat', sans-serif; color: #333; }
+      .article-content p { margin-bottom: 1.5rem; line-height: 1.8; }
+      .article-content h2 { scroll-margin-top: 100px; font-size: 1.75rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1.5rem; color: #1e40af; }
+      .article-content h3 { scroll-margin-top: 100px; font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: #1e3a8a; }
+      .article-content ul, .article-content ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+      .article-content li { margin-bottom: 0.5rem; }
+      .article-content img { margin: 2rem 0; border-radius: 0.5rem; }
+      .article-content blockquote { margin: 2rem 0; padding: 1.5rem; border-left: 4px solid #1e40af; background-color: #f8fafc; font-style: italic; }
+      .table-of-contents { position: sticky; top: 100px; }
+      .table-of-contents li { margin-bottom: 0.75rem; }
+      .table-of-contents a { text-decoration: none; color: #1e40af; transition: all 0.2s; display: block; padding: 0.5rem; border-radius: 0.25rem; }
+      .table-of-contents a:hover { color: #3b82f6; background-color: #f0f7ff;}
+      .table-of-contents a.active { background-color: #e0edff; color: #1e40af; font-weight: 600;}
+      .rating input { display: none; }
+      .rating label { cursor: pointer; width: 1.5rem; font-size: 1.5rem; color: #dddddd; float: right; transition: color 0.2s ease-in-out; }
+      .rating label:before { content: '\2605'; }
+      .rating input:checked ~ label, .rating label:hover, .rating label.hovered, .rating label:hover ~ label { color: #ffdd00; }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header Corregido -->
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-lg">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <!-- Logo (Left Aligned) -->
+          <a href="index.html" class="text-primary font-['Pacifico'] text-2xl md:text-3xl tracking-wide">
+            Reparaciones G García
+          </a>
+
+          <!-- Right Section: Back Link + Contact -->
+          <div class="flex items-center space-x-4 md:space-x-6">
+             <!-- Back to Blog Link (Moves closer to contact on smaller screens) -->
+             <a href="index.html#blog" class="text-gray-700 hover:text-primary flex items-center transition-colors duration-200">
+               <i class="ri-arrow-left-line mr-1 md:mr-2" aria-hidden="true"></i>
+               <span class="text-sm md:text-base">Volver al Blog</span>
+             </a>
+
+            <!-- Contact Info -->
+            <div class="hidden md:flex items-center space-x-1">
+              <div class="w-8 h-8 flex items-center justify-center text-primary">
+                <i class="ri-phone-line ri-lg" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500">Llámanos</p>
+                <p class="text-sm font-semibold">56 4537 1808</p>
+              </div>
+            </div>
+             <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-button flex items-center whitespace-nowrap transition duration-300 text-sm md:text-base">
+                <i class="ri-whatsapp-line mr-1 md:mr-2" aria-hidden="true"></i>
+                <span class="hidden sm:inline">WhatsApp</span>
+             </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Fin Header Corregido -->
+
+    <!-- Article Header -->
+    <div
+      class="relative pt-32 pb-20 bg-gradient-to-r from-primary/90 to-primary/70 text-white"
+    >
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center text-blue-100 mb-4 text-sm">
+            <a
+              href="index.html"
+              class="hover:text-white"
+              >Inicio</a
+            >
+            <i class="ri-arrow-right-s-line mx-2" aria-hidden="true"></i>
+            <a
+              href="index.html#blog"
+              class="hover:text-white"
+              >Blog</a
+            >
+            <i class="ri-arrow-right-s-line mx-2" aria-hidden="true"></i>
+            <span>Mantenimiento de PC</span>
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+             Cómo Mantener tu PC en Buen Estado y Prevenir Fallos
+          </h1>
+          <div class="flex flex-wrap items-center text-blue-100 text-sm mb-8">
+            <div class="flex items-center mr-6 mb-2">
+              <i class="ri-user-3-line mr-2" aria-hidden="true"></i>
+              <span>Por Gustavo García</span>
+            </div>
+            <div class="flex items-center mr-6 mb-2">
+              <i class="ri-calendar-line mr-2" aria-hidden="true"></i>
+              <span>12 de abril, 2025</span>
+            </div>
+            <div class="flex items-center mr-6 mb-2">
+              <i class="ri-time-line mr-2" aria-hidden="true"></i>
+              <span>8 minutos de lectura</span>
+            </div>
+            <div class="flex items-center mb-2">
+              <i class="ri-price-tag-3-line mr-2" aria-hidden="true"></i>
+              <span>Mantenimiento, Prevención, Windows</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-6 py-12">
+      <div class="flex flex-col lg:flex-row gap-12">
+        <!-- Article Content -->
+        <div class="lg:w-2/3">
+          <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
+            <img
+              src="https://readdy.ai/api/search-image?query=professional%2520computer%2520technician%2520working%2520on%2520laptop%2520repair%252C%2520detailed%2520view%2520of%2520computer%2520components%252C%2520high-quality%2520tools%252C%2520clean%2520workspace%252C%2520blue%2520lighting%2520accents%252C%2520modern%2520technical%2520environment%252C%2520professional%2520service%2520atmosphere&width=1200&height=600&seq=3&orientation=landscape"
+              alt="Técnico trabajando en el mantenimiento de una laptop"
+              class="w-full h-80 object-cover object-top"
+            />
+
+            <div class="p-8">
+              <div class="article-content">
+                <p class="text-lg font-medium text-gray-700 mb-6">
+                  Tu computadora es una herramienta esencial en tu vida diaria,
+                  ya sea para el trabajo, estudio o entretenimiento. Para asegurar que funcione de manera óptima y evitar fallos inesperados, es crucial realizar un mantenimiento regular. Pequeñas acciones preventivas pueden alargar significativamente la vida útil de tu equipo y ahorrarte costosas reparaciones.
+                </p>
+
+                <p>
+                  En Reparaciones G García, con más de 10 años de experiencia en
+                  servicio técnico en la Ciudad de México, queremos compartir contigo las mejores prácticas para mantener tu PC Windows en excelente estado. Estos consejos te ayudarán a prevenir problemas comunes y a disfrutar de un rendimiento óptimo.
+                </p>
+
+                <h2 id="limpieza">1. Limpieza Física Regular</h2>
+
+                <p>
+                  El polvo y la suciedad son enemigos silenciosos de los componentes electrónicos. La acumulación de polvo puede obstruir los ventiladores, provocando sobrecalentamiento y reduciendo la vida útil de las piezas.
+                </p>
+                <ul class="list-disc pl-5 space-y-2 mb-6">
+                    <li><strong>Apaga y desconecta:</strong> Antes de limpiar, apaga completamente tu PC y desconéctala de la corriente.</li>
+                    <li><strong>Gabinete y Periféricos:</strong> Limpia el exterior del gabinete, teclado, mouse y monitor con un paño de microfibra ligeramente humedecido.</li>
+                    <li><strong>Interior (PC de escritorio):</strong> Abre el gabinete (si te sientes cómodo haciéndolo) y usa aire comprimido para eliminar el polvo de los ventiladores (CPU, GPU, fuente de poder, gabinete), disipadores y ranuras. ¡Nunca uses una aspiradora! Puede generar estática.</li>
+                    <li><strong>Laptop:</strong> Usa aire comprimido en las rejillas de ventilación y puertos. No intentes abrirla si no tienes experiencia.</li>
+                    <li><strong>Frecuencia:</strong> Realiza una limpieza superficial cada mes y una más profunda (interior) cada 3-6 meses, dependiendo del ambiente.</li>
+                </ul>
+
+                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-primary my-6">
+                  <h4 class="font-bold text-gray-800 mb-2">Importante:</h4>
+                  <p>Al usar aire comprimido, hazlo en ráfagas cortas y mantén la lata en posición vertical para evitar que salga líquido propelente.</p>
+                </div>
+
+                <img
+                  src="https://readdy.ai/api/search-image?query=cleaning%20computer%20internals%20with%20compressed%20air%2C%20dust%20removal%20from%20PC%20components%20like%20fans%20and%20heatsinks%2C%20computer%20maintenance%20process%2C%20professional%20technician%20cleaning%20computer&width=800&height=500&seq=4&orientation=landscape"
+                  alt="Limpieza interna de PC con aire comprimido"
+                  class="w-full rounded-lg" loading="lazy"
+                />
+
+                <h2 id="software">2. Mantenimiento del Software</h2>
+
+                <p>
+                  Un sistema operativo limpio y optimizado es tan importante como un hardware sin polvo. El desorden digital puede ralentizar tu PC significativamente.
+                </p>
+
+                 <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500 my-6">
+                  <h4 class="font-bold text-gray-800 mb-2">
+                    Tareas Clave de Mantenimiento de Software:
+                  </h4>
+                  <ul class="space-y-3">
+                    <li class="flex items-start">
+                      <div class="w-6 h-6 flex items-center justify-center bg-yellow-500 rounded-full text-white mr-3 mt-1 flex-shrink-0">
+                        <i class="ri-delete-bin-line" aria-hidden="true"></i>
+                      </div>
+                      <div>
+                        <span class="font-semibold">Desinstala programas innecesarios:</span>
+                        Revisa la lista de programas instalados y elimina aquellos que ya no uses.
+                      </div>
+                    </li>
+                    <li class="flex items-start">
+                      <div class="w-6 h-6 flex items-center justify-center bg-yellow-500 rounded-full text-white mr-3 mt-1 flex-shrink-0">
+                        <i class="ri-folder-zip-line" aria-hidden="true"></i>
+                      </div>
+                      <div>
+                        <span class="font-semibold">Limpia archivos temporales:</span>
+                         Usa la herramienta "Liberador de espacio en disco" de Windows para eliminar archivos temporales, caché y otros datos innecesarios.
+                      </div>
+                    </li>
+                     <li class="flex items-start">
+                      <div class="w-6 h-6 flex items-center justify-center bg-yellow-500 rounded-full text-white mr-3 mt-1 flex-shrink-0">
+                        <i class="ri-play-list-add-line" aria-hidden="true"></i>
+                      </div>
+                      <div>
+                        <span class="font-semibold">Gestiona programas de inicio:</span>
+                         Deshabilita programas que no necesites que se inicien automáticamente con Windows a través del Administrador de Tareas (pestaña Inicio).
+                      </div>
+                    </li>
+                    <li class="flex items-start">
+                      <div class="w-6 h-6 flex items-center justify-center bg-yellow-500 rounded-full text-white mr-3 mt-1 flex-shrink-0">
+                        <i class="ri-hard-drive-2-line" aria-hidden="true"></i>
+                      </div>
+                      <div>
+                        <span class="font-semibold">Desfragmenta tu disco duro (HDD):</span>
+                        Si tienes un disco duro mecánico (HDD), desfragmentarlo regularmente (Windows lo hace automáticamente por defecto) puede mejorar la velocidad de acceso a los archivos. <span class="font-bold">Nota:</span> No desfragmentes unidades de estado sólido (SSD).
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <p>
+                  Realizar estas tareas cada pocos meses puede mantener tu sistema ágil y receptivo.
+                </p>
+
+                <h2 id="actualizaciones">3. Mantén Todo Actualizado</h2>
+
+                <p>
+                  Las actualizaciones de software no solo añaden nuevas funciones, sino que también corrigen errores y, lo más importante, tapan agujeros de seguridad que podrían ser explotados por malware.
+                </p>
+
+                <ul class="list-disc pl-5 space-y-2 mb-6">
+                    <li><strong>Sistema Operativo:</strong> Asegúrate de que Windows Update esté habilitado y descarga e instala las actualizaciones importantes tan pronto como estén disponibles.</li>
+                    <li><strong>Controladores (Drivers):</strong> Mantén actualizados los controladores de tus componentes clave (tarjeta gráfica, chipset, red). Puedes hacerlo a través del Administrador de dispositivos o usando el software del fabricante.</li>
+                    <li><strong>Antivirus:</strong> Tu software antivirus debe estar siempre actualizado con las últimas definiciones de virus para protegerte de las amenazas más recientes.</li>
+                    <li><strong>Navegador y Aplicaciones:</strong> Actualiza tu navegador web y otros programas que uses frecuentemente (como lectores de PDF, reproductores multimedia, etc.).</li>
+                </ul>
+
+                <blockquote>
+                  "Un sistema desactualizado es una puerta abierta para los ciberdelincuentes. La mayoría de las infecciones que vemos podrían haberse evitado simplemente manteniendo el software al día." - Gustavo García, Técnico Senior
+                </blockquote>
+
+                <h2 id="seguridad">4. Cuida la Seguridad</h2>
+
+                <p>
+                  Proteger tu equipo contra virus y otras amenazas es fundamental para su buen funcionamiento y para la seguridad de tu información personal.
+                </p>
+                 <div class="bg-blue-50 p-6 rounded-lg my-6">
+                  <h4 class="font-bold text-gray-800 mb-3">
+                    Prácticas Esenciales de Seguridad:
+                  </h4>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                      <div class="flex items-center mb-2">
+                        <div class="w-8 h-8 flex items-center justify-center bg-primary rounded-full text-white mr-3">
+                          <i class="ri-shield-check-line" aria-hidden="true"></i>
+                        </div>
+                        <h5 class="font-semibold">Antivirus Activo</h5>
+                      </div>
+                      <p class="text-sm text-gray-600">
+                        Utiliza un buen programa antivirus y antimalware, y realiza escaneos regulares.
+                      </p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                      <div class="flex items-center mb-2">
+                        <div class="w-8 h-8 flex items-center justify-center bg-primary rounded-full text-white mr-3">
+                          <i class="ri-fire-line" aria-hidden="true"></i>
+                        </div>
+                        <h5 class="font-semibold">Firewall Habilitado</h5>
+                      </div>
+                      <p class="text-sm text-gray-600">
+                        Asegúrate de que el firewall de Windows (o uno de terceros) esté activo para controlar el tráfico de red.
+                      </p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                      <div class="flex items-center mb-2">
+                        <div class="w-8 h-8 flex items-center justify-center bg-primary rounded-full text-white mr-3">
+                          <i class="ri-mail-unread-line" aria-hidden="true"></i>
+                        </div>
+                        <h5 class="font-semibold">Cuidado con Emails</h5>
+                      </div>
+                      <p class="text-sm text-gray-600">
+                        No abras archivos adjuntos ni hagas clic en enlaces de correos electrónicos sospechosos o desconocidos.
+                      </p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                      <div class="flex items-center mb-2">
+                        <div class="w-8 h-8 flex items-center justify-center bg-primary rounded-full text-white mr-3">
+                          <i class="ri-download-cloud-2-line" aria-hidden="true"></i>
+                        </div>
+                        <h5 class="font-semibold">Descargas Seguras</h5>
+                      </div>
+                      <p class="text-sm text-gray-600">
+                        Descarga software únicamente de fuentes oficiales y confiables.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <h2 id="respaldos">5. Realiza Copias de Seguridad (Backups)</h2>
+
+                <p>
+                  Incluso con el mejor mantenimiento, los fallos de hardware o las infecciones graves pueden ocurrir. Tener copias de seguridad regulares de tus archivos importantes es tu red de seguridad final.
+                </p>
+                <p>
+                    Puedes usar discos duros externos, servicios de almacenamiento en la nube (como Google Drive, OneDrive, Dropbox) o software especializado en backups. Lo importante es tener al menos una copia de tus datos críticos (documentos, fotos, videos) fuera de tu computadora principal.
+                </p>
+
+                <img
+                  src="https://readdy.ai/api/search-image?query=data%20backup%20concept%20with%20external%20hard%20drive%20and%20cloud%20storage%20icon%2C%20data%20security%20and%20protection%20visualization%2C%20information%20safety%2C%20modern%20tech%20illustration&width=800&height=500&seq=5&orientation=landscape"
+                  alt="Concepto de respaldo de datos en disco externo y nube"
+                  class="w-full rounded-lg" loading="lazy"
+                />
+
+                <h2 id="profesional">¿Cuándo considerar Mantenimiento Profesional?</h2>
+
+                <p>
+                  Aunque puedes hacer mucho por tu cuenta, hay momentos en que es mejor acudir a profesionales:
+                </p>
+
+                <ul class="list-disc pl-5 space-y-2 mb-6">
+                  <li>Si no te sientes cómodo abriendo tu PC para limpiarla.</li>
+                  <li>Si después de la limpieza y optimización, tu PC sigue lenta.</li>
+                  <li>Si experimentas ruidos extraños, sobrecalentamiento excesivo o pantallas azules.</li>
+                  <li>Si sospechas una infección de malware que no puedes eliminar.</li>
+                  <li>Para una revisión completa y mantenimiento preventivo anual.</li>
+                </ul>
+
+                <div class="bg-primary/10 p-6 rounded-lg my-8">
+                  <h3 class="text-xl font-bold text-primary mb-4">
+                    Mantenimiento Preventivo Profesional con Reparaciones G García
+                  </h3>
+                  <p class="mb-4">
+                    Nuestro servicio de mantenimiento preventivo incluye:
+                  </p>
+                  <ul class="space-y-3">
+                    <li class="flex items-start">
+                      <div class="w-6 h-6 flex items-center justify-center bg-primary rounded-full text-white mr-3 mt-1 flex-shrink-0">
+                        <i class="ri-check-line" aria-hidden="true"></i>
+                      </div>
+                      <div>Limpieza física interna y externa detallada.</div>
+                    </li>
+                     <li class="flex items-start">
+                      <div class="w-6 h-6 flex items-center justify-center bg-primary rounded-full text-white mr-3 mt-1 flex-shrink-0">
+                        <i class="ri-check-line" aria-hidden="true"></i>
+                      </div>
+                      <div>Revisión y limpieza de ventiladores y disipadores.</div>
+                    </li>
+                     <li class="flex items-start">
+                      <div class="w-6 h-6 flex items-center justify-center bg-primary rounded-full text-white mr-3 mt-1 flex-shrink-0">
+                        <i class="ri-check-line" aria-hidden="true"></i>
+                      </div>
+                      <div>Aplicación de nueva pasta térmica de alta calidad (si es necesario).</div>
+                    </li>
+                     <li class="flex items-start">
+                      <div class="w-6 h-6 flex items-center justify-center bg-primary rounded-full text-white mr-3 mt-1 flex-shrink-0">
+                        <i class="ri-check-line" aria-hidden="true"></i>
+                      </div>
+                      <div>Optimización completa del sistema operativo.</div>
+                    </li>
+                     <li class="flex items-start">
+                      <div class="w-6 h-6 flex items-center justify-center bg-primary rounded-full text-white mr-3 mt-1 flex-shrink-0">
+                        <i class="ri-check-line" aria-hidden="true"></i>
+                      </div>
+                      <div>Escaneo y eliminación de malware.</div>
+                    </li>
+                    <li class="flex items-start">
+                      <div class="w-6 h-6 flex items-center justify-center bg-primary rounded-full text-white mr-3 mt-1 flex-shrink-0">
+                        <i class="ri-check-line" aria-hidden="true"></i>
+                      </div>
+                      <div>Revisión del estado del disco duro y memoria RAM.</div>
+                    </li>
+                  </ul>
+                  <div class="mt-6 flex flex-col sm:flex-row gap-4">
+                    <a
+                      href="tel:5645371808"
+                      class="bg-primary text-white py-3 px-6 rounded-button font-semibold flex items-center justify-center whitespace-nowrap hover:bg-primary/90 transition duration-300"
+                    >
+                      <i class="ri-phone-line mr-2" aria-hidden="true"></i>
+                      Llamar ahora
+                    </a>
+                    <a
+                      href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer"
+                      class="bg-green-500 text-white py-3 px-6 rounded-button font-semibold flex items-center justify-center whitespace-nowrap hover:bg-green-600 transition duration-300"
+                    >
+                      <i class="ri-whatsapp-line mr-2" aria-hidden="true"></i>
+                      Contactar por WhatsApp
+                    </a>
+                  </div>
+                </div>
+
+                <h2 id="conclusion">Conclusión</h2>
+
+                <p>
+                  Mantener tu computadora en buen estado no requiere ser un experto en tecnología. Con rutinas sencillas de limpieza, optimización de software, actualizaciones constantes, buenas prácticas de seguridad y respaldos regulares, puedes asegurar que tu equipo funcione de manera eficiente por mucho más tiempo y prevenir la mayoría de los problemas comunes.
+                </p>
+
+                <p>
+                  Y recuerda, si alguna tarea te parece complicada o si tu equipo ya presenta problemas, no dudes en contactar a profesionales. En Reparaciones G García estamos para ayudarte con servicio técnico experto en toda la CDMX.
+                </p>
+
+                <div class="border-t border-b border-gray-200 py-6 my-8">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <img
+                        src="https://readdy.ai/api/search-image?query=professional%2520male%2520IT%2520technician%2520portrait%252C%2520hispanic%2520man%2520in%2520business%2520casual%2520attire%252C%2520confident%2520expression%252C%2520technical%2520background%252C%2520professional%2520headshot%252C%2520high%2520quality&width=200&height=200&seq=6&orientation=squarish"
+                        alt="Retrato de Gustavo García"
+                        class="w-16 h-16 rounded-full object-cover mr-4" loading="lazy"
+                      />
+                      <div>
+                        <p class="font-semibold">Gustavo García</p>
+                        <p class="text-sm text-gray-600">
+                          Técnico Senior en Reparaciones G García
+                        </p>
+                      </div>
+                    </div>
+                    <!-- Social Links Removed for Simplicity -->
+                  </div>
+                </div>
+
+                <!-- Social Sharing -->
+                <div class="flex flex-wrap items-center justify-between mt-8 pt-6 border-t border-gray-200">
+                  <div class="mb-4 md:mb-0">
+                    <p class="font-semibold mb-2">
+                      ¿Te resultó útil este artículo? ¡Compártelo!
+                    </p>
+                    <div class="flex space-x-2">
+                      <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200" aria-label="Compartir en Facebook">
+                        <i class="ri-facebook-fill" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white hover:bg-gray-800 transition-colors duration-200" aria-label="Compartir en Twitter/X">
+                        <i class="ri-twitter-x-fill" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors duration-200" aria-label="Compartir en WhatsApp">
+                        <i class="ri-whatsapp-fill" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-200" aria-label="Compartir en LinkedIn">
+                        <i class="ri-linkedin-fill" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors duration-200" aria-label="Compartir por Email">
+                        <i class="ri-mail-line" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="mr-3 text-gray-600">Valora este artículo:</span>
+                    <div class="rating flex flex-row-reverse">
+                      <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 estrellas"></label>
+                      <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 estrellas"></label>
+                      <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 estrellas"></label>
+                      <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 estrellas"></label>
+                      <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 estrella"></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="lg:w-1/3">
+             <!-- Table of Contents -->
+             <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8 sticky top-24">
+               <div class="p-6">
+                 <h3 class="text-xl font-bold text-gray-800 mb-4">
+                   Contenido del artículo
+                 </h3>
+                 <ul class="table-of-contents space-y-1">
+                   <li><a href="#limpieza">1. Limpieza Física Regular</a></li>
+                   <li><a href="#software">2. Mantenimiento del Software</a></li>
+                   <li><a href="#actualizaciones">3. Mantén Todo Actualizado</a></li>
+                   <li><a href="#seguridad">4. Cuida la Seguridad</a></li>
+                   <li><a href="#respaldos">5. Realiza Copias de Seguridad</a></li>
+                   <li><a href="#profesional">¿Cuándo buscar ayuda profesional?</a></li>
+                   <li><a href="#conclusion">Conclusión</a></li>
+                 </ul>
+               </div>
+             </div>
+
+            <!-- Resources -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">
+                  Recursos útiles
+                </h3>
+                <ul class="space-y-4">
+                  <li>
+                    <a href="#" class="flex items-start p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200 group">
+                      <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full text-primary mr-3 flex-shrink-0">
+                        <i class="ri-file-pdf-line" aria-hidden="true"></i>
+                      </div>
+                      <div>
+                        <h4 class="font-semibold text-gray-800 group-hover:text-primary">Guía de Mantenimiento PDF</h4>
+                        <p class="text-sm text-gray-600">Descarga nuestra guía completa.</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="index.html#contacto" class="flex items-start p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200 group">
+                      <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full text-primary mr-3 flex-shrink-0">
+                        <i class="ri-tools-line" aria-hidden="true"></i>
+                      </div>
+                      <div>
+                        <h4 class="font-semibold text-gray-800 group-hover:text-primary">Solicitar Mantenimiento</h4>
+                        <p class="text-sm text-gray-600">Agenda tu servicio preventivo.</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="index.html#faqs" class="flex items-start p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200 group">
+                      <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full text-primary mr-3 flex-shrink-0">
+                        <i class="ri-question-line" aria-hidden="true"></i>
+                      </div>
+                      <div>
+                        <h4 class="font-semibold text-gray-800 group-hover:text-primary">Preguntas Frecuentes</h4>
+                        <p class="text-sm text-gray-600">Encuentra respuestas rápidas.</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="bg-primary rounded-xl shadow-md overflow-hidden mb-8">
+              <div class="p-6 text-white">
+                <h3 class="text-xl font-bold mb-3">
+                  Suscríbete a nuestro boletín
+                </h3>
+                <p class="mb-4 text-blue-100">
+                  Recibe consejos, ofertas especiales y noticias sobre
+                  mantenimiento de equipos.
+                </p>
+                <form>
+                  <div class="flex flex-col sm:flex-row gap-3">
+                    <input
+                      type="email"
+                      placeholder="Tu correo electrónico" required
+                      class="flex-grow px-4 py-3 rounded-button text-gray-800 border-none focus:ring-2 focus:ring-blue-300"
+                    />
+                    <button
+                      type="submit"
+                      class="bg-white text-primary hover:bg-blue-50 px-6 py-3 rounded-button font-semibold whitespace-nowrap transition duration-300"
+                    >
+                      Suscribirme
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div> <!-- End Sidebar -->
+        </div> <!-- End Flex Container -->
+      </div> <!-- End Main Container -->
+
+    <!-- CTA Banner -->
+    <section class="py-12 bg-primary text-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 bg-primary/80 backdrop-blur-sm p-8 rounded-xl">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">
+              ¿Tu PC necesita mantenimiento profesional?
+            </h2>
+            <p class="text-blue-100 mb-6">
+              Asegura el óptimo rendimiento y prolonga la vida útil de tu equipo con nuestro servicio experto.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="tel:5645371808" class="bg-white text-primary hover:bg-blue-50 px-6 py-3 rounded-button font-semibold flex items-center justify-center whitespace-nowrap transition duration-300">
+                <i class="ri-phone-line mr-2" aria-hidden="true"></i>Llamar ahora
+              </a>
+              <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-button font-semibold flex items-center justify-center whitespace-nowrap transition duration-300">
+                <i class="ri-whatsapp-line mr-2" aria-hidden="true"></i>Contactar por WhatsApp
+              </a>
+            </div>
+          </div>
+          <div class="w-full md:w-1/3 flex justify-center mt-6 md:mt-0">
+            <img src="https://readdy.ai/api/search-image?query=professional%2520IT%2520technician%2520with%2520tools%2520ready%2520to%2520help%252C%2520confident%2520pose%252C%2520technical%2520background%252C%2520blue%2520lighting%252C%2520professional%2520service%2520visualization&width=300&height=300&seq=10&orientation=squarish" alt="Técnico profesional listo para ayudar" class="rounded-xl shadow-lg max-w-xs h-auto" loading="lazy"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1e2937] text-white py-12">
+      <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12">
+              <!-- Company Info -->
+              <div class="lg:col-span-1">
+                   <a href="index.html" class="text-white font-['Pacifico'] text-2xl mb-4 inline-block">Reparaciones G García</a>
+                  <p class="text-gray-300 mb-4">Tu aliado tecnológico en CDMX. Más de 10 años ofreciendo servicio técnico confiable para equipos Windows. Diagnóstico gratuito y garantía.</p>
+              </div>
+              <!-- Navigation -->
+              <div>
+                  <h3 class="text-xl font-bold mb-4">Navegación</h3>
+                  <ul class="space-y-2">
+                      <li><a href="index.html#inicio" class="text-gray-300 hover:text-white transition-colors">Inicio</a></li>
+                      <li><a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Servicios</a></li>
+                       <li><a href="index.html#proceso" class="text-gray-300 hover:text-white transition-colors">Proceso</a></li>
+                      <li><a href="index.html#nosotros" class="text-gray-300 hover:text-white transition-colors">Nosotros</a></li>
+                      <li><a href="index.html#testimonios" class="text-gray-300 hover:text-white transition-colors">Testimonios</a></li>
+                       <li><a href="index.html#blog" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+                      <li><a href="index.html#faqs" class="text-gray-300 hover:text-white transition-colors">FAQs</a></li>
+                      <li><a href="index.html#contacto" class="text-gray-300 hover:text-white transition-colors">Contacto</a></li>
+                  </ul>
+              </div>
+              <!-- Services -->
+              <div>
+                  <h3 class="text-xl font-bold mb-4">Servicios Populares</h3>
+                  <ul class="space-y-2">
+                      <li class="flex items-center gap-2">
+                          <i class="ri-tools-line text-primary" aria-hidden="true"></i>
+                          <a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Reparación de Hardware</a>
+                      </li>
+                      <li class="flex items-center gap-2">
+                          <i class="ri-window-line text-primary" aria-hidden="true"></i>
+                          <a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Solución de Software</a>
+                      </li>
+                       <li class="flex items-center gap-2">
+                          <i class="ri-speed-up-line text-primary" aria-hidden="true"></i>
+                          <a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Optimización de PC</a>
+                      </li>
+                      <li class="flex items-center gap-2">
+                          <i class="ri-virus-line text-primary" aria-hidden="true"></i>
+                          <a href="index.html#contacto" class="text-gray-300 hover:text-white transition-colors">Eliminación de Virus</a>
+                      </li>
+                      <li class="flex items-center gap-2">
+                          <i class="ri-home-smile-line text-primary" aria-hidden="true"></i>
+                          <a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Servicio a Domicilio CDMX</a>
+                      </li>
+                  </ul>
+              </div>
+               <!-- Contact Info -->
+               <div>
+                  <h3 class="text-xl font-bold mb-4">Contacto Rápido</h3>
+                  <ul class="space-y-3">
+                      <li class="flex items-center gap-2">
+                          <i class="ri-phone-line text-primary" aria-hidden="true"></i>
+                          <a href="tel:5645371808" class="text-gray-300 hover:text-white transition-colors">56 4537 1808</a>
+                      </li>
+                       <li class="flex items-center gap-2">
+                          <i class="ri-whatsapp-line text-primary" aria-hidden="true"></i>
+                          <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">WhatsApp Directo</a>
+                      </li>
+                      <li class="flex items-center gap-2">
+                          <i class="ri-mail-line text-primary" aria-hidden="true"></i>
+                          <a href="mailto:redventasremotasautomatizadas@gmail.com" class="text-gray-300 hover:text-white transition-colors break-all">Enviar Correo</a>
+                      </li>
+                      <li class="flex items-start gap-2">
+                          <i class="ri-map-pin-line text-primary mt-1" aria-hidden="true"></i>
+                          <span class="text-gray-300">Álvaro Obregón, CDMX (Servicio a Domicilio)</span>
+                      </li>
+                  </ul>
+               </div>
+          </div>
+           <!-- Copyright -->
+          <div class="mt-12 pt-8 border-t border-gray-700 text-center">
+              <p class="text-gray-400 text-sm">
+                  © 2024 Reparaciones G García, Expertos en Reparación de Computadoras en CDMX. Todos los derechos reservados.
+              </p>
+          </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90" aria-label="Volver arriba">
+      <i class="ri-arrow-up-line ri-lg" aria-hidden="true"></i>
+    </button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Back to top button
+        const backToTopButton = document.getElementById("back-to-top");
+        if(backToTopButton) {
+          window.addEventListener("scroll", function () {
+            if (window.pageYOffset > 300) {
+              backToTopButton.classList.remove("opacity-0", "invisible");
+              backToTopButton.classList.add("opacity-100", "visible");
+            } else {
+              backToTopButton.classList.remove("opacity-100", "visible");
+              backToTopButton.classList.add("opacity-0", "invisible");
+            }
+          });
+          backToTopButton.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        }
+
+        // Table of contents active state and smooth scrolling
+        const tocLinksObserver = document.querySelectorAll(".table-of-contents a");
+        const sectionsObserver = [];
+        tocLinksObserver.forEach(link => {
+            const targetId = link.getAttribute("href");
+            if(targetId && targetId.startsWith("#")){
+                const section = document.querySelector(targetId);
+                if(section) sectionsObserver.push(section);
+            }
+        });
+
+        const makeActiveObserver = (link) => {
+            tocLinksObserver.forEach((l) => l.classList.remove("active"));
+            if(link) link.classList.add("active");
+        };
+
+        const observerCallback = (entries) => {
+            let intersectingSectionId = null;
+            entries.forEach((entry) => {
+                // Prioritize the section highest on the screen that is intersecting
+                if (entry.isIntersecting) {
+                   intersectingSectionId = `#${entry.target.id}`;
+                }
+            });
+
+            if (intersectingSectionId) {
+                const activeLink = document.querySelector(`.table-of-contents a[href="${intersectingSectionId}"]`);
+                makeActiveObserver(activeLink);
+            } else {
+                // If no section is intersecting (e.g., scrolling between sections),
+                // find the last one that was visible above the viewport center
+                let lastVisibleSectionId = null;
+                for (let i = sectionsObserver.length - 1; i >= 0; i--) {
+                    const rect = sectionsObserver[i].getBoundingClientRect();
+                    if (rect.top < window.innerHeight / 2) {
+                        lastVisibleSectionId = `#${sectionsObserver[i].id}`;
+                        break;
+                    }
+                }
+                 if(lastVisibleSectionId) {
+                     const activeLink = document.querySelector(`.table-of-contents a[href="${lastVisibleSectionId}"]`);
+                    makeActiveObserver(activeLink);
+                 }
+            }
+        };
+
+        const observer = new IntersectionObserver(observerCallback, {
+            rootMargin: "-100px 0px -50% 0px", // Top offset for header, bottom offset triggers earlier
+            threshold: 0 // Trigger as soon as section enters/leaves adjusted rootMargin
+        });
+
+        sectionsObserver.forEach((section) => {
+            observer.observe(section);
+        });
+
+
+        // Smooth scrolling for TOC links
+        tocLinksObserver.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                 const headerOffset = 100; // Header height + extra space
+                 const elementPosition = targetElement.getBoundingClientRect().top;
+                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                 window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                 makeActiveObserver(this); // Update active state immediately
+            }
+          });
+        });
+
+        // Rating stars logic (assuming .rating class from first article page)
+        const ratingContainer = document.querySelector('.rating');
+        if (ratingContainer) {
+             const ratingLabels = ratingContainer.querySelectorAll("label");
+             ratingLabels.forEach((label) => {
+                 label.addEventListener("mouseover", function () {
+                    ratingLabels.forEach(l => l.classList.remove('hovered'));
+                    let current = this;
+                    while(current && current.tagName === 'LABEL') {
+                        current.classList.add('hovered');
+                        current = current.previousElementSibling;
+                         if(current && current.tagName !== 'LABEL'){
+                            current = current.previousElementSibling;
+                        }
+                    }
+                 });
+                 label.addEventListener("mouseout", function () {
+                      ratingLabels.forEach(l => l.classList.remove('hovered'));
+                 });
+             });
+        }
+
+      }); // End DOMContentLoaded
+    </script>
+  </body>
+</html>

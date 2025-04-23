@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reparaciones G García - Servicio Técnico de PC en CDMX</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        // Tailwind CSS Configuration
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#1e40af", secondary: "#3b82f6" },
+                    borderRadius: {
+                        none: "0px",
+                        sm: "4px",
+                        DEFAULT: "8px",
+                        md: "12px",
+                        lg: "16px",
+                        xl: "20px",
+                        "2xl": "24px",
+                        "3xl": "32px",
+                        full: "9999px",
+                        button: "8px", // Custom button radius
+                    },
+                },
+            },
+        };
+    </script>
+    <!-- Google Fonts: Pacifico for logo, Montserrat for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Remix Icon Library -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        /* Placeholder for RemixIcon content if needed, handled by library */
+        :where([class^="ri-"])::before { content: "\f3c2"; /* Placeholder, actual content handled by RemixIcon CSS */ }
+        /* Set default body font */
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Hero background pattern (example URL) */
+        .hero-pattern {
+            background-image: url('https://readdy.ai/api/search-image?query=abstract%20technology%20circuit%20board%20pattern%20with%20blue%20gradient%2C%20high%20tech%20digital%20background%2C%20modern%20technology%20concept%2C%20clean%20and%20minimal%20design%2C%20perfect%20for%20tech%20service%20background&width=1920&height=1080&seq=1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Glassmorphism effect for header (and potentially other elements) */
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.1); /* Adjust opacity as needed */
+        }
+        /* Remove default focus outline for cleaner look (Tailwind handles focus rings) */
+        input:focus {
+            outline: none;
+        }
+        /* Smooth scrolling adjustment for fixed header */
+        html {
+             scroll-padding-top: 80px; /* Adjust based on your actual fixed header height */
+        }
+        /* Basic animation */
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header with Glassmorphism Effect -->
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="text-primary font-['Pacifico'] text-3xl tracking-wide">Reparaciones G García</a>
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200">Inicio</a>
+                    <a href="#servicios" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200">Servicios</a>
+                    <a href="#proceso" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200">Proceso</a>
+                    <a href="#nosotros" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200">Nosotros</a>
+                    <a href="#testimonios" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200">Testimonios</a>
+                    <a href="#blog" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200">Blog</a>
+                    <a href="#faqs" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200">FAQs</a>
+                    <a href="#contacto" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200">Contacto</a>
+                </nav>
+                <!-- Contact Info & Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <!-- Phone Number (Hidden on small screens) -->
+                    <div class="hidden md:flex items-center">
+                        <div class="w-10 h-10 flex items-center justify-center text-primary">
+                            <i class="ri-phone-line ri-lg" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500">Llámanos</p>
+                            <p class="text-sm font-semibold">56 4537 1808</p>
+                        </div>
+                    </div>
+                    <!-- WhatsApp Button -->
+                    <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-button flex items-center whitespace-nowrap transition duration-300">
+                        <i class="ri-whatsapp-line mr-2" aria-hidden="true"></i>
+                        Contactar por WhatsApp
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+                        <i class="ri-menu-line ri-lg" aria-label="Abrir menú"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-[90vh] flex items-center overflow-hidden pt-20">
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
+        <!-- Content -->
+        <div class="container mx-auto px-6 py-24 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Text Content -->
+                <div class="w-full lg:w-1/2 text-white">
+                    <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-8 animate-fade-in">
+                        ¿Tu PC Windows Necesita Reparación? <br>
+                        <span class="text-blue-200">Expertos en Servicio Técnico</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-blue-100">
+                        Reparación Experta de PC y Laptops con 10 Años Sirviendo a la Ciudad de México.
+                    </p>
+                    <!-- Highlight Box -->
+                    <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg mb-8 border border-white border-opacity-20">
+                        <p class="mb-4">
+                            Olvídate del estrés tecnológico. En Reparaciones G García, ofrecemos diagnóstico gratuito, soluciones rápidas y garantía en reparación de computadoras en CDMX, optimización, eliminación de virus y venta de equipos Windows.
+                        </p>
+                        <p>
+                            Servicio en toda la CDMX, incluyendo Álvaro Obregón, Polanco, Coyoacán, Roma Norte, Del Valle y más.
+                        </p>
+                    </div>
+                    <!-- Call to Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contacto" class="bg-white text-primary hover:bg-blue-50 px-6 py-3 rounded-button font-semibold flex items-center justify-center whitespace-nowrap transition duration-300">
+                            <i class="ri-tools-line mr-2" aria-hidden="true"></i>
+                            Solicita tu Diagnóstico Gratuito
+                        </a>
+                        <a href="#contacto" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-button font-semibold flex items-center justify-center whitespace-nowrap border border-blue-400 transition duration-300">
+                            <i class="ri-customer-service-2-line mr-2" aria-hidden="true"></i>
+                            Habla con un Técnico
+                        </a>
+                    </div>
+                </div>
+                <!-- Image -->
+                <div class="w-full md:w-2/5 mt-12 md:mt-0 flex justify-center">
+                    <img src="https://readdy.ai/api/search-image?query=professional%20IT%20technician%20working%20on%20computer%20repair%2C%20blue%20tones%2C%20modern%20workspace%2C%20high-quality%20professional%20service%2C%20detailed%20computer%20components%2C%20clean%20workspace%2C%20professional%20tools%2C%20high-tech%20environment&width=600&height=600&seq=2&orientation=squarish"
+                         alt="Técnico profesional de TI trabajando en la reparación de una computadora"
+                         class="rounded-xl shadow-2xl transform hover:scale-105 transition duration-500 max-w-md w-full"
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soluciones Section -->
+    <section id="servicios" class="py-24 bg-gradient-to-b from-white to-gray-50">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-20">
+                <span class="text-primary font-semibold text-lg mb-4 block">NUESTROS SERVICIOS</span>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">Soluciones Profesionales para tu Equipo</h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+                    Expertos en diagnóstico y reparación de equipos Windows. Servicio integral con garantía y atención personalizada en toda la CDMX.
+                </p>
+            </div>
+            <!-- Special Offer: Home Service -->
+            <div class="bg-primary text-white rounded-xl p-8 mb-16 shadow-lg transform hover:scale-[1.01] transition duration-300">
+                <div class="text-center">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Reparación a Domicilio en CDMX ¡Sin Costo Adicional!</h3>
+                    <p class="mb-6">Olvídate de cargar tu equipo. Vamos a tu casa u oficina para realizar el diagnóstico y la reparación. Comodidad y eficiencia garantizadas.</p>
+                    <a href="#contacto" class="inline-block bg-white text-primary hover:bg-blue-50 px-6 py-3 rounded-button font-semibold whitespace-nowrap transition duration-300">
+                        Agenda tu Visita Ahora
+                    </a>
+                </div>
+            </div>
+            <!-- Service Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Hardware Repair -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition duration-300 flex flex-col">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto flex-shrink-0">
+                        <i class="ri-tools-fill text-primary ri-2x" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">Reparación de Hardware</h3>
+                    <p class="text-gray-600 mb-6 text-center flex-grow">
+                        Solucionamos fallas de disco duro, memoria RAM, sobrecalentamiento, pantallas rotas y más. Diagnosticamos con precisión el problema y realizamos una reparación duradera y confiable para tu equipo.
+                    </p>
+                    <div class="flex flex-col gap-3 mt-auto">
+                        <a href="#contacto" class="w-full bg-primary text-white py-2 rounded-button whitespace-nowrap transition duration-300 hover:bg-primary/90 text-center">
+                            Solicitar Reparación
+                        </a>
+                        <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="w-full border border-primary text-primary py-2 rounded-button text-center whitespace-nowrap transition duration-300 hover:bg-blue-50 flex items-center justify-center">
+                            <i class="ri-whatsapp-line mr-2" aria-hidden="true"></i>
+                            Consulta por WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <!-- Card 2: Software Solutions -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition duration-300 flex flex-col">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto flex-shrink-0">
+                        <i class="ri-window-fill text-primary ri-2x" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">Solución de Software</h3>
+                    <p class="text-gray-600 mb-6 text-center flex-grow">
+                        ¿Pantalla azul, Windows corrupto, programas que no responden? Realizamos un análisis detallado para identificar y resolver problemas de software, restaurando la funcionalidad completa de tu sistema operativo y aplicaciones.
+                    </p>
+                    <div class="flex flex-col gap-3 mt-auto">
+                        <a href="#contacto" class="w-full bg-primary text-white py-2 rounded-button whitespace-nowrap transition duration-300 hover:bg-primary/90 text-center">
+                             Arreglar Software
+                        </a>
+                        <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="w-full border border-primary text-primary py-2 rounded-button text-center whitespace-nowrap transition duration-300 hover:bg-blue-50 flex items-center justify-center">
+                            <i class="ri-whatsapp-line mr-2" aria-hidden="true"></i>
+                            Consulta por WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <!-- Card 3: PC Optimization -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition duration-300 flex flex-col">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto flex-shrink-0">
+                        <i class="ri-speed-up-fill text-primary ri-2x" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">Optimización de PC</h3>
+                    <p class="text-gray-600 mb-6 text-center flex-grow">
+                        ¿Tu computadora tarda una eternidad en arrancar o abrir programas? Realizamos una limpieza profunda, optimizamos el inicio y configuramos tu sistema para un rendimiento óptimo. Te damos consejos para mantener tu PC rápida.
+                    </p>
+                    <div class="flex flex-col gap-3 mt-auto">
+                        <a href="#contacto" class="w-full bg-primary text-white py-2 rounded-button whitespace-nowrap transition duration-300 hover:bg-primary/90 text-center">
+                            Agendar Optimización
+                        </a>
+                        <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="w-full border border-primary text-primary py-2 rounded-button text-center whitespace-nowrap transition duration-300 hover:bg-blue-50 flex items-center justify-center">
+                            <i class="ri-whatsapp-line mr-2" aria-hidden="true"></i>
+                            Consulta por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Misión, Visión y Marcas Section (Consolidated) -->
+    <section id="nosotros" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Más de 10 Años de Experiencia en Reparación de PC en CDMX</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto mb-8">
+                    Reparaciones G García nació hace más de una década en Álvaro Obregón, CDMX, por la pasión de Gustavo García hacia la tecnología. Hemos crecido gracias a la confianza de cientos de clientes, ofreciendo un servicio técnico de PC confiable, honesto y rápido para sistemas Windows.
+                </p>
+                <p class="text-primary font-semibold mb-12">Garantía en Repuestos y Mano de Obra</p>
+            </div>
+            <!-- Misión & Visión -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+                <!-- Misión Card -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Nuestra Misión</h3>
+                    <p class="text-gray-600">
+                        Facilitar la vida digital de nuestros clientes en CDMX con soluciones informáticas expertas, rápidas y un servicio excepcional.
+                    </p>
+                </div>
+                <!-- Visión Card -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Nuestra Visión</h3>
+                    <p class="text-gray-600">
+                        Ser el servicio técnico de PC Windows de mayor confianza en la Ciudad de México, reconocidos por nuestra integridad, calidad y compromiso.
+                    </p>
+                </div>
+            </div>
+            <!-- Marcas Section -->
+            <div class="bg-white p-8 rounded-xl shadow-md">
+                <h3 class="text-2xl font-bold text-center mb-6">Trabajamos con las Mejores Marcas</h3>
+                <p class="text-gray-600 text-center mb-8">
+                    Contamos con experiencia y acceso a repuestos para las principales marcas del mercado, asegurando compatibilidad y calidad en cada reparación.
+                </p>
+                <!-- Brand Logos Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-6 place-items-center">
+                    <!-- HP -->
+                    <div class="flex items-center justify-center" title="HP">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
+                            <i class="ri-hp-line text-primary ri-2x" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <!-- Dell -->
+                    <div class="flex items-center justify-center" title="Dell">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
+                            <i class="ri-dell-line text-primary ri-2x" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <!-- Lenovo -->
+                    <div class="flex items-center justify-center" title="Lenovo">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
+                            <i class="ri-lenovo-line text-primary ri-2x" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <!-- Acer -->
+                    <div class="flex items-center justify-center" title="Acer">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
+                            <i class="ri-acer-line text-primary ri-2x" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <!-- Asus -->
+                    <div class="flex items-center justify-center" title="Asus">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
+                            <i class="ri-asus-line text-primary ri-2x" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <!-- Toshiba -->
+                     <div class="flex items-center justify-center" title="Toshiba">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
+                             <i class="ri-toshiba-line text-primary ri-2x" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <!-- Samsung -->
+                     <div class="flex items-center justify-center" title="Samsung">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
+                             <i class="ri-samsung-line text-primary ri-2x" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <!-- Other Brands -->
+                    <div class="flex items-center justify-center" title="Otras marcas">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
+                            <span class="text-primary font-semibold text-xl">+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por qué elegirnos -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Por Qué Elegir Nuestro Servicio Técnico?</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Con más de 10 años de experiencia, ofrecemos soluciones confiables y garantizadas para todos tus problemas informáticos.
+                </p>
+            </div>
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1: Warranty -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="ri-shield-check-line text-primary ri-2x" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-2">Garantía en Servicio</h3>
+                    <p class="text-gray-600 text-center">
+                        Todos nuestros servicios incluyen garantía de hasta 3 meses en reparaciones y mantenimiento.
+                    </p>
+                </div>
+                <!-- Feature 2: Fast Service -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="ri-time-line text-primary ri-2x" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-2">Servicio Rápido</h3>
+                    <p class="text-gray-600 text-center">
+                        Resolvemos la mayoría de los problemas en menos de 24 horas, minimizando tu tiempo sin equipo.
+                    </p>
+                </div>
+                <!-- Feature 3: Home Service -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="ri-home-smile-line text-primary ri-2x" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-2">Servicio a Domicilio</h3>
+                    <p class="text-gray-600 text-center">
+                        Nos desplazamos a tu domicilio u oficina sin costo adicional en toda la CDMX.
+                    </p>
+                </div>
+                <!-- Feature 4: Transparent Pricing -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="ri-money-dollar-circle-line text-primary ri-2x" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-2">Precios Transparentes</h3>
+                    <p class="text-gray-600 text-center">
+                        Sin sorpresas ni costos ocultos. Te informamos del precio antes de iniciar cualquier reparación.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso Section (Simplified) -->
+    <section id="proceso" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestro Proceso de Reparación: Simple y Transparente</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Te explicamos paso a paso cómo trabajamos para solucionar los problemas de tu equipo de manera profesional y eficiente.
+                </p>
+            </div>
+            <!-- Steps List -->
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Step 1: Diagnosis -->
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition duration-300 flex items-start gap-6">
+                    <div class="w-12 h-12 bg-primary rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-xl">
+                        1
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">Diagnóstico Preciso</h3>
+                        <p class="text-gray-600">
+                            Contáctanos por WhatsApp, teléfono o visita nuestro taller. Realizamos un diagnóstico gratuito para identificar la falla exacta de tu PC o laptop.
+                        </p>
+                    </div>
+                </div>
+                <!-- Step 2: Quote -->
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition duration-300 flex items-start gap-6">
+                    <div class="w-12 h-12 bg-primary rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-xl">
+                        2
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">Presupuesto Claro</h3>
+                        <p class="text-gray-600">
+                            Te presentamos un presupuesto detallado y transparente, explicando las piezas necesarias y el costo total. Sin costos ocultos ni sorpresas.
+                        </p>
+                    </div>
+                </div>
+                <!-- Step 3: Expert Repair -->
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition duration-300 flex items-start gap-6">
+                    <div class="w-12 h-12 bg-primary rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-xl">
+                        3
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">Reparación Experta</h3>
+                        <p class="text-gray-600">
+                            Una vez aprobado el presupuesto, nuestros técnicos expertos proceden con la reparación utilizando componentes de calidad y las mejores prácticas. Te mantenemos informado del avance.
+                        </p>
+                    </div>
+                </div>
+                <!-- Step 4: Delivery & Warranty -->
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition duration-300 flex items-start gap-6">
+                     <div class="w-12 h-12 bg-primary rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-xl">
+                        4
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">Entrega y Garantía</h3>
+                        <p class="text-gray-600">
+                            Realizamos pruebas finales para asegurar el correcto funcionamiento. Te entregamos tu equipo reparado en taller o a domicilio con nuestra garantía en repuestos y mano de obra.
+                        </p>
+                    </div>
+                </div>
+                <!-- Call to Action Button -->
+                <div class="text-center mt-12">
+                    <a href="#contacto" class="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-button font-semibold hover:bg-primary/90 transition duration-300 whitespace-nowrap">
+                        <i class="ri-tools-line mr-2" aria-hidden="true"></i>
+                        Iniciar mi Reparación
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios Section -->
+    <section id="testimonios" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Historias Reales de Clientes Satisfechos en CDMX</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Conoce las experiencias de nuestros clientes y cómo hemos solucionado sus problemas tecnológicos.
+                </p>
+            </div>
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col">
+                     <div class="flex items-center justify-between mb-6">
+                         <!-- Customer Info -->
+                         <div class="flex items-center">
+                             <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                 <i class="ri-user-3-fill text-primary text-xl" aria-hidden="true"></i>
+                             </div>
+                             <div>
+                                 <h4 class="font-semibold text-lg">Valeria R., Estudiante</h4>
+                                 <p class="text-sm text-gray-500">Copilco, CDMX</p>
+                             </div>
+                         </div>
+                         <!-- Service Tag -->
+                         <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap">Reparación Hardware</span>
+                    </div>
+                    <!-- Testimonial Content -->
+                    <div class="mb-6 flex-grow">
+                         <p class="text-gray-600 italic mb-4">"Mi laptop HP no encendía y tenía que entregar mi tesis."</p>
+                         <div class="space-y-2">
+                             <p class="text-gray-700"><span class="font-semibold">Solución:</span> Diagnosticaron una falla en el conector de carga y lo repararon rápido.</p>
+                             <p class="text-gray-700"><span class="font-semibold">Resultado:</span> "Pude entregar mi tesis a tiempo. ¡Servicio profesional y justo!"</p>
+                         </div>
+                     </div>
+                     <!-- Rating -->
+                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                         <div class="text-yellow-400 flex" aria-label="Calificación: 5 de 5 estrellas">
+                             <i class="ri-star-fill" aria-hidden="true"></i>
+                             <i class="ri-star-fill" aria-hidden="true"></i>
+                             <i class="ri-star-fill" aria-hidden="true"></i>
+                             <i class="ri-star-fill" aria-hidden="true"></i>
+                             <i class="ri-star-fill" aria-hidden="true"></i>
+                         </div>
+                         <span class="text-primary font-semibold">5.0</span>
+                     </div>
+                </div>
+                <!-- Testimonial 2 -->
+                 <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col">
+                    <div class="flex items-center justify-between mb-6">
+                        <!-- Customer Info -->
+                        <div class="flex items-center">
+                             <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                 <i class="ri-user-3-fill text-primary text-xl" aria-hidden="true"></i>
+                             </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Mariana Rodríguez</h4>
+                                <p class="text-sm text-gray-500">Polanco</p>
+                            </div>
+                        </div>
+                        <!-- Service Tag -->
+                         <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap">Optimización</span>
+                    </div>
+                    <!-- Testimonial Content -->
+                    <div class="mb-6 flex-grow">
+                        <p class="text-gray-600 italic">
+                            "Vinieron a mi oficina a revisar mi computadora que estaba extremadamente lenta. Después de la optimización, arranca en segundos y los programas se abren inmediatamente. Muy profesionales y puntuales."
+                        </p>
+                    </div>
+                    <!-- Rating -->
+                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                         <div class="text-yellow-400 flex" aria-label="Calificación: 5 de 5 estrellas">
+                             <i class="ri-star-fill" aria-hidden="true"></i>
+                             <i class="ri-star-fill" aria-hidden="true"></i>
+                             <i class="ri-star-fill" aria-hidden="true"></i>
+                             <i class="ri-star-fill" aria-hidden="true"></i>
+                             <i class="ri-star-fill" aria-hidden="true"></i>
+                         </div>
+                         <span class="text-primary font-semibold">5.0</span>
+                     </div>
+                </div>
+                <!-- Testimonial 3 -->
+                 <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col">
+                     <div class="flex items-center justify-between mb-6">
+                        <!-- Customer Info -->
+                        <div class="flex items-center">
+                             <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                 <i class="ri-user-3-fill text-primary text-xl" aria-hidden="true"></i>
+                             </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Roberto Gutiérrez</h4>
+                                <p class="text-sm text-gray-500">Del Valle</p>
+                            </div>
+                        </div>
+                        <!-- Service Tag -->
+                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap">Eliminación Virus</span>
+                    </div>
+                    <!-- Testimonial Content -->
+                    <div class="mb-6 flex-grow">
+                        <p class="text-gray-600 italic">
+                            "Mi PC tenía un virus terrible que me impedía acceder a mis archivos importantes. El técnico no solo eliminó el virus, sino que también recuperó todos mis documentos. Precio justo y excelente atención."
+                        </p>
+                    </div>
+                    <!-- Rating -->
+                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                         <div class="text-yellow-400 flex" aria-label="Calificación: 4.5 de 5 estrellas">
+                             <i class="ri-star-fill" aria-hidden="true"></i>
+                             <i class="ri-star-fill" aria-hidden="true"></i>
+                             <i class="ri-star-fill" aria-hidden="true"></i>
+                             <i class="ri-star-fill" aria-hidden="true"></i>
+                             <i class="ri-star-half-fill" aria-hidden="true"></i>
+                         </div>
+                         <span class="text-primary font-semibold">4.5</span>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section id="faqs" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Preguntas Frecuentes (FAQs)</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Resolvemos tus dudas sobre nuestros servicios de reparación.
+                </p>
+            </div>
+            <!-- FAQ Accordion -->
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                        <span class="font-semibold text-lg">¿Ofrecen diagnóstico gratuito?</span>
+                        <i class="ri-arrow-down-s-line text-2xl text-primary transition-transform duration-300" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer px-6 pt-0 pb-4 bg-gray-50 hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="text-gray-600">¡Sí! Ofrecemos un diagnóstico completamente gratuito en nuestro taller. Si prefieres el servicio a domicilio, el diagnóstico también es gratuito si decides realizar la reparación con nosotros. Queremos que sepas qué tiene tu equipo antes de comprometerte.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                        <span class="font-semibold text-lg">¿Cuánto cuesta una reparación de computadora?</span>
+                        <i class="ri-arrow-down-s-line text-2xl text-primary transition-transform duration-300" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer px-6 pt-0 pb-4 bg-gray-50 hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="text-gray-600">El costo varía según el problema y las piezas necesarias. Después del diagnóstico gratuito, te daremos un presupuesto exacto y transparente. Nuestros precios son competitivos y justos para un servicio técnico de PC de calidad en CDMX.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                        <span class="font-semibold text-lg">¿Tienen servicio de reparación a domicilio?</span>
+                        <i class="ri-arrow-down-s-line text-2xl text-primary transition-transform duration-300" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer px-6 pt-0 pb-4 bg-gray-50 hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="text-gray-600">Sí, ofrecemos reparación de computadoras a domicilio en gran parte de la CDMX sin costo adicional por el traslado. Es ideal para problemas de software, optimización o diagnósticos iniciales. Reparaciones complejas de hardware pueden requerir llevar el equipo al taller.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                        <span class="font-semibold text-lg">¿Cuánto tiempo tardan las reparaciones?</span>
+                        <i class="ri-arrow-down-s-line text-2xl text-primary transition-transform duration-300" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer px-6 pt-0 pb-4 bg-gray-50 hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="text-gray-600">Depende de la complejidad y la disponibilidad de piezas. Muchas reparaciones de software y optimizaciones se completan el mismo día o en 24 horas. Reparaciones de hardware pueden tomar de 1 a 3 días hábiles. Siempre te daremos un tiempo estimado.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 5 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                        <span class="font-semibold text-lg">¿Qué garantía ofrecen?</span>
+                        <i class="ri-arrow-down-s-line text-2xl text-primary transition-transform duration-300" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer px-6 pt-0 pb-4 bg-gray-50 hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="text-gray-600">Ofrecemos garantía tanto en la mano de obra como en las piezas nuevas que instalamos. La duración de la garantía varía según el componente, pero siempre respaldamos nuestro trabajo para tu tranquilidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Contacta con Nosotros</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Estamos listos para ayudarte con cualquier problema informático. ¡Solicita tu diagnóstico gratuito!
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold mb-6">Envíanos un mensaje</h3>
+                    <!-- FORMULARIO OPTIMIZADO PARA FORMSPREE -->
+                    <form action="https://formspree.io/f/xldbeagy" method="POST" class="space-y-6" id="contactForm">
+                        <!-- Name Input -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre completo</label>
+                            <input type="text" id="name" name="name" required
+                                   class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 placeholder-gray-400"
+                                   placeholder="Ingresa tu nombre completo">
+                        </div>
+                        <!-- Email Input -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 placeholder-gray-400"
+                                   placeholder="tu@email.com">
+                        </div>
+                        <!-- Phone Input (Optional) -->
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono (Opcional)</label>
+                            <input type="tel" id="phone" name="phone"
+                                   class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 placeholder-gray-400"
+                                   placeholder="56 4537 1808">
+                        </div>
+                        <!-- Service Select -->
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Servicio que necesitas</label>
+                            <div class="relative">
+                                <select id="service" name="service" required
+                                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg appearance-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 pr-8">
+                                    <option value="">Selecciona un servicio</option>
+                                    <option value="Diagnóstico Gratuito">Diagnóstico Gratuito</option>
+                                    <option value="Reparación Hardware">Reparación de Hardware</option>
+                                    <option value="Solución Software">Solución de Software</option>
+                                    <option value="Optimización PC">Optimización de PC</option>
+                                    <option value="Eliminación Virus">Eliminación de virus</option>
+                                    <option value="Recuperación Datos">Recuperación de datos</option>
+                                    <option value="Servicio Domicilio">Servicio a Domicilio</option>
+                                    <option value="Otro">Otro (Describe abajo)</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
+                                    <i class="ri-arrow-down-s-line text-gray-400" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Message Textarea -->
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                            <textarea id="message" name="message" rows="4" required
+                                      class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 placeholder-gray-400"
+                                      placeholder="Describe brevemente el problema de tu equipo..."></textarea>
+                        </div>
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-button font-semibold hover:bg-primary/90 transition duration-300 whitespace-nowrap">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                    <!-- FIN DEL FORMULARIO OPTIMIZADO -->
+                </div>
+                <!-- Contact Info & Service Areas -->
+                <div>
+                    <!-- Contact Info Card -->
+                    <div class="bg-white p-8 rounded-xl shadow-md mb-8">
+                        <h3 class="text-2xl font-bold mb-6">Información de Contacto</h3>
+                        <div class="space-y-4">
+                            <!-- Phone -->
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                    <i class="ri-phone-line text-primary" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Teléfono</h4>
+                                    <a href="tel:5645371808" class="text-gray-600 hover:text-primary">56 4537 1808</a>
+                                </div>
+                            </div>
+                            <!-- WhatsApp -->
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                    <i class="ri-whatsapp-line text-primary" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">WhatsApp</h4>
+                                     <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-primary">56 4537 1808</a>
+                                </div>
+                            </div>
+                            <!-- Email -->
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                    <i class="ri-mail-line text-primary" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Correo Electrónico</h4>
+                                    <a href="mailto:redventasremotasautomatizadas@gmail.com" class="text-gray-600 hover:text-primary break-all">redventasremotasautomatizadas@gmail.com</a>
+                                </div>
+                            </div>
+                            <!-- Hours -->
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                    <i class="ri-time-line text-primary" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Horario de Atención</h4>
+                                    <p class="text-gray-600">Lunes a Sábado: 9:00 AM - 7:00 PM</p>
+                                    <p class="text-gray-600">Domingo: Cerrado</p>
+                                </div>
+                            </div>
+                             <!-- Location -->
+                             <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                    <i class="ri-map-pin-line text-primary" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Ubicación Taller</h4>
+                                    <p class="text-gray-600">Calle Rosa Venus 164, Molino de Rosas, Álvaro Obregón, 01470 CDMX</p>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Rosa+Venus+164,+Molino+de+Rosas,+Álvaro+Obregón,+01470+CDMX" target="_blank" rel="noopener noreferrer" class="text-sm text-primary hover:underline">Ver en Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service Areas Card -->
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-bold mb-6">Zonas de Servicio a Domicilio</h3>
+                        <p class="text-gray-600 mb-4">
+                            Ofrecemos servicio a domicilio sin costo extra en las principales alcaldías de la Ciudad de México:
+                        </p>
+                        <ul class="grid grid-cols-2 gap-x-4 gap-y-2">
+                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2" aria-hidden="true"></i> Álvaro Obregón</li>
+                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2" aria-hidden="true"></i> Benito Juárez</li>
+                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2" aria-hidden="true"></i> Coyoacán</li>
+                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2" aria-hidden="true"></i> Cuauhtémoc</li>
+                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2" aria-hidden="true"></i> Miguel Hidalgo</li>
+                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2" aria-hidden="true"></i> Tlalpan</li>
+                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2" aria-hidden="true"></i> Azcapotzalco</li>
+                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2" aria-hidden="true"></i> Iztacalco</li>
+                            <li class="flex items-center col-span-2"><i class="ri-add-circle-line text-primary mr-2" aria-hidden="true"></i> ¡Y zonas aledañas! (Consulta cobertura)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Blog y Consejos de Mantenimiento</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Mantente informado y cuida tu equipo con nuestros consejos prácticos sobre mantenimiento y reparación de computadoras en CDMX.
+                </p>
+            </div>
+            <!-- Blog Posts Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden flex flex-col">
+                    <img src="https://readdy.ai/api/search-image?query=computer%20maintenance%20and%20cleaning%2C%20professional%20workspace%2C%20tools%20for%20PC%20repair%2C%20clean%20and%20organized%20setup%2C%20high%20quality%20professional%20image&width=600&height=400&seq=1&orientation=landscape"
+                         alt="Herramientas y entorno limpio para mantenimiento de PC" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 hover:text-primary transition duration-300">
+                            <a href="mantenimiento-pc.html">Cómo Mantener tu PC en Buen Estado y Prevenir Fallos</a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 flex-grow">
+                            Descubre rutinas sencillas de limpieza física y de software, la importancia de las actualizaciones y cómo evitar el sobrecalentamiento para alargar la vida útil de tu computadora...
+                        </p>
+                        <a href="mantenimiento-pc.html" class="text-primary font-semibold hover:text-primary/80 transition duration-300 inline-flex items-center mt-auto">
+                            Leer más <i class="ri-arrow-right-line ml-2" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden flex flex-col">
+                    <img src="https://readdy.ai/api/search-image?query=computer%20virus%20detection%2C%20cybersecurity%20concept%2C%20malware%20protection%2C%20digital%20security%20visualization%2C%20professional%20tech%20image&width=600&height=400&seq=2&orientation=landscape"
+                         alt="Concepto visual de detección de virus y ciberseguridad" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 hover:text-primary transition duration-300">
+                            <a href="signos-virus.html">5 Signos Claros de que tu Equipo Podría Tener un Virus</a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 flex-grow">
+                            ¿Tu PC está lenta, muestra ventanas emergentes extrañas o se comporta de forma inusual? Aprende a identificar las señales comunes de una infección por malware y qué hacer al respecto...
+                        </p>
+                        <a href="signos-virus.html" class="text-primary font-semibold hover:text-primary/80 transition duration-300 inline-flex items-center mt-auto">
+                            Leer más <i class="ri-arrow-right-line ml-2" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- View All Button -->
+            <div class="text-center">
+                <a href="#blog" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-button font-semibold hover:bg-primary/90 transition duration-300">
+                    Ver Todos los Artículos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1e2937] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-1">
+                    <h3 class="text-xl font-bold mb-4">Reparaciones G García</h3>
+                    <p class="text-gray-300 mb-4">Tu aliado tecnológico en CDMX. Más de 10 años ofreciendo servicio técnico confiable para equipos Windows. Diagnóstico gratuito y garantía.</p>
+                </div>
+                <!-- Navigation Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Navegación</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-gray-300 hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#servicios" class="text-gray-300 hover:text-white transition-colors">Servicios</a></li>
+                         <li><a href="#proceso" class="text-gray-300 hover:text-white transition-colors">Proceso</a></li>
+                        <li><a href="#nosotros" class="text-gray-300 hover:text-white transition-colors">Nosotros</a></li>
+                        <li><a href="#testimonios" class="text-gray-300 hover:text-white transition-colors">Testimonios</a></li>
+                         <li><a href="#blog" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#faqs" class="text-gray-300 hover:text-white transition-colors">FAQs</a></li>
+                        <li><a href="#contacto" class="text-gray-300 hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                <!-- Popular Services Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Servicios Populares</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i class="ri-tools-line text-primary" aria-hidden="true"></i>
+                            <a href="#servicios" class="text-gray-300 hover:text-white transition-colors">Reparación de Hardware</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="ri-window-line text-primary" aria-hidden="true"></i>
+                            <a href="#servicios" class="text-gray-300 hover:text-white transition-colors">Solución de Software</a>
+                        </li>
+                         <li class="flex items-center gap-2">
+                            <i class="ri-speed-up-line text-primary" aria-hidden="true"></i>
+                            <a href="#servicios" class="text-gray-300 hover:text-white transition-colors">Optimización de PC</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="ri-virus-line text-primary" aria-hidden="true"></i>
+                            <a href="#contacto" class="text-gray-300 hover:text-white transition-colors">Eliminación de Virus</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="ri-home-smile-line text-primary" aria-hidden="true"></i>
+                            <a href="#servicios" class="text-gray-300 hover:text-white transition-colors">Servicio a Domicilio CDMX</a>
+                        </li>
+                    </ul>
+                </div>
+                 <!-- Quick Contact Info -->
+                 <div>
+                    <h3 class="text-xl font-bold mb-4">Contacto Rápido</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2">
+                            <i class="ri-phone-line text-primary" aria-hidden="true"></i>
+                            <a href="tel:5645371808" class="text-gray-300 hover:text-white transition-colors">56 4537 1808</a>
+                        </li>
+                         <li class="flex items-center gap-2">
+                            <i class="ri-whatsapp-line text-primary" aria-hidden="true"></i>
+                            <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">WhatsApp Directo</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="ri-mail-line text-primary" aria-hidden="true"></i>
+                            <a href="mailto:redventasremotasautomatizadas@gmail.com" class="text-gray-300 hover:text-white transition-colors break-all">Enviar Correo</a>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="ri-map-pin-line text-primary mt-1" aria-hidden="true"></i>
+                            <span class="text-gray-300">Álvaro Obregón, CDMX (Servicio a Domicilio)</span>
+                        </li>
+                    </ul>
+                 </div>
+            </div>
+
+            <!-- Google Maps Embed -->
+            <div class="mt-12 pt-8 border-t border-gray-700">
+                 <h3 class="text-xl font-bold mb-4 text-center">Nuestra Ubicación para Entrega/Recogida en Taller</h3>
+                 <div class="h-[300px] rounded-lg overflow-hidden shadow-lg">
+                     <iframe
+                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.4981877042647!2d-99.20989482526697!3d19.35161048694061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d200687a99d4c9%3A0x8c6b4a6c7c870f56!2sRosa%20Venus%20164%2C%20Molino%20de%20Rosas%2C%20%C3%81lvaro%20Obreg%C3%B3n%2C%2001470%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1682181234567!5m2!1ses!2smx"
+                         width="100%"
+                         height="100%"
+                         style="border:0;"
+                         allowfullscreen=""
+                         loading="lazy"
+                         referrerpolicy="no-referrer-when-downgrade"
+                         title="Mapa de ubicación de Reparaciones G García">
+                    </iframe>
+                 </div>
+                 <p class="text-sm text-gray-400 mt-4 text-center">Dirección: Calle Rosa Venus 164, Molino de Rosas, Álvaro Obregón, 01470 CDMX</p>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Reparaciones G García, Expertos en Reparación de Computadoras en CDMX. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90" aria-label="Volver arriba">
+        <i class="ri-arrow-up-line ri-lg" aria-hidden="true"></i>
+    </button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // --- Back to top button ---
+            const backToTopButton = document.getElementById("back-to-top");
+            if (backToTopButton) {
+                window.addEventListener("scroll", function () {
+                    if (window.pageYOffset > 300) { // Show button after scrolling 300px
+                        backToTopButton.classList.remove("opacity-0", "invisible");
+                        backToTopButton.classList.add("opacity-100", "visible");
+                    } else {
+                        backToTopButton.classList.remove("opacity-100", "visible");
+                        backToTopButton.classList.add("opacity-0", "invisible");
+                    }
+                });
+                backToTopButton.addEventListener("click", function () {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth", // Smooth scroll animation
+                    });
+                });
+            }
+
+            // --- FAQ accordion functionality ---
+            const faqButtons = document.querySelectorAll("#faqs .faq-button");
+            faqButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const answer = button.nextElementSibling;
+                    const icon = button.querySelector("i");
+                    const isOpening = answer.classList.contains("hidden");
+
+                    // Close all other answers first for a clean accordion effect
+                    faqButtons.forEach((otherButton) => {
+                        if (otherButton !== button) {
+                            const otherAnswer = otherButton.nextElementSibling;
+                            const otherIcon = otherButton.querySelector("i");
+                            otherAnswer.style.maxHeight = null; // Collapse
+                            otherAnswer.classList.add("hidden"); // Hide content
+                            otherAnswer.classList.remove('pt-4'); // Remove padding when closed
+                            if(otherIcon) otherIcon.style.transform = "rotate(0deg)"; // Reset icon
+                        }
+                    });
+
+                    // Toggle the clicked answer
+                    if (isOpening) {
+                        answer.classList.remove("hidden");
+                        answer.classList.add('pt-4'); // Add top padding for spacing when open
+                        // Force reflow before setting maxHeight for transition to work
+                        answer.offsetHeight;
+                        answer.style.maxHeight = answer.scrollHeight + "px"; // Expand to full height
+                        if(icon) icon.style.transform = "rotate(180deg)"; // Rotate icon
+                    } else {
+                         answer.style.maxHeight = null; // Collapse
+                         answer.classList.remove('pt-4'); // Remove padding before hiding
+                         // Add hidden class after the transition finishes for accessibility
+                         setTimeout(() => {
+                            // Double check it's still meant to be closed before hiding
+                            if (!answer.style.maxHeight || answer.style.maxHeight === '0px') {
+                                answer.classList.add("hidden");
+                            }
+                        }, 500); // Duration should match CSS transition duration
+                         if(icon) icon.style.transform = "rotate(0deg)"; // Reset icon
+                    }
+                });
+            });
+
+
+            // --- Smooth scrolling for anchor links ---
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    const targetId = this.getAttribute("href");
+                    // Ensure it's a valid internal link and not just "#"
+                    if (targetId && targetId.startsWith("#") && targetId.length > 1) {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            e.preventDefault(); // Prevent default jump behavior
+
+                            // Calculate offset based on fixed header height
+                            const headerOffset = 80; // Adjust this value if header height changes
+                            const elementPosition = targetElement.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                            // Perform smooth scroll
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: "smooth",
+                            });
+
+                             // Optional: Close mobile menu if open after clicking a link
+                             // const mobileMenuButton = document.querySelector('.lg\\:hidden button'); // More specific selector if needed
+                             // Add logic here to check if a mobile menu is open and close it
+                        }
+                    }
+                });
+            });
+
+            // --- Mobile Menu Toggle (Basic Example - Requires Mobile Menu HTML) ---
+            const menuButton = document.querySelector('.lg\\:hidden button'); // Selector for the burger icon button
+            const navMenu = document.querySelector('nav.hidden.lg\\:flex'); // Selecting the desktop nav
+
+            if (menuButton && navMenu) {
+                 // NOTE: This example assumes you have a SEPARATE mobile menu structure or
+                 // you intend to toggle classes on the existing nav/body to show/hide it
+                 // on mobile. The current HTML doesn't explicitly define a mobile menu view.
+                 menuButton.addEventListener('click', () => {
+                     // Example logic: Toggle a class on the body or a dedicated mobile menu container
+                     // document.body.classList.toggle('mobile-menu-active');
+                     // Or toggle classes on the navMenu itself if adapting it for mobile
+                     // navMenu.classList.toggle('hidden'); // Simplistic toggle
+
+                     console.log("Mobile menu button clicked. Implement your specific menu toggle logic here.");
+                     // e.g., find the mobile menu element and toggle its display/visibility classes.
+                 });
+            }
+
+            // --- Formspree Handling (Optional: Add confirmation message) ---
+            // Basic Formspree forms redirect by default. If you want an AJAX submission
+            // with a success message without leaving the page, you'd need more JS.
+            // For now, the standard HTML form submission to Formspree is handled
+            // by the browser due to the action and method attributes.
+
+        }); // End DOMContentLoaded
+    </script>
+</body>
+</html>

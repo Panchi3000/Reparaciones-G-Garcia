@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      5 Signos Claros de que tu Equipo Podría Tener un Virus - Reparaciones G
+      García
+    </title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#1e40af", secondary: "#3b82f6" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; } /* Placeholder */
+      html { scroll-padding-top: 100px; /* Header offset */ }
+      body { font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; }
+      .article-content h2 { scroll-margin-top: 100px; font-size: 1.75rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: #1e40af; }
+      .article-content h3 { scroll-margin-top: 100px; font-size: 1.5rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1e3a8a; }
+      .article-content p { margin-bottom: 1.25rem; }
+      .article-content ul, .article-content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+      .article-content ul li, .article-content ol li { margin-bottom: 0.5rem; }
+      .article-content blockquote { border-left: 4px solid #1e40af; padding-left: 1rem; font-style: italic; margin: 1.5rem 0; background-color: #f0f7ff; padding: 1.5rem; border-radius: 0.5rem; }
+      .article-content img { border-radius: 0.5rem; margin: 1.5rem 0; }
+      .article-content a { color: #1e40af; text-decoration: underline; transition: color 0.2s; }
+      .article-content a:hover { color: #3b82f6; }
+      .table-of-contents { position: sticky; top: 100px; /* Adjust based on header height */ }
+      .table-of-contents li { margin-bottom: 0.5rem; }
+      .table-of-contents a { display: block; padding: 0.5rem; border-radius: 0.25rem; transition: all 0.2s; color: #1e40af; text-decoration: none; }
+      .table-of-contents a:hover { background-color: #f0f7ff; }
+      .table-of-contents a.active { background-color: #e0edff; color: #1e40af; font-weight: 600; }
+      .rating-stars input[type="radio"] { display: none; }
+      .rating-stars label { cursor: pointer; transition: color 0.2s; }
+      .rating-stars label i { transition: color 0.2s; }
+      /* Styles for checked and hovered stars */
+      .rating-stars input:checked ~ label i,
+      .rating-stars label:hover i,
+      .rating-stars label:hover ~ label i { color: #ffc107; /* Yellow color for stars */ }
+      .custom-checkbox { appearance: none; -webkit-appearance: none; width: 1.25rem; height: 1.25rem; border: 2px solid #d1d5db; border-radius: 0.25rem; outline: none; cursor: pointer; position: relative; transition: all 0.2s; vertical-align: middle; }
+      .custom-checkbox:checked { background-color: #1e40af; border-color: #1e40af; }
+      .custom-checkbox:checked::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%) rotate(45deg); /* Adjusted for better checkmark centering */ width: 0.3rem; height: 0.6rem; border-bottom: 2px solid white; border-right: 2px solid white; }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header Corregido -->
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-lg">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <!-- Logo (Left Aligned) -->
+          <a href="index.html" class="text-primary font-['Pacifico'] text-2xl md:text-3xl tracking-wide">
+            Reparaciones G García
+          </a>
+
+          <!-- Right Section: Back Link + Contact -->
+          <div class="flex items-center space-x-4 md:space-x-6">
+             <!-- Back to Blog Link -->
+             <a href="index.html#blog" class="text-gray-700 hover:text-primary flex items-center transition-colors duration-200">
+               <i class="ri-arrow-left-line mr-1 md:mr-2" aria-hidden="true"></i>
+               <span class="text-sm md:text-base">Volver al Blog</span>
+             </a>
+
+            <!-- Contact Info -->
+            <div class="hidden md:flex items-center space-x-1">
+              <div class="w-8 h-8 flex items-center justify-center text-primary">
+                <i class="ri-phone-line ri-lg" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500">Llámanos</p>
+                <p class="text-sm font-semibold">56 4537 1808</p>
+              </div>
+            </div>
+             <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-button flex items-center whitespace-nowrap transition duration-300 text-sm md:text-base">
+                <i class="ri-whatsapp-line mr-1 md:mr-2" aria-hidden="true"></i>
+                <span class="hidden sm:inline">WhatsApp</span>
+             </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Fin Header Corregido -->
+
+    <!-- Article Header -->
+    <section
+      class="pt-32 pb-16 bg-gradient-to-r from-primary/90 to-primary/70 text-white"
+    >
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center text-blue-100 text-sm mb-4">
+            <a
+              href="index.html"
+              class="hover:text-white"
+              >Inicio</a
+            >
+            <span class="mx-2">/</span>
+            <a
+              href="index.html#blog"
+              class="hover:text-white"
+              >Blog</a
+            >
+            <span class="mx-2">/</span>
+            <span>Seguridad Informática</span>
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            5 Signos Claros de que tu Equipo Podría Tener un Virus
+          </h1>
+          <div class="flex flex-wrap items-center text-sm mb-6">
+            <div class="flex items-center mr-6 mb-2">
+              <div
+                class="w-8 h-8 bg-blue-100/20 rounded-full flex items-center justify-center mr-2"
+              >
+                <i class="ri-user-3-line" aria-hidden="true"></i>
+              </div>
+              <span>Por Gustavo García</span>
+            </div>
+            <div class="flex items-center mr-6 mb-2">
+              <div
+                class="w-8 h-8 bg-blue-100/20 rounded-full flex items-center justify-center mr-2"
+              >
+                <i class="ri-calendar-line" aria-hidden="true"></i>
+              </div>
+              <span>22 de abril, 2025</span>
+            </div>
+            <div class="flex items-center mr-6 mb-2">
+              <div
+                class="w-8 h-8 bg-blue-100/20 rounded-full flex items-center justify-center mr-2"
+              >
+                <i class="ri-time-line" aria-hidden="true"></i>
+              </div>
+              <span>8 minutos de lectura</span>
+            </div>
+            <div class="flex items-center mb-2">
+              <div
+                class="w-8 h-8 bg-blue-100/20 rounded-full flex items-center justify-center mr-2"
+              >
+                <i class="ri-price-tag-3-line" aria-hidden="true"></i>
+              </div>
+              <span>Seguridad, Virus, Mantenimiento</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row gap-12">
+          <!-- Article Content -->
+          <div class="lg:w-2/3">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
+              <img
+                src="https://readdy.ai/api/search-image?query=computer%2520virus%2520detection%252C%2520cybersecurity%2520concept%252C%2520malware%2520protection%252C%2520digital%2520security%2520visualization%252C%2520professional%2520tech%2520image%252C%2520detailed%2520high%2520quality%2520image%2520showing%2520computer%2520screen%2520with%2520virus%2520alert%252C%2520digital%2520threat%2520visualization&width=1200&height=600&seq=3&orientation=landscape"
+                alt="Pantalla de computadora mostrando alerta de virus"
+                class="w-full h-80 object-cover object-top"
+              />
+
+              <div class="p-8">
+                <div class="article-content">
+                  <p class="text-lg font-medium text-gray-700 mb-6">
+                    ¿Tu PC está lenta, muestra ventanas emergentes extrañas o se
+                    comporta de forma inusual? Estos podrían ser signos de una
+                    infección por malware. En este artículo, te explicamos cómo
+                    identificar las señales comunes de un virus en tu
+                    computadora y qué hacer al respecto.
+                  </p>
+
+                  <p>
+                    En Reparaciones G García, con más de 10 años de experiencia
+                    en servicio técnico en CDMX, hemos visto todo tipo de
+                    infecciones informáticas. Los virus, troyanos, spyware y
+                    otros tipos de malware pueden infiltrarse en tu sistema de
+                    formas muy diversas, y a menudo lo hacen sin que te des
+                    cuenta hasta que el daño ya está hecho.
+                  </p>
+
+                  <p>
+                    Detectar a tiempo una infección puede ahorrarte dolores de
+                    cabeza, pérdida de datos importantes y hasta dinero. Aquí te
+                    presentamos los 5 signos más claros que indican que tu
+                    equipo podría estar infectado.
+                  </p>
+
+                  <h2 id="signo1">1. Rendimiento extremadamente lento</h2>
+
+                  <p>
+                    Uno de los síntomas más comunes de una infección por malware
+                    es la ralentización notable del sistema. Si tu computadora
+                    solía funcionar con normalidad y de repente tarda una
+                    eternidad en arrancar, abrir programas o navegar por
+                    internet, podría ser señal de que un virus está consumiendo
+                    recursos del sistema en segundo plano.
+                  </p>
+
+                  <p>
+                    <strong>¿Qué ocurre?</strong> Muchos tipos de malware
+                    ejecutan procesos ocultos que consumen CPU, memoria RAM y
+                    ancho de banda de internet, lo que provoca que tu equipo
+                    funcione más lento de lo normal.
+                  </p>
+
+                  <div class="bg-blue-50 p-6 rounded-lg my-6">
+                    <h4 class="font-bold text-primary mb-2">
+                      Consejo del experto:
+                    </h4>
+                    <p class="mb-0">
+                      Verifica el Administrador de tareas (Ctrl+Alt+Supr) para
+                      identificar procesos sospechosos que consuman un
+                      porcentaje inusualmente alto de recursos. Busca nombres de
+                      procesos extraños o desconocidos.
+                    </p>
+                  </div>
+
+                  <img
+                    src="https://readdy.ai/api/search-image?query=computer%2520task%2520manager%2520showing%2520high%2520CPU%2520usage%252C%2520suspicious%2520processes%2520running%252C%2520system%2520performance%2520monitor%252C%2520detailed%2520screen%2520capture%2520of%2520Windows%2520task%2520manager%2520with%2520high%2520resource%2520usage&width=800&height=500&seq=4&orientation=landscape"
+                    alt="Administrador de tareas mostrando procesos sospechosos"
+                    class="w-full rounded-lg" loading="lazy"
+                  />
+
+                  <h2 id="signo2">
+                    2. Ventanas emergentes y anuncios excesivos
+                  </h2>
+
+                  <p>
+                    Si de repente tu navegador muestra ventanas emergentes
+                    constantes, incluso cuando no estás navegando por internet,
+                    es una señal clara de adware (software publicitario
+                    malicioso) en tu sistema.
+                  </p>
+
+                  <p>
+                    <strong>¿Qué ocurre?</strong> El adware inserta anuncios no
+                    deseados en tu navegador y puede redirigirte a sitios web
+                    potencialmente peligrosos. Además de ser extremadamente
+                    molesto, puede ser la puerta de entrada para infecciones más
+                    graves.
+                  </p>
+
+                  <blockquote>
+                    "Nunca hagas clic en ventanas emergentes que afirmen que tu
+                    computadora está infectada o necesita una actualización
+                    urgente. Estas son tácticas comunes de ingeniería social
+                    para engañarte y que descargues más malware."
+                  </blockquote>
+
+                  <h2 id="signo3">3. Comportamiento extraño del sistema</h2>
+
+                  <p>
+                    Si tu computadora comienza a comportarse de manera
+                    impredecible, podría ser síntoma de una infección. Algunos
+                    comportamientos extraños incluyen:
+                  </p>
+
+                  <ul class="list-disc pl-6 mb-6">
+                    <li>Programas que se abren o cierran solos</li>
+                    <li>El cursor del mouse se mueve por sí solo</li>
+                    <li>Archivos que desaparecen o cambian de ubicación</li>
+                    <li>
+                      Configuraciones del sistema que se modifican sin tu
+                      intervención
+                    </li>
+                    <li>La webcam se activa sin que la estés utilizando</li>
+                    <li>Mensajes de error frecuentes o pantallas azules</li>
+                  </ul>
+
+                  <p>
+                    <strong>¿Qué ocurre?</strong> Algunos tipos de malware,
+                    especialmente los troyanos de acceso remoto (RAT), pueden
+                    dar control de tu equipo a un atacante, permitiéndole
+                    realizar acciones en tu computadora como si estuviera
+                    sentado frente a ella.
+                  </p>
+
+                  <img
+                    src="https://readdy.ai/api/search-image?query=computer%2520screen%2520showing%2520unusual%2520behavior%252C%2520multiple%2520error%2520messages%252C%2520system%2520warnings%252C%2520blue%2520screen%2520of%2520death%252C%2520professional%2520technical%2520image%2520of%2520computer%2520malfunction&width=800&height=500&seq=5&orientation=landscape"
+                    alt="Comportamiento extraño del sistema y mensajes de error"
+                    class="w-full rounded-lg" loading="lazy"
+                  />
+
+                  <h2 id="signo4">4. Actividad de red inusual</h2>
+
+                  <p>
+                    Si notas que tu conexión a internet es más lenta de lo
+                    normal o hay transferencia de datos cuando no estás
+                    utilizando activamente la red, podría ser señal de que un
+                    malware está comunicándose con servidores remotos.
+                  </p>
+
+                  <p>
+                    <strong>¿Qué ocurre?</strong> Muchos tipos de malware
+                    necesitan comunicarse con servidores de comando y control
+                    para recibir instrucciones, actualizar su código o enviar
+                    datos robados de tu equipo.
+                  </p>
+
+                  <div class="bg-blue-50 p-6 rounded-lg my-6">
+                    <h4 class="font-bold text-primary mb-2">
+                      Herramienta recomendada:
+                    </h4>
+                    <p class="mb-0">
+                      Utiliza el Monitor de recursos de Windows para verificar
+                      las conexiones de red activas. Busca programas
+                      desconocidos que estén enviando o recibiendo datos.
+                    </p>
+                  </div>
+
+                  <h2 id="signo5">
+                    5. Problemas con antivirus y herramientas de seguridad
+                  </h2>
+
+                  <p>
+                    Si tu antivirus deja de funcionar repentinamente, no puedes
+                    actualizarlo o no te permite acceder a sitios web de
+                    seguridad, es una señal preocupante.
+                  </p>
+
+                  <p>
+                    <strong>¿Qué ocurre?</strong> Los malware más sofisticados
+                    intentan desactivar las herramientas de seguridad para
+                    evitar ser detectados y eliminados. Esta táctica de
+                    autoprotección es común en infecciones graves.
+                  </p>
+
+                  <p>
+                    Si no puedes acceder a sitios web de compañías de antivirus
+                    o herramientas de seguridad, el malware podría estar
+                    bloqueando estos dominios para evitar que descargues
+                    soluciones.
+                  </p>
+
+                  <h2 id="que-hacer">
+                    ¿Qué hacer si sospechas que tu equipo está infectado?
+                  </h2>
+
+                  <p>
+                    Si has identificado uno o más de estos signos en tu
+                    computadora, es importante actuar rápidamente para minimizar
+                    el daño potencial. Aquí te recomendamos los pasos a seguir:
+                  </p>
+
+                  <ol class="list-decimal pl-6 mb-6">
+                    <li>
+                      <strong
+                        >No entres en pánico y desconecta tu equipo de
+                        internet.</strong
+                      >
+                      Esto evitará que el malware siga comunicándose con
+                      servidores externos o infectando otros dispositivos en tu
+                      red.
+                    </li>
+                    <li>
+                      <strong
+                        >Realiza un análisis completo con tu antivirus.</strong
+                      >
+                      Si tu antivirus aún funciona, ejecuta un escaneo profundo
+                      del sistema. Si no funciona, intenta arrancar en modo
+                      seguro.
+                    </li>
+                    <li>
+                      <strong
+                        >Utiliza herramientas anti-malware alternativas.</strong
+                      >
+                      A veces, un solo programa no puede detectar todas las
+                      amenazas. Considera usar herramientas especializadas en la
+                      detección de malware.
+                    </li>
+                    <li>
+                      <strong
+                        >Actualiza tu sistema operativo y programas.</strong
+                      >
+                      Las actualizaciones a menudo incluyen parches de seguridad
+                      que corrigen vulnerabilidades.
+                    </li>
+                    <li>
+                      <strong>Cambia tus contraseñas.</strong> Si sospechas que
+                      tu equipo ha estado infectado, cambia las contraseñas de
+                      todas tus cuentas importantes desde otro dispositivo
+                      limpio.
+                    </li>
+                  </ol>
+
+                  <div class="bg-primary/10 p-6 rounded-lg my-6">
+                    <h3 class="font-bold text-primary mb-2 text-xl">
+                      ¿Necesitas ayuda profesional?
+                    </h3>
+                    <p>
+                      En casos de infecciones graves o persistentes, lo mejor es
+                      consultar con profesionales. En Reparaciones G García
+                      ofrecemos:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4">
+                      <li>Diagnóstico gratuito de infecciones</li>
+                      <li>Eliminación profesional de malware</li>
+                      <li>Recuperación de datos comprometidos</li>
+                      <li>Configuración de protecciones avanzadas</li>
+                    </ul>
+                    <a
+                      href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer"
+                      class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-button font-semibold hover:bg-primary/90 transition duration-300 whitespace-nowrap"
+                    >
+                      <i class="ri-whatsapp-line mr-2" aria-hidden="true"></i>
+                      Consulta gratis por WhatsApp
+                    </a>
+                  </div>
+
+                  <h2 id="prevencion">Prevención: La mejor defensa</h2>
+
+                  <p>
+                    Como siempre decimos a nuestros clientes, la prevención es
+                    la mejor estrategia contra las infecciones informáticas.
+                    Aquí hay algunas medidas preventivas esenciales:
+                  </p>
+
+                  <ul class="list-disc pl-6 mb-6">
+                    <li>
+                      Mantén tu sistema operativo y programas siempre
+                      actualizados
+                    </li>
+                    <li>
+                      Utiliza un antivirus confiable y mantenlo actualizado
+                    </li>
+                    <li>
+                      No abras correos electrónicos sospechosos ni sus archivos
+                      adjuntos
+                    </li>
+                    <li>
+                      Ten cuidado con las descargas de internet, especialmente
+                      de sitios no oficiales
+                    </li>
+                    <li>
+                      Realiza copias de seguridad regulares de tus datos
+                      importantes
+                    </li>
+                    <li>
+                      Utiliza contraseñas fuertes y diferentes para cada
+                      servicio
+                    </li>
+                    <li>
+                      Considera usar un bloqueador de anuncios en tu navegador
+                    </li>
+                  </ul>
+
+                  <p>
+                    Recuerda que la seguridad informática es un proceso
+                    continuo, no una solución única. Mantenerse vigilante y
+                    seguir buenas prácticas de seguridad es la mejor manera de
+                    proteger tu equipo y tus datos.
+                  </p>
+
+                  <h2 id="conclusion">Conclusión</h2>
+
+                  <p>
+                    Los virus y malware son una amenaza constante en el mundo
+                    digital actual. Conocer los signos de una posible infección
+                    y saber cómo actuar puede marcar la diferencia entre un
+                    simple susto y un desastre informático.
+                  </p>
+
+                  <p>
+                    En Reparaciones G García estamos comprometidos con la
+                    seguridad informática de nuestros clientes en toda la CDMX.
+                    Si necesitas ayuda con la eliminación de virus o quieres
+                    mejorar la seguridad de tu equipo, no dudes en contactarnos.
+                  </p>
+
+                  <p>
+                    ¿Has experimentado alguno de estos signos en tu computadora?
+                    ¿Tienes alguna pregunta sobre seguridad informática? Déjanos
+                    tu comentario abajo y te responderemos lo antes posible.
+                  </p>
+                </div>
+
+                <!-- Author Box -->
+                <div
+                  class="flex items-start border-t border-gray-200 pt-8 mt-8"
+                >
+                  <div
+                    class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="ri-user-3-fill text-primary ri-lg" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-lg">Gustavo García</h3>
+                    <p class="text-gray-600 text-sm mb-2">
+                      Fundador y Técnico Principal
+                    </p>
+                    <p class="text-gray-700">
+                      Con más de 10 años de experiencia en reparación de equipos
+                      informáticos. Especialista certificado en seguridad
+                      informática y recuperación de datos. Apasionado por ayudar
+                      a los clientes a resolver sus problemas tecnológicos.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Social Sharing -->
+                <div class="border-t border-gray-200 pt-6 mt-8">
+                  <h4 class="font-semibold mb-4">Comparte este artículo:</h4>
+                  <div class="flex space-x-3">
+                    <a href="#" class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition" aria-label="Compartir en Facebook">
+                      <i class="ri-facebook-fill" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition" aria-label="Compartir en Twitter/X">
+                      <i class="ri-twitter-x-fill" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition" aria-label="Compartir en WhatsApp">
+                      <i class="ri-whatsapp-fill" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition" aria-label="Compartir en LinkedIn">
+                      <i class="ri-linkedin-fill" aria-hidden="true"></i>
+                    </a>
+                     <a href="#" class="w-10 h-10 bg-gray-200 text-gray-700 rounded-full flex items-center justify-center hover:bg-gray-300 transition" aria-label="Compartir por Email">
+                      <i class="ri-mail-line" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2 mt-6">
+                  <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Seguridad Informática</span>
+                  <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Virus</span>
+                  <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Malware</span>
+                  <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Mantenimiento PC</span>
+                  <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Windows</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rating Section -->
+            <div class="bg-white rounded-xl shadow-md p-8 mb-8">
+              <h3 class="text-xl font-bold mb-4">
+                ¿Te resultó útil este artículo?
+              </h3>
+              <div class="flex items-center mb-6">
+                <div class="rating-stars flex items-center flex-row-reverse justify-end">
+                  <input type="radio" name="rating" id="star5" value="5" /><label for="star5" class="w-8 h-8 text-gray-300 hover:text-yellow-400 cursor-pointer" title="5 estrellas"><i class="ri-star-fill text-2xl"></i></label>
+                  <input type="radio" name="rating" id="star4" value="4" /><label for="star4" class="w-8 h-8 text-gray-300 hover:text-yellow-400 cursor-pointer" title="4 estrellas"><i class="ri-star-fill text-2xl"></i></label>
+                  <input type="radio" name="rating" id="star3" value="3" /><label for="star3" class="w-8 h-8 text-gray-300 hover:text-yellow-400 cursor-pointer" title="3 estrellas"><i class="ri-star-fill text-2xl"></i></label>
+                  <input type="radio" name="rating" id="star2" value="2" /><label for="star2" class="w-8 h-8 text-gray-300 hover:text-yellow-400 cursor-pointer" title="2 estrellas"><i class="ri-star-fill text-2xl"></i></label>
+                  <input type="radio" name="rating" id="star1" value="1" /><label for="star1" class="w-8 h-8 text-gray-300 hover:text-yellow-400 cursor-pointer" title="1 estrella"><i class="ri-star-fill text-2xl"></i></label>
+                </div>
+                <span class="ml-4 text-gray-600">Selecciona tu valoración</span>
+              </div>
+              <button class="bg-primary text-white px-6 py-2 rounded-button font-semibold hover:bg-primary/90 transition duration-300 whitespace-nowrap">
+                Enviar valoración
+              </button>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="bg-white rounded-xl shadow-md p-8 mb-8">
+              <h3 class="text-xl font-bold mb-6">Comentarios (3)</h3>
+
+              <!-- Comment Form -->
+              <form class="mb-8">
+                <div class="mb-4">
+                  <label for="comment" class="block text-gray-700 mb-2 font-medium">Deja tu comentario</label>
+                  <textarea id="comment" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Escribe tu comentario aquí..." required></textarea>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label for="name" class="block text-gray-700 mb-2 font-medium">Nombre</label>
+                    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Tu nombre" required/>
+                  </div>
+                  <div>
+                    <label for="email" class="block text-gray-700 mb-2 font-medium">Correo electrónico</label>
+                    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary" placeholder="tu@email.com" required/>
+                  </div>
+                </div>
+                <div class="flex items-center mb-4">
+                  <input type="checkbox" id="save-info" class="custom-checkbox mr-2"/>
+                  <label for="save-info" class="text-gray-700 text-sm select-none">Guardar mi nombre y correo para la próxima vez</label>
+                </div>
+                <button type="submit" class="bg-primary text-white px-6 py-2 rounded-button font-semibold hover:bg-primary/90 transition duration-300 whitespace-nowrap">
+                  Publicar comentario
+                </button>
+              </form>
+
+              <!-- Comments List -->
+              <div class="space-y-6">
+                <!-- Comment 1 -->
+                <div class="border-b border-gray-200 pb-6">
+                  <div class="flex items-start">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                      <i class="ri-user-3-fill text-primary" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <div class="flex items-center mb-1">
+                        <h4 class="font-semibold">Alejandra Méndez</h4>
+                        <span class="mx-2 text-gray-400">•</span>
+                        <span class="text-gray-500 text-sm">18 de abril, 2025</span>
+                      </div>
+                      <p class="text-gray-700 mb-3">
+                        Excelente artículo. Mi laptop presentaba varios de estos síntomas y efectivamente tenía un virus. Seguí los consejos de prevención y ahora mi equipo funciona mucho mejor. ¡Gracias por la información!
+                      </p>
+                      <button class="text-primary text-sm font-medium hover:text-primary/80 transition">
+                        Responder
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Comment 2 (with reply) -->
+                <div class="border-b border-gray-200 pb-6">
+                  <div class="flex items-start">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                      <i class="ri-user-3-fill text-primary" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <div class="flex items-center mb-1">
+                        <h4 class="font-semibold">Ricardo Fuentes</h4>
+                        <span class="mx-2 text-gray-400">•</span>
+                        <span class="text-gray-500 text-sm">15 de abril, 2025</span>
+                      </div>
+                      <p class="text-gray-700 mb-3">
+                        ¿Qué antivirus recomiendan para equipos Windows 11? Tengo una laptop nueva y quiero asegurarme de protegerla bien desde el principio.
+                      </p>
+                      <button class="text-primary text-sm font-medium hover:text-primary/80 transition">
+                        Responder
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex items-start mt-4 ml-16">
+                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                      <i class="ri-user-3-fill text-primary" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <div class="flex items-center mb-1 flex-wrap">
+                        <h4 class="font-semibold mr-2">Gustavo García</h4>
+                        <span class="text-gray-500 text-sm mr-2">16 de abril, 2025</span>
+                        <span class="bg-blue-100 text-primary px-2 py-0.5 rounded-full text-xs">Autor</span>
+                      </div>
+                      <p class="text-gray-700 mb-3">
+                        Hola Ricardo, para Windows 11 recomendamos soluciones como Bitdefender, Kaspersky o incluso el propio Windows Defender que ha mejorado mucho en los últimos años. Lo importante es mantenerlo actualizado y complementarlo con buenas prácticas de navegación. Si necesitas ayuda con la configuración, puedes contactarnos.
+                      </p>
+                      <button class="text-primary text-sm font-medium hover:text-primary/80 transition">
+                        Responder
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Comment 3 -->
+                <div>
+                  <div class="flex items-start">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                      <i class="ri-user-3-fill text-primary" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <div class="flex items-center mb-1">
+                        <h4 class="font-semibold">Laura Vázquez</h4>
+                        <span class="mx-2 text-gray-400">•</span>
+                        <span class="text-gray-500 text-sm">10 de abril, 2025</span>
+                      </div>
+                      <p class="text-gray-700 mb-3">
+                        Mi computadora presenta varios de estos síntomas, especialmente la lentitud y ventanas emergentes. ¿Ofrecen servicio a domicilio en Coyoacán? Necesito ayuda urgente.
+                      </p>
+                      <button class="text-primary text-sm font-medium hover:text-primary/80 transition">
+                        Responder
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Article Navigation -->
+            <div class="flex flex-col sm:flex-row justify-between gap-4 mb-8">
+              <a href="mantenimiento-pc.html" class="flex items-center bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition duration-300 group">
+                <i class="ri-arrow-left-line mr-3 text-primary group-hover:mr-4 transition-all" aria-hidden="true"></i>
+                <div>
+                  <span class="text-sm text-gray-500 block">Artículo anterior</span>
+                  <span class="font-medium group-hover:text-primary">Cómo Mantener tu PC en Buen Estado</span>
+                </div>
+              </a>
+              <span class="flex items-center justify-end bg-gray-100 text-gray-400 rounded-xl shadow-sm p-4 w-full sm:w-auto cursor-not-allowed">
+                <div class="text-right">
+                  <span class="text-sm block">Siguiente artículo</span>
+                  <span class="font-medium">No hay artículo siguiente</span>
+                </div>
+                 <i class="ri-arrow-right-line ml-3" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="lg:w-1/3">
+            <!-- Table of Contents -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8 table-of-contents">
+              <h3 class="text-lg font-bold mb-4">Contenido del artículo</h3>
+              <ul class="space-y-1">
+                <li><a href="#signo1">1. Rendimiento lento</a></li>
+                <li><a href="#signo2">2. Ventanas emergentes</a></li>
+                <li><a href="#signo3">3. Comportamiento extraño</a></li>
+                <li><a href="#signo4">4. Actividad de red inusual</a></li>
+                <li><a href="#signo5">5. Problemas con antivirus</a></li>
+                <li><a href="#que-hacer">¿Qué hacer?</a></li>
+                <li><a href="#prevencion">Prevención</a></li>
+                <li><a href="#conclusion">Conclusión</a></li>
+              </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+              <h3 class="text-lg font-bold mb-4">Recursos útiles</h3>
+              <ul class="space-y-4">
+                <li>
+                  <a href="#" class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-blue-50 transition group">
+                    <div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+                      <i class="ri-shield-check-line ri-lg" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <span class="font-medium group-hover:text-primary transition">Guía de Seguridad PDF</span>
+                      <span class="text-sm text-gray-500 block">Descarga gratuita</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="index.html#contacto" class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-blue-50 transition group">
+                    <div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+                      <i class="ri-tools-line ri-lg" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <span class="font-medium group-hover:text-primary transition">Solicitar Eliminación Virus</span>
+                       <span class="text-sm text-gray-500 block">Servicio Profesional CDMX</span>
+                    </div>
+                  </a>
+                </li>
+                 <li>
+                  <a href="index.html#faqs" class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-blue-50 transition group">
+                    <div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+                      <i class="ri-question-line ri-lg" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <span class="font-medium group-hover:text-primary transition">Preguntas Frecuentes</span>
+                       <span class="text-sm text-gray-500 block">Encuentra respuestas</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+              <h3 class="text-lg font-bold mb-2">
+                Suscríbete a nuestro boletín
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Recibe consejos de mantenimiento y ofertas especiales
+                directamente en tu correo.
+              </p>
+              <form>
+                <div class="mb-3">
+                  <input type="email" placeholder="Tu correo electrónico" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary" required />
+                </div>
+                <button type="submit" class="w-full bg-primary text-white py-2 rounded-button font-semibold hover:bg-primary/90 transition duration-300 whitespace-nowrap">
+                  Suscribirme
+                </button>
+              </form>
+            </div>
+
+             <!-- CTA Box Sticky -->
+            <div class="bg-primary rounded-xl shadow-md p-6 text-white sticky top-[calc(100vh-250px)]">
+              <h3 class="text-xl font-bold mb-3">
+                ¿Equipo infectado o lento?
+              </h3>
+              <p class="mb-4 text-blue-100">
+                Diagnóstico Gratuito. Servicio a Domicilio en CDMX.
+              </p>
+              <div class="space-y-3">
+                <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full bg-white text-primary py-2 rounded-button font-semibold hover:bg-blue-50 transition duration-300 whitespace-nowrap">
+                  <i class="ri-whatsapp-line mr-2" aria-hidden="true"></i> Contactar por WhatsApp
+                </a>
+                <a href="tel:5645371808" class="flex items-center justify-center w-full bg-primary/80 text-white py-2 rounded-button font-semibold border border-white/30 hover:bg-primary/70 transition duration-300 whitespace-nowrap">
+                  <i class="ri-phone-line mr-2" aria-hidden="true"></i> Llamar: 56 4537 1808
+                </a>
+              </div>
+            </div>
+          </div> <!-- End Sidebar -->
+        </div> <!-- End Flex Container -->
+      </div> <!-- End Main Container -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1e2937] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-1">
+                     <a href="index.html" class="text-white font-['Pacifico'] text-2xl mb-4 inline-block">Reparaciones G García</a>
+                    <p class="text-gray-300 mb-4">Tu aliado tecnológico en CDMX. Más de 10 años ofreciendo servicio técnico confiable para equipos Windows. Diagnóstico gratuito y garantía.</p>
+                </div>
+                <!-- Navigation -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Navegación</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#inicio" class="text-gray-300 hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Servicios</a></li>
+                         <li><a href="index.html#proceso" class="text-gray-300 hover:text-white transition-colors">Proceso</a></li>
+                        <li><a href="index.html#nosotros" class="text-gray-300 hover:text-white transition-colors">Nosotros</a></li>
+                        <li><a href="index.html#testimonios" class="text-gray-300 hover:text-white transition-colors">Testimonios</a></li>
+                         <li><a href="index.html#blog" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="index.html#faqs" class="text-gray-300 hover:text-white transition-colors">FAQs</a></li>
+                        <li><a href="index.html#contacto" class="text-gray-300 hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Servicios Populares</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i class="ri-tools-line text-primary" aria-hidden="true"></i>
+                            <a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Reparación de Hardware</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="ri-window-line text-primary" aria-hidden="true"></i>
+                            <a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Solución de Software</a>
+                        </li>
+                         <li class="flex items-center gap-2">
+                            <i class="ri-speed-up-line text-primary" aria-hidden="true"></i>
+                            <a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Optimización de PC</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="ri-virus-line text-primary" aria-hidden="true"></i>
+                            <a href="index.html#contacto" class="text-gray-300 hover:text-white transition-colors">Eliminación de Virus</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="ri-home-smile-line text-primary" aria-hidden="true"></i>
+                            <a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Servicio a Domicilio CDMX</a>
+                        </li>
+                    </ul>
+                </div>
+                 <!-- Contact Info -->
+                 <div>
+                    <h3 class="text-xl font-bold mb-4">Contacto Rápido</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2">
+                            <i class="ri-phone-line text-primary" aria-hidden="true"></i>
+                            <a href="tel:5645371808" class="text-gray-300 hover:text-white transition-colors">56 4537 1808</a>
+                        </li>
+                         <li class="flex items-center gap-2">
+                            <i class="ri-whatsapp-line text-primary" aria-hidden="true"></i>
+                            <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">WhatsApp Directo</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="ri-mail-line text-primary" aria-hidden="true"></i>
+                            <a href="mailto:redventasremotasautomatizadas@gmail.com" class="text-gray-300 hover:text-white transition-colors break-all">Enviar Correo</a>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="ri-map-pin-line text-primary mt-1" aria-hidden="true"></i>
+                            <span class="text-gray-300">Álvaro Obregón, CDMX (Servicio a Domicilio)</span>
+                        </li>
+                    </ul>
+                 </div>
+            </div>
+             <!-- Copyright -->
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Reparaciones G García, Expertos en Reparación de Computadoras en CDMX. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+      </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90" aria-label="Volver arriba">
+      <i class="ri-arrow-up-line ri-lg" aria-hidden="true"></i>
+    </button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Back to top button
+        const backToTopButton = document.getElementById("back-to-top");
+        if(backToTopButton) {
+            window.addEventListener("scroll", function () {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove("opacity-0", "invisible");
+                    backToTopButton.classList.add("opacity-100", "visible");
+                } else {
+                    backToTopButton.classList.remove("opacity-100", "visible");
+                    backToTopButton.classList.add("opacity-0", "invisible");
+                }
+            });
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        }
+
+        // Rating stars functionality
+        const ratingStarsContainer = document.querySelector(".rating-stars");
+        if(ratingStarsContainer){
+             const ratingLabels = ratingStarsContainer.querySelectorAll("label");
+             const ratingInputs = ratingStarsContainer.querySelectorAll("input");
+
+             // Function to update stars visually based on checked input
+             const updateStars = () => {
+                 const checkedInput = ratingStarsContainer.querySelector('input[type="radio"]:checked');
+                 let checkedValue = checkedInput ? parseInt(checkedInput.value) : 0;
+                 ratingLabels.forEach((lbl, index) => {
+                     const starIcon = lbl.querySelector('i');
+                     const starValue = ratingLabels.length - index; // 5, 4, 3, 2, 1
+                     if (starValue <= checkedValue) {
+                         starIcon.classList.add('text-yellow-400');
+                         starIcon.classList.remove('text-gray-300');
+                     } else {
+                         starIcon.classList.remove('text-yellow-400');
+                         starIcon.classList.add('text-gray-300');
+                     }
+                 });
+             };
+
+             ratingLabels.forEach((label) => {
+                 const input = document.getElementById(label.getAttribute('for'));
+                 const hoverValue = parseInt(input.value);
+
+                 label.addEventListener('mouseover', () => {
+                     ratingLabels.forEach((lbl, index) => {
+                         const starIcon = lbl.querySelector('i');
+                         const starValue = ratingLabels.length - index;
+                         if (starValue <= hoverValue) {
+                             starIcon.classList.add('text-yellow-400');
+                             starIcon.classList.remove('text-gray-300');
+                         } else {
+                             starIcon.classList.remove('text-yellow-400');
+                             starIcon.classList.add('text-gray-300');
+                         }
+                     });
+                 });
+
+                 label.addEventListener('mouseout', () => {
+                     updateStars(); // Revert to checked state on mouse out
+                 });
+
+                 // Update stars when an input is actually changed (clicked)
+                 input.addEventListener('change', updateStars);
+             });
+
+             // Initial update in case a value is pre-checked
+             updateStars();
+        }
+
+
+        // Table of contents active state and smooth scrolling
+        const tocLinks = document.querySelectorAll(".table-of-contents a");
+        const sections = [];
+        tocLinks.forEach(link => {
+            const targetId = link.getAttribute("href");
+            if(targetId && targetId.startsWith("#")){
+                const section = document.querySelector(targetId);
+                if(section) sections.push(section);
+            }
+        });
+
+        const makeActive = (link) => {
+            tocLinks.forEach((l) => l.classList.remove("active"));
+            if(link) link.classList.add("active");
+        };
+
+        const observerCallback = (entries) => {
+            let intersectingSectionId = null;
+            let minTopValue = Infinity;
+
+            entries.forEach((entry) => {
+                const rect = entry.target.getBoundingClientRect();
+                 // Check if section is intersecting and above the bottom threshold
+                if (entry.isIntersecting && rect.top < (window.innerHeight * 0.7)) { // Adjust 0.7 (70%) as needed
+                    // Find the highest intersecting section on the screen
+                    if (rect.top < minTopValue) {
+                        minTopValue = rect.top;
+                        intersectingSectionId = `#${entry.target.id}`;
+                    }
+                }
+            });
+
+            if (intersectingSectionId) {
+                 const activeLink = document.querySelector(`.table-of-contents a[href="${intersectingSectionId}"]`);
+                 makeActive(activeLink);
+            } else {
+                 // Fallback if no section is deemed active by intersection logic (e.g., scrolling fast)
+                 // Find the last section whose top is above the middle of the viewport
+                let lastVisibleSectionId = null;
+                for (let i = sections.length - 1; i >= 0; i--) {
+                    const rect = sections[i].getBoundingClientRect();
+                    if (rect.top < window.innerHeight / 2) {
+                        lastVisibleSectionId = `#${sections[i].id}`;
+                        break;
+                    }
+                }
+                if (lastVisibleSectionId) {
+                     const activeLink = document.querySelector(`.table-of-contents a[href="${lastVisibleSectionId}"]`);
+                     makeActive(activeLink);
+                } else if (window.scrollY < 200) {
+                    // If near the top, make the first link active
+                    makeActive(tocLinks[0]);
+                }
+            }
+        };
+
+        const observerOptions = {
+            rootMargin: "-100px 0px -30% 0px", // Top offset for header, adjust bottom %
+            threshold: 0 // Trigger when edge enters/leaves margin
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+
+
+        // Smooth scrolling for TOC links
+        tocLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                 const headerOffset = 100; // Header height + extra space
+                 const elementPosition = targetElement.getBoundingClientRect().top;
+                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                 window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                 // Update active state immediately for better UX
+                 makeActive(this);
+            }
+          });
+        });
+      }); // End DOMContentLoaded
+    </script>
+  </body>
+</html>
