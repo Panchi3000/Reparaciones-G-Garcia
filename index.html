@@ -42,16 +42,38 @@
         body {
             font-family: 'Montserrat', sans-serif;
         }
-        /* Hero background pattern (example URL) */
-        .hero-pattern {
+        /* Fixed background for entire page */
+        body {
             background-image: url('https://readdy.ai/api/search-image?query=abstract%20technology%20circuit%20board%20pattern%20with%20blue%20gradient%2C%20high%20tech%20digital%20background%2C%20modern%20technology%20concept%2C%20clean%20and%20minimal%20design%2C%20perfect%20for%20tech%20service%20background&width=1920&height=1080&seq=1&orientation=landscape');
+            background-attachment: fixed;
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
         }
-        /* Glassmorphism effect for header (and potentially other elements) */
+        /* Hero background pattern */
+        .hero-pattern {
+            background-color: rgba(30, 64, 175, 0.85);
+            position: relative;
+        }
+        /* Glassmorphism effect for elements */
         .glass-effect {
-            backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.1); /* Adjust opacity as needed */
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        /* Section backgrounds with transparency */
+        section {
+            position: relative;
+        }
+        section.bg-white {
+            background-color: rgba(255, 255, 255, 0.92) !important;
+        }
+        section.bg-gray-50 {
+            background-color: rgba(249, 250, 251, 0.92) !important;
+        }
+        section.bg-blue-50 {
+            background-color: rgba(239, 246, 255, 0.92) !important;
         }
         /* Remove default focus outline for cleaner look (Tailwind handles focus rings) */
         input:focus {
@@ -74,21 +96,21 @@
 <body class="bg-gray-50">
 
     <!-- Header with Glassmorphism Effect -->
-    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-lg">
+    <header class="fixed w-full z-50 glass-effect shadow-lg">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
                 <a href="index.html" class="text-primary font-['Pacifico'] text-3xl tracking-wide">Reparaciones G García</a>
                 <!-- Desktop Navigation -->
                 <nav class="hidden lg:flex items-center space-x-8">
-                    <a href="#inicio" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200">Inicio</a>
-                    <a href="#servicios" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200">Servicios</a>
-                    <a href="#proceso" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200">Proceso</a>
-                    <a href="#nosotros" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200">Nosotros</a>
-                    <a href="#testimonios" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200">Testimonios</a>
-                    <a href="#blog" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200">Blog</a>
-                    <a href="#faqs" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200">FAQs</a>
-                    <a href="#contacto" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200">Contacto</a>
+                    <a href="#inicio" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Inicio</a>
+                    <a href="#servicios" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Servicios</a>
+                    <a href="#proceso" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Proceso</a>
+                    <a href="#nosotros" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Nosotros</a>
+                    <a href="#testimonios" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Testimonios</a>
+                    <a href="#blog" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Blog</a>
+                    <a href="#faqs" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">FAQs</a>
+                    <a href="#contacto" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Contacto</a>
                 </nav>
                 <!-- Contact Info & Mobile Menu Button -->
                 <div class="flex items-center space-x-4">
@@ -103,18 +125,54 @@
                         </div>
                     </div>
                     <!-- WhatsApp Button -->
-                    <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-button flex items-center whitespace-nowrap transition duration-300">
+                    <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-button flex items-center whitespace-nowrap transition duration-300 shadow-md hover:shadow-lg">
                         <i class="ri-whatsapp-line mr-2" aria-hidden="true"></i>
                         Contactar por WhatsApp
                     </a>
                     <!-- Mobile Menu Button -->
-                    <button class="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+                    <button id="mobile-menu-button" class="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors duration-200">
                         <i class="ri-menu-line ri-lg" aria-label="Abrir menú"></i>
                     </button>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black/50 z-50 hidden">
+        <div class="bg-white h-full w-4/5 max-w-sm p-6 transform transition-transform duration-300 -translate-x-full">
+            <div class="flex justify-between items-center mb-8">
+                <a href="index.html" class="text-primary font-['Pacifico'] text-2xl">Reparaciones G García</a>
+                <button id="close-menu" class="p-2 text-gray-700 hover:text-primary">
+                    <i class="ri-close-line text-2xl"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="#inicio" class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Inicio</a>
+                <a href="#servicios" class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Servicios</a>
+                <a href="#proceso" class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Proceso</a>
+                <a href="#nosotros" class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Nosotros</a>
+                <a href="#testimonios" class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Testimonios</a>
+                <a href="#blog" class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Blog</a>
+                <a href="#faqs" class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">FAQs</a>
+                <a href="#contacto" class="text-gray-800 hover:text-primary font-semibold py-2">Contacto</a>
+            </nav>
+            <div class="mt-8 pt-8 border-t border-gray-100">
+                <p class="text-sm text-gray-500 mb-4">Contáctanos directamente:</p>
+                <a href="tel:5645371808" class="flex items-center text-gray-700 hover:text-primary mb-4">
+                    <i class="ri-phone-line mr-3 text-primary"></i>
+                    <span>56 4537 1808</span>
+                </a>
+                <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="flex items-center text-gray-700 hover:text-primary">
+                    <i class="ri-whatsapp-line mr-3 text-primary"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- White Header Background Strip (Only visible at top) -->
+    <div id="header-bg-strip" class="fixed top-0 left-0 w-full h-[72px] bg-white z-40 transition-opacity duration-300"></div>
 
     <!-- Hero Section -->
     <section id="inicio" class="relative min-h-[90vh] flex items-center overflow-hidden pt-20">
@@ -283,53 +341,53 @@
                     Contamos con experiencia y acceso a repuestos para las principales marcas del mercado, asegurando compatibilidad y calidad en cada reparación.
                 </p>
                 <!-- Brand Logos Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-6 place-items-center">
+                <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-6 place-items-center py-4">
                     <!-- HP -->
-                    <div class="flex items-center justify-center" title="HP">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
-                            <span class="text-primary font-bold text-lg">HP</span>
+                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300" title="HP">
+                        <div class="w-20 h-20 bg-white rounded-lg shadow-md flex items-center justify-center p-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png" alt="HP" class="max-h-12 max-w-full">
                         </div>
                     </div>
                     <!-- Acer -->
-                    <div class="flex items-center justify-center" title="Acer">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
-                            <i class="ri-computer-line text-primary ri-2x" aria-hidden="true"></i>
+                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Acer">
+                        <div class="w-20 h-20 bg-white rounded-lg shadow-md flex items-center justify-center p-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Acer_2011.svg/2560px-Acer_2011.svg.png" alt="Acer" class="max-h-12 max-w-full">
                         </div>
                     </div>
                     <!-- Asus -->
-                     <div class="flex items-center justify-center" title="Asus">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
-                             <i class="ri-gamepad-line text-primary ri-2x" aria-hidden="true"></i>
+                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Asus">
+                        <div class="w-20 h-20 bg-white rounded-lg shadow-md flex items-center justify-center p-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/ASUS_Logo.svg/2560px-ASUS_Logo.svg.png" alt="Asus" class="max-h-12 max-w-full">
                         </div>
                     </div>
                     <!-- Dell -->
-                    <div class="flex items-center justify-center" title="Dell">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
-                            <span class="text-primary font-bold text-lg">DELL</span>
+                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Dell">
+                        <div class="w-20 h-20 bg-white rounded-lg shadow-md flex items-center justify-center p-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Dell_Logo.png/1200px-Dell_Logo.png" alt="Dell" class="max-h-12 max-w-full">
                         </div>
                     </div>
                     <!-- Apple -->
-                    <div class="flex items-center justify-center" title="Apple">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
-                            <i class="ri-apple-fill text-primary ri-2x" aria-hidden="true"></i>
+                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Apple">
+                        <div class="w-20 h-20 bg-white rounded-lg shadow-md flex items-center justify-center p-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png" alt="Apple" class="max-h-12 max-w-full">
                         </div>
                     </div>
                     <!-- Samsung -->
-                     <div class="flex items-center justify-center" title="Samsung">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
-                             <i class="ri-smartphone-line text-primary ri-2x" aria-hidden="true"></i>
+                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Samsung">
+                        <div class="w-20 h-20 bg-white rounded-lg shadow-md flex items-center justify-center p-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png" alt="Samsung" class="max-h-12 max-w-full">
                         </div>
                     </div>
                     <!-- Microsoft -->
-                    <div class="flex items-center justify-center" title="Microsoft">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
-                            <i class="ri-windows-fill text-primary ri-2x" aria-hidden="true"></i>
+                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Microsoft">
+                        <div class="w-20 h-20 bg-white rounded-lg shadow-md flex items-center justify-center p-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png" alt="Microsoft" class="max-h-12 max-w-full">
                         </div>
                     </div>
                     <!-- Lenovo -->
-                    <div class="flex items-center justify-center" title="Lenovo">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
-                            <span class="text-primary font-bold text-lg">LENOVO</span>
+                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Lenovo">
+                        <div class="w-20 h-20 bg-white rounded-lg shadow-md flex items-center justify-center p-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lenovo_logo_2015.svg/2560px-Lenovo_logo_2015.svg.png" alt="Lenovo" class="max-h-12 max-w-full">
                         </div>
                     </div>
                 </div>
@@ -473,112 +531,333 @@
                 <p class="text-gray-600 max-w-3xl mx-auto">
                     Conoce las experiencias de nuestros clientes y cómo hemos solucionado sus problemas tecnológicos.
                 </p>
+                <!-- Google Rating Badge (Fixed, Non-clickable) -->
+                <div class="mt-8 flex justify-center">
+                    <div class="flex items-center bg-white px-8 py-4 rounded-lg shadow-md border border-gray-100">
+                        <!-- Google Logo -->
+                        <div class="flex items-center mr-6 pr-6 border-r border-gray-200">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="Google" class="h-8">
+                        </div>
+                        <!-- Rating Info -->
+                        <div class="flex flex-col">
+                            <!-- Stars and Score -->
+                            <div class="flex items-center mb-1">
+                                <span class="text-2xl font-bold mr-3 text-gray-800">4.9</span>
+                                <div class="text-yellow-400 flex">
+                                    <i class="ri-star-fill text-xl" aria-hidden="true"></i>
+                                    <i class="ri-star-fill text-xl" aria-hidden="true"></i>
+                                    <i class="ri-star-fill text-xl" aria-hidden="true"></i>
+                                    <i class="ri-star-fill text-xl" aria-hidden="true"></i>
+                                    <i class="ri-star-fill text-xl" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <!-- Review Count -->
+                            <div class="flex items-center">
+                                <span class="text-gray-600 font-medium">Basado en 48 reseñas verificadas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Testimonials Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col">
-                     <div class="flex items-center justify-between mb-6">
-                         <!-- Customer Info -->
-                         <div class="flex items-center">
-                             <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                 <i class="ri-user-3-fill text-primary text-xl" aria-hidden="true"></i>
-                             </div>
-                             <div>
-                                 <h4 class="font-semibold text-lg">Valeria R., Estudiante</h4>
-                                 <p class="text-sm text-gray-500">Copilco, CDMX</p>
-                             </div>
-                         </div>
-                         <!-- Service Tag -->
-                         <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap">Reparación Hardware</span>
-                    </div>
-                    <!-- Testimonial Content -->
-                    <div class="mb-6 flex-grow">
-                         <p class="text-gray-600 italic mb-4">"Mi laptop HP no encendía y tenía que entregar mi tesis."</p>
-                         <div class="space-y-2">
-                             <p class="text-gray-700"><span class="font-semibold">Solución:</span> Diagnosticaron una falla en el conector de carga y lo repararon rápido.</p>
-                             <p class="text-gray-700"><span class="font-semibold">Resultado:</span> "Pude entregar mi tesis a tiempo. ¡Servicio profesional y justo!"</p>
-                         </div>
-                     </div>
-                     <!-- Rating -->
-                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                         <div class="text-yellow-400 flex" aria-label="Calificación: 5 de 5 estrellas">
-                             <i class="ri-star-fill" aria-hidden="true"></i>
-                             <i class="ri-star-fill" aria-hidden="true"></i>
-                             <i class="ri-star-fill" aria-hidden="true"></i>
-                             <i class="ri-star-fill" aria-hidden="true"></i>
-                             <i class="ri-star-fill" aria-hidden="true"></i>
-                         </div>
-                         <span class="text-primary font-semibold">5.0</span>
-                     </div>
-                </div>
-                <!-- Testimonial 2 -->
-                 <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col">
-                    <div class="flex items-center justify-between mb-6">
-                        <!-- Customer Info -->
-                        <div class="flex items-center">
-                             <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                 <i class="ri-user-3-fill text-primary text-xl" aria-hidden="true"></i>
-                             </div>
-                            <div>
-                                <h4 class="font-semibold text-lg">Mariana Rodríguez</h4>
-                                <p class="text-sm text-gray-500">Polanco</p>
+
+            <!-- Testimonial Carousel -->
+            <div class="testimonial-carousel relative max-w-6xl mx-auto">
+                <!-- Navigation Controls -->
+                <button id="prev-testimonial" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-md z-10 hover:bg-gray-50 transition-colors duration-200 -ml-4 lg:-ml-6 focus:outline-none focus:ring-2 focus:ring-primary/50">
+                    <i class="ri-arrow-left-s-line text-primary text-xl"></i>
+                </button>
+
+                <!-- Testimonials Slider -->
+                <div class="overflow-hidden mx-10">
+                    <div id="testimonials-container" class="flex transition-transform duration-500 ease-in-out">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
+                                <div class="flex flex-col mb-6">
+                                    <!-- Customer Info -->
+                                    <div class="flex items-center mb-3">
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Valeria R." class="w-12 h-12 rounded-full object-cover mr-4 flex-shrink-0">
+                                        <div>
+                                            <h4 class="font-semibold text-lg">Valeria R., Estudiante</h4>
+                                            <p class="text-sm text-gray-500">Copilco, CDMX</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service Tag -->
+                                    <div class="flex">
+                                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Reparación Hardware</span>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Content -->
+                                <div class="mb-6 flex-grow">
+                                    <p class="text-gray-600 italic mb-4">"Mi laptop HP no encendía y tenía que entregar mi tesis."</p>
+                                    <div class="space-y-2">
+                                        <p class="text-gray-700"><span class="font-semibold">Solución:</span> Diagnosticaron una falla en el conector de carga y lo repararon rápido.</p>
+                                        <p class="text-gray-700"><span class="font-semibold">Resultado:</span> "Pude entregar mi tesis a tiempo. ¡Servicio profesional y justo!"</p>
+                                    </div>
+                                </div>
+                                <!-- Rating -->
+                                <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                                    <div class="text-yellow-400 flex" aria-label="Calificación: 5 de 5 estrellas">
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                    </div>
+                                    <span class="text-primary font-semibold">5.0</span>
+                                </div>
                             </div>
                         </div>
-                        <!-- Service Tag -->
-                         <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap">Optimización</span>
-                    </div>
-                    <!-- Testimonial Content -->
-                    <div class="mb-6 flex-grow">
-                        <p class="text-gray-600 italic">
-                            "Vinieron a mi oficina a revisar mi computadora que estaba extremadamente lenta. Después de la optimización, arranca en segundos y los programas se abren inmediatamente. Muy profesionales y puntuales."
-                        </p>
-                    </div>
-                    <!-- Rating -->
-                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                         <div class="text-yellow-400 flex" aria-label="Calificación: 5 de 5 estrellas">
-                             <i class="ri-star-fill" aria-hidden="true"></i>
-                             <i class="ri-star-fill" aria-hidden="true"></i>
-                             <i class="ri-star-fill" aria-hidden="true"></i>
-                             <i class="ri-star-fill" aria-hidden="true"></i>
-                             <i class="ri-star-fill" aria-hidden="true"></i>
-                         </div>
-                         <span class="text-primary font-semibold">5.0</span>
-                     </div>
-                </div>
-                <!-- Testimonial 3 -->
-                 <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col">
-                     <div class="flex items-center justify-between mb-6">
-                        <!-- Customer Info -->
-                        <div class="flex items-center">
-                             <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                 <i class="ri-user-3-fill text-primary text-xl" aria-hidden="true"></i>
-                             </div>
-                            <div>
-                                <h4 class="font-semibold text-lg">Roberto Gutiérrez</h4>
-                                <p class="text-sm text-gray-500">Del Valle</p>
+
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
+                                <div class="flex flex-col mb-6">
+                                    <!-- Customer Info -->
+                                    <div class="flex items-center mb-3">
+                                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Mariana Rodríguez" class="w-12 h-12 rounded-full object-cover mr-4 flex-shrink-0">
+                                        <div>
+                                            <h4 class="font-semibold text-lg">Mariana Rodríguez</h4>
+                                            <p class="text-sm text-gray-500">Polanco</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service Tag -->
+                                    <div class="flex">
+                                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Optimización</span>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Content -->
+                                <div class="mb-6 flex-grow">
+                                    <p class="text-gray-600 italic">
+                                        "Vinieron a mi oficina a revisar mi computadora que estaba extremadamente lenta. Después de la optimización, arranca en segundos y los programas se abren inmediatamente. Muy profesionales y puntuales."
+                                    </p>
+                                </div>
+                                <!-- Rating -->
+                                <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                                    <div class="text-yellow-400 flex" aria-label="Calificación: 5 de 5 estrellas">
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                    </div>
+                                    <span class="text-primary font-semibold">5.0</span>
+                                </div>
                             </div>
                         </div>
-                        <!-- Service Tag -->
-                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap">Eliminación Virus</span>
+
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
+                                <div class="flex flex-col mb-6">
+                                    <!-- Customer Info -->
+                                    <div class="flex items-center mb-3">
+                                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Roberto Gutiérrez" class="w-12 h-12 rounded-full object-cover mr-4 flex-shrink-0">
+                                        <div>
+                                            <h4 class="font-semibold text-lg">Roberto Gutiérrez</h4>
+                                            <p class="text-sm text-gray-500">Del Valle</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service Tag -->
+                                    <div class="flex">
+                                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Eliminación Virus</span>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Content -->
+                                <div class="mb-6 flex-grow">
+                                    <p class="text-gray-600 italic">
+                                        "Mi PC tenía un virus terrible que me impedía acceder a mis archivos importantes. El técnico no solo eliminó el virus, sino que también recuperó todos mis documentos. Precio justo y excelente atención."
+                                    </p>
+                                </div>
+                                <!-- Rating -->
+                                <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                                    <div class="text-yellow-400 flex" aria-label="Calificación: 4.5 de 5 estrellas">
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-half-fill" aria-hidden="true"></i>
+                                    </div>
+                                    <span class="text-primary font-semibold">4.5</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
+                                <div class="flex flex-col mb-6">
+                                    <!-- Customer Info -->
+                                    <div class="flex items-center mb-3">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Méndez" class="w-12 h-12 rounded-full object-cover mr-4 flex-shrink-0">
+                                        <div>
+                                            <h4 class="font-semibold text-lg">Carlos Méndez</h4>
+                                            <p class="text-sm text-gray-500">Condesa</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service Tag -->
+                                    <div class="flex">
+                                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Actualización PC</span>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Content -->
+                                <div class="mb-6 flex-grow">
+                                    <p class="text-gray-600 italic">
+                                        "Excelente servicio. Actualizaron mi PC antigua con nuevos componentes y ahora funciona como nueva. El técnico me explicó todo el proceso y me dio recomendaciones muy útiles."
+                                    </p>
+                                </div>
+                                <!-- Rating -->
+                                <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                                    <div class="text-yellow-400 flex" aria-label="Calificación: 5 de 5 estrellas">
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                    </div>
+                                    <span class="text-primary font-semibold">5.0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 5 -->
+                        <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
+                                <div class="flex flex-col mb-6">
+                                    <!-- Customer Info -->
+                                    <div class="flex items-center mb-3">
+                                        <img src="https://randomuser.me/api/portraits/women/29.jpg" alt="Laura Torres" class="w-12 h-12 rounded-full object-cover mr-4 flex-shrink-0">
+                                        <div>
+                                            <h4 class="font-semibold text-lg">Laura Torres</h4>
+                                            <p class="text-sm text-gray-500">Nápoles</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service Tag -->
+                                    <div class="flex">
+                                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Recuperación Datos</span>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Content -->
+                                <div class="mb-6 flex-grow">
+                                    <p class="text-gray-600 italic">
+                                        "Pensé que había perdido todas mis fotos familiares cuando mi disco duro falló. El equipo de Reparaciones G García logró recuperar el 95% de mis archivos. No tengo palabras para agradecer su profesionalismo."
+                                    </p>
+                                </div>
+                                <!-- Rating -->
+                                <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                                    <div class="text-yellow-400 flex" aria-label="Calificación: 5 de 5 estrellas">
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                    </div>
+                                    <span class="text-primary font-semibold">5.0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 6 -->
+                        <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
+                                <div class="flex flex-col mb-6">
+                                    <!-- Customer Info -->
+                                    <div class="flex items-center mb-3">
+                                        <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Miguel Ángel Sánchez" class="w-12 h-12 rounded-full object-cover mr-4 flex-shrink-0">
+                                        <div>
+                                            <h4 class="font-semibold text-lg">Miguel Ángel Sánchez</h4>
+                                            <p class="text-sm text-gray-500">Roma Norte</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service Tag -->
+                                    <div class="flex">
+                                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Servicio a Domicilio</span>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Content -->
+                                <div class="mb-6 flex-grow">
+                                    <p class="text-gray-600 italic">
+                                        "Increíble servicio a domicilio. El técnico llegó puntual, fue muy profesional y resolvió el problema de mi laptop en menos de una hora. Precio justo y excelente atención al cliente."
+                                    </p>
+                                </div>
+                                <!-- Rating -->
+                                <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                                    <div class="text-yellow-400 flex" aria-label="Calificación: 5 de 5 estrellas">
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                    </div>
+                                    <span class="text-primary font-semibold">5.0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 7 -->
+                        <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
+                                <div class="flex flex-col mb-6">
+                                    <!-- Customer Info -->
+                                    <div class="flex items-center mb-3">
+                                        <img src="https://randomuser.me/api/portraits/women/42.jpg" alt="Sofía Ramírez" class="w-12 h-12 rounded-full object-cover mr-4 flex-shrink-0">
+                                        <div>
+                                            <h4 class="font-semibold text-lg">Sofía Ramírez</h4>
+                                            <p class="text-sm text-gray-500">Tlalpan</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service Tag -->
+                                    <div class="flex">
+                                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Mantenimiento</span>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Content -->
+                                <div class="mb-6 flex-grow">
+                                    <p class="text-gray-600 italic">
+                                        "Llevo mi computadora cada 6 meses para mantenimiento preventivo y nunca me ha fallado. El servicio es rápido, profesional y siempre me dan consejos útiles para cuidar mi equipo. Totalmente recomendable."
+                                    </p>
+                                </div>
+                                <!-- Rating -->
+                                <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                                    <div class="text-yellow-400 flex" aria-label="Calificación: 4.5 de 5 estrellas">
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-fill" aria-hidden="true"></i>
+                                        <i class="ri-star-half-fill" aria-hidden="true"></i>
+                                    </div>
+                                    <span class="text-primary font-semibold">4.5</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Testimonial Content -->
-                    <div class="mb-6 flex-grow">
-                        <p class="text-gray-600 italic">
-                            "Mi PC tenía un virus terrible que me impedía acceder a mis archivos importantes. El técnico no solo eliminó el virus, sino que también recuperó todos mis documentos. Precio justo y excelente atención."
-                        </p>
-                    </div>
-                    <!-- Rating -->
-                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                         <div class="text-yellow-400 flex" aria-label="Calificación: 4.5 de 5 estrellas">
-                             <i class="ri-star-fill" aria-hidden="true"></i>
-                             <i class="ri-star-fill" aria-hidden="true"></i>
-                             <i class="ri-star-fill" aria-hidden="true"></i>
-                             <i class="ri-star-fill" aria-hidden="true"></i>
-                             <i class="ri-star-half-fill" aria-hidden="true"></i>
-                         </div>
-                         <span class="text-primary font-semibold">4.5</span>
-                     </div>
+                </div>
+
+                <!-- Next Button -->
+                <button id="next-testimonial" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-md z-10 hover:bg-gray-50 transition-colors duration-200 -mr-4 lg:-mr-6 focus:outline-none focus:ring-2 focus:ring-primary/50">
+                    <i class="ri-arrow-right-s-line text-primary text-xl"></i>
+                </button>
+
+                <!-- Dots Navigation -->
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-100" data-index="0" aria-label="Ver testimonio 1"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="1" aria-label="Ver testimonio 2"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="2" aria-label="Ver testimonio 3"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="3" aria-label="Ver testimonio 4"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="4" aria-label="Ver testimonio 5"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="5" aria-label="Ver testimonio 6"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="6" aria-label="Ver testimonio 7"></button>
+                </div>
+            </div>
+
+            <!-- Add Review CTA -->
+            <div class="text-center mt-12">
+                <div class="inline-block">
+                    <p class="text-gray-600 mb-4">¿Has utilizado nuestros servicios? Nos encantaría conocer tu experiencia</p>
+                    <a href="https://maps.app.goo.gl/1Y3uVj6VBXWXyhTQ9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-button font-semibold hover:bg-primary/90 transition duration-300 shadow-md">
+                        <i class="ri-edit-line mr-2" aria-hidden="true"></i>
+                        Deja tu Opinión en Google
+                    </a>
                 </div>
             </div>
         </div>
@@ -937,7 +1216,7 @@
                  <h3 class="text-xl font-bold mb-4 text-center">Nuestra Ubicación para Entrega/Recogida en Taller</h3>
                  <div class="h-[300px] rounded-lg overflow-hidden shadow-lg">
                      <iframe
-                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.4981877042647!2d-99.20989482526697!3d19.35161048694061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d200687a99d4c9%3A0x8c6b4a6c7c870f56!2sRosa%20Venus%20164%2C%20Molino%20de%20Rosas%2C%20%C3%81lvaro%20Obreg%C3%B3n%2C%2001470%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1682181234567!5m2!1ses!2smx"
+                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7528.996375408529!2d-99.20201876176229!3d19.372214784371938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d201e0ebc1517d%3A0x10c129ee40dfbe34!2s%22Reparaciones%20G%20Garc%C3%ADa%22!5e0!3m2!1ses!2smx!4v1745858787254!5m2!1ses!2smx"
                          width="100%"
                          height="100%"
                          style="border:0;"
@@ -964,21 +1243,40 @@
         <i class="ri-arrow-up-line ri-lg" aria-hidden="true"></i>
     </button>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer"
+       class="fixed bottom-24 right-6 z-40 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 flex items-center justify-center">
+        <i class="ri-whatsapp-line text-2xl"></i>
+    </a>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 
-            // --- Back to top button ---
+            // --- Back to top button and Header Background Strip ---
             const backToTopButton = document.getElementById("back-to-top");
+            const headerBgStrip = document.getElementById("header-bg-strip");
+
+            // Handle scroll events for both elements
+            window.addEventListener("scroll", function () {
+                // Back to top button visibility
+                if (window.pageYOffset > 300) { // Show button after scrolling 300px
+                    backToTopButton.classList.remove("opacity-0", "invisible");
+                    backToTopButton.classList.add("opacity-100", "visible");
+                } else {
+                    backToTopButton.classList.remove("opacity-100", "visible");
+                    backToTopButton.classList.add("opacity-0", "invisible");
+                }
+
+                // Header background strip visibility
+                if (window.pageYOffset < 10) { // Only show white strip at the very top
+                    headerBgStrip.style.opacity = "1";
+                } else {
+                    headerBgStrip.style.opacity = "0";
+                }
+            });
+
+            // Back to top button click handler
             if (backToTopButton) {
-                window.addEventListener("scroll", function () {
-                    if (window.pageYOffset > 300) { // Show button after scrolling 300px
-                        backToTopButton.classList.remove("opacity-0", "invisible");
-                        backToTopButton.classList.add("opacity-100", "visible");
-                    } else {
-                        backToTopButton.classList.remove("opacity-100", "visible");
-                        backToTopButton.classList.add("opacity-0", "invisible");
-                    }
-                });
                 backToTopButton.addEventListener("click", function () {
                     window.scrollTo({
                         top: 0,
@@ -1060,23 +1358,143 @@
                 });
             });
 
-            // --- Mobile Menu Toggle (Basic Example - Requires Mobile Menu HTML) ---
-            const menuButton = document.querySelector('.lg\\:hidden button'); // Selector for the burger icon button
-            const navMenu = document.querySelector('nav.hidden.lg\\:flex'); // Selecting the desktop nav
+            // --- Mobile Menu Toggle ---
+            const menuButton = document.getElementById('mobile-menu-button');
+            const closeButton = document.getElementById('close-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
 
-            if (menuButton && navMenu) {
-                 // NOTE: This example assumes you have a SEPARATE mobile menu structure or
-                 // you intend to toggle classes on the existing nav/body to show/hide it
-                 // on mobile. The current HTML doesn't explicitly define a mobile menu view.
-                 menuButton.addEventListener('click', () => {
-                     // Example logic: Toggle a class on the body or a dedicated mobile menu container
-                     // document.body.classList.toggle('mobile-menu-active');
-                     // Or toggle classes on the navMenu itself if adapting it for mobile
-                     // navMenu.classList.toggle('hidden'); // Simplistic toggle
+            if (menuButton && mobileMenu) {
+                // Open mobile menu
+                menuButton.addEventListener('click', () => {
+                    mobileMenu.classList.remove('hidden');
+                    document.body.classList.add('overflow-hidden'); // Prevent scrolling when menu is open
 
-                     console.log("Mobile menu button clicked. Implement your specific menu toggle logic here.");
-                     // e.g., find the mobile menu element and toggle its display/visibility classes.
-                 });
+                    // Add animation class
+                    setTimeout(() => {
+                        mobileMenu.querySelector('div').classList.add('translate-x-0');
+                        mobileMenu.querySelector('div').classList.remove('-translate-x-full');
+                    }, 10);
+                });
+
+                // Close mobile menu
+                closeButton.addEventListener('click', closeMenu);
+
+                // Close menu when clicking outside
+                mobileMenu.addEventListener('click', (e) => {
+                    if (e.target === mobileMenu) {
+                        closeMenu();
+                    }
+                });
+
+                // Close menu when clicking a link
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+
+                function closeMenu() {
+                    mobileMenu.querySelector('div').classList.remove('translate-x-0');
+                    mobileMenu.querySelector('div').classList.add('-translate-x-full');
+
+                    // Hide menu after animation completes
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                        document.body.classList.remove('overflow-hidden');
+                    }, 300);
+                }
+            }
+
+            // --- Testimonial Carousel with Direction Change ---
+            const testimonialsContainer = document.getElementById('testimonials-container');
+            const prevButton = document.getElementById('prev-testimonial');
+            const nextButton = document.getElementById('next-testimonial');
+            const dots = document.querySelectorAll('.testimonial-dot');
+
+            if (testimonialsContainer && prevButton && nextButton) {
+                const slides = document.querySelectorAll('.testimonial-slide');
+                let currentIndex = 0;
+                const totalSlides = slides.length;
+                let direction = 1; // 1 for right, -1 for left
+
+                // Set initial position
+                updateCarousel();
+
+                // Handle next button click
+                nextButton.addEventListener('click', () => {
+                    direction = 1; // Set direction to right
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                    updateCarousel();
+                });
+
+                // Handle previous button click
+                prevButton.addEventListener('click', () => {
+                    direction = -1; // Set direction to left
+                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                    updateCarousel();
+                });
+
+                // Handle dot navigation
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        // Set direction based on which dot was clicked
+                        direction = index > currentIndex ? 1 : -1;
+                        currentIndex = index;
+                        updateCarousel();
+                    });
+                });
+
+                // Update carousel position and active dot
+                function updateCarousel() {
+                    // Calculate slide width based on viewport
+                    let slideWidth = 100;
+                    if (window.innerWidth >= 1024) { // lg breakpoint
+                        slideWidth = 100 / 3; // Show 3 slides on large screens
+                    } else if (window.innerWidth >= 768) { // md breakpoint
+                        slideWidth = 50; // Show 2 slides on medium screens
+                    }
+
+                    // Update transform
+                    const offset = -currentIndex * slideWidth;
+                    testimonialsContainer.style.transform = `translateX(${offset}%)`;
+
+                    // Update dots
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('opacity-100', index === currentIndex);
+                        dot.classList.toggle('opacity-40', index !== currentIndex);
+                    });
+                }
+
+                // Auto-advance carousel with direction change
+                let autoplayInterval = setInterval(autoAdvance, 5000);
+
+                // Function to auto-advance with direction change
+                function autoAdvance() {
+                    // If we've reached the end, change direction
+                    if (currentIndex === totalSlides - 1 && direction === 1) {
+                        direction = -1; // Change to left direction
+                    }
+                    // If we've reached the beginning, change direction
+                    else if (currentIndex === 0 && direction === -1) {
+                        direction = 1; // Change to right direction
+                    }
+
+                    // Move in the current direction
+                    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+                    updateCarousel();
+                }
+
+                // Pause autoplay on hover
+                testimonialsContainer.parentElement.addEventListener('mouseenter', () => {
+                    clearInterval(autoplayInterval);
+                });
+
+                // Resume autoplay when mouse leaves
+                testimonialsContainer.parentElement.addEventListener('mouseleave', () => {
+                    autoplayInterval = setInterval(autoAdvance, 5000);
+                });
+
+                // Update carousel on window resize
+                window.addEventListener('resize', updateCarousel);
             }
 
             // --- Formspree Handling (Optional: Add confirmation message) ---
