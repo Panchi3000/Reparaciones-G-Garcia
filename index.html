@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin"> <!-- Added Referrer Policy -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff"> <!-- Added Security Header -->
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN"> <!-- Added Security Header -->
     <title>Reparaciones G García - Servicio Técnico de PC en CDMX</title>
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
@@ -943,35 +946,75 @@
                 <!-- Contact Form -->
                 <div class="bg-white p-8 rounded-xl shadow-md">
                     <h3 class="text-2xl font-bold mb-6">Envíanos un mensaje</h3>
-                    <!-- FORMULARIO OPTIMIZADO PARA FORMSPREE -->
-                    <form action="https://formspree.io/f/xldbeagy" method="POST" class="space-y-6" id="contactForm">
-                        <!-- Name Input -->
+                    <!-- FORMULARIO OPTIMIZADO PARA FORMSPREE CON SEGURIDAD AVANZADA -->
+                    <form action="https://formspree.io/f/xldbeagy" method="POST" class="space-y-6" id="contactForm" novalidate>
+                        <!-- Token CSRF (generado dinámicamente por JavaScript) -->
+                        <input type="hidden" name="_csrf_token" id="_csrf_token">
+
+                        <!-- Honeypot field (trampa para bots) -->
+                        <div class="hidden" aria-hidden="true" style="display:none">
+                            <label for="website">Dejar en blanco:</label>
+                            <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <!-- Name Input with validation - SOLO 40 LETRAS -->
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre completo</label>
                             <input type="text" id="name" name="name" required
                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 placeholder-gray-400"
-                                   placeholder="Ingresa tu nombre completo">
+                                   placeholder="Ingresa tu nombre completo"
+                                   minlength="2" maxlength="40" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$"
+                                   autocomplete="name" spellcheck="false" autocorrect="off"
+                                   data-error-message="Por favor ingresa un nombre válido (solo letras y espacios, máximo 40 caracteres)"
+                                   data-validation-type="letters-only" data-max-length="40">
+                            <div class="text-red-500 text-sm mt-1 hidden" id="name-error"></div>
+                            <div class="flex justify-between">
+                                <div class="text-xs text-gray-500 mt-1">Solo letras, máximo 40 caracteres</div>
+                                <div class="text-xs text-gray-500 mt-1"><span id="name-char-count">0</span>/40</div>
+                            </div>
                         </div>
-                        <!-- Email Input -->
+
+                        <!-- Email Input with validation - MÁXIMO 40 CARACTERES -->
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico</label>
                             <input type="email" id="email" name="email" required
                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 placeholder-gray-400"
-                                   placeholder="tu@email.com">
+                                   placeholder="tu@email.com"
+                                   pattern="^[a-zA-Z0-9._%+-]{1,30}@[a-zA-Z0-9.-]{1,8}\.[a-zA-Z]{2,4}$" maxlength="40"
+                                   autocomplete="email" spellcheck="false" autocorrect="off"
+                                   data-error-message="Por favor ingresa un correo electrónico válido (máximo 40 caracteres)"
+                                   data-validation-type="email" data-max-length="40">
+                            <div class="text-red-500 text-sm mt-1 hidden" id="email-error"></div>
+                            <div class="flex justify-between">
+                                <div class="text-xs text-gray-500 mt-1">Máximo 40 caracteres</div>
+                                <div class="text-xs text-gray-500 mt-1"><span id="email-char-count">0</span>/40</div>
+                            </div>
                         </div>
-                        <!-- Phone Input (Optional) -->
+
+                        <!-- Phone Input with validation - SOLO NÚMEROS -->
                         <div>
                             <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono (Opcional)</label>
                             <input type="tel" id="phone" name="phone"
                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 placeholder-gray-400"
-                                   placeholder="56 4537 1808">
+                                   placeholder="5645371808"
+                                   pattern="^[0-9]{8,15}$" maxlength="15" inputmode="numeric"
+                                   autocomplete="tel" spellcheck="false" autocorrect="off"
+                                   data-error-message="Por favor ingresa solo números (8-15 dígitos)"
+                                   data-validation-type="numbers-only">
+                            <div class="text-red-500 text-sm mt-1 hidden" id="phone-error"></div>
+                            <div class="flex justify-between">
+                                <div class="text-xs text-gray-500 mt-1">Solo números, sin espacios ni caracteres especiales</div>
+                                <div class="text-xs text-gray-500 mt-1"><span id="phone-char-count">0</span>/15</div>
+                            </div>
                         </div>
-                        <!-- Service Select -->
+
+                        <!-- Service Select with validation -->
                         <div>
                             <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Servicio que necesitas</label>
                             <div class="relative">
                                 <select id="service" name="service" required
-                                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg appearance-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 pr-8">
+                                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg appearance-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 pr-8"
+                                        data-error-message="Por favor selecciona un servicio">
                                     <option value="">Selecciona un servicio</option>
                                     <option value="Diagnóstico Gratuito">Diagnóstico Gratuito</option>
                                     <option value="Reparación Hardware">Reparación de Hardware</option>
@@ -986,17 +1029,48 @@
                                     <i class="ri-arrow-down-s-line text-gray-400" aria-hidden="true"></i>
                                 </div>
                             </div>
+                            <div class="text-red-500 text-sm mt-1 hidden" id="service-error"></div>
                         </div>
-                        <!-- Message Textarea -->
+
+                        <!-- Message Textarea with validation - MÁXIMO 104 CARACTERES, SOLO LETRAS, NÚMEROS Y ESPACIOS -->
                         <div>
                             <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
                             <textarea id="message" name="message" rows="4" required
                                       class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 placeholder-gray-400"
-                                      placeholder="Describe brevemente el problema de tu equipo..."></textarea>
+                                      placeholder="Describe brevemente el problema de tu equipo..."
+                                      minlength="10" maxlength="104" spellcheck="true"
+                                      pattern="^[A-Za-z0-9\sÀ-ÖØ-öø-ÿ]+$"
+                                      data-error-message="Por favor ingresa un mensaje usando solo letras, números y espacios (máximo 104 caracteres)"
+                                      data-validation-type="alphanumeric-only" data-max-length="104"></textarea>
+                            <div class="text-red-500 text-sm mt-1 hidden" id="message-error"></div>
+                            <div class="flex justify-between">
+                                <div class="text-xs text-gray-500 mt-1">Solo letras, números y espacios (máximo 104 caracteres)</div>
+                                <div class="text-xs text-gray-500 mt-1">
+                                    <span id="message-char-count" class="font-medium">0</span>/104
+                                    <span id="message-char-warning" class="hidden text-red-500 ml-1">(límite)</span>
+                                </div>
+                            </div>
                         </div>
-                        <!-- Submit Button -->
-                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-button font-semibold hover:bg-primary/90 transition duration-300 whitespace-nowrap">
-                            Enviar Mensaje
+
+                        <!-- Form Status Messages -->
+                        <div id="form-status" class="hidden">
+                            <div id="form-success" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative">
+                                <span class="block sm:inline">¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.</span>
+                            </div>
+                            <div id="form-error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+                                <span class="block sm:inline">Hubo un error al enviar el mensaje. Por favor intenta nuevamente.</span>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button with loading state -->
+                        <button type="submit" id="submit-button" class="w-full bg-primary text-white py-3 rounded-button font-semibold hover:bg-primary/90 transition duration-300 whitespace-nowrap flex items-center justify-center">
+                            <span>Enviar Mensaje</span>
+                            <span id="loading-spinner" class="ml-2 hidden">
+                                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                            </span>
                         </button>
                     </form>
                     <!-- FIN DEL FORMULARIO OPTIMIZADO -->
@@ -1404,7 +1478,7 @@
                 }
             }
 
-            // --- Testimonial Carousel with Direction Change ---
+            // --- Testimonial Carousel with Direction Change and Drag Support ---
             const testimonialsContainer = document.getElementById('testimonials-container');
             const prevButton = document.getElementById('prev-testimonial');
             const nextButton = document.getElementById('next-testimonial');
@@ -1415,9 +1489,74 @@
                 let currentIndex = 0;
                 const totalSlides = slides.length;
                 let direction = 1; // 1 for right, -1 for left
+                const slideChangeInterval = 6000; // Change slide every 6 seconds
 
-                // Set initial position
-                updateCarousel();
+                // Update carousel position and active dot
+                function updateCarousel() {
+                    // Calculate slide width based on viewport
+                    let slideWidth = 100;
+                    if (window.innerWidth >= 1024) { // lg breakpoint
+                        slideWidth = 100 / 3; // Show 3 slides on large screens
+                    } else if (window.innerWidth >= 768) { // md breakpoint
+                        slideWidth = 50; // Show 2 slides on medium screens
+                    }
+
+                    // Update transform
+                    const offset = -currentIndex * slideWidth;
+                    testimonialsContainer.style.transform = `translateX(${offset}%)`;
+
+                    // Update dots
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('opacity-100', index === currentIndex);
+                        dot.classList.toggle('opacity-40', index !== currentIndex);
+                    });
+                }
+
+                // Auto-advance carousel with direction change
+                let autoplayInterval = setInterval(autoAdvance, slideChangeInterval); // Use the defined interval
+
+                // Function to auto-advance with direction change
+                function autoAdvance() {
+                    // Determine the number of visible slides based on screen width
+                    let visibleSlides = 1;
+                    if (window.innerWidth >= 1024) { // lg breakpoint
+                        visibleSlides = 3;
+                    } else if (window.innerWidth >= 768) { // md breakpoint
+                        visibleSlides = 2;
+                    }
+
+                    // Calculate the last possible index based on visible slides
+                    const lastIndex = totalSlides - visibleSlides;
+
+                    // If moving right and reaching the end, change direction
+                    if (currentIndex >= lastIndex && direction === 1) {
+                        direction = -1; // Change to left direction
+                    }
+                    // If moving left and reaching the beginning, change direction
+                    else if (currentIndex <= 0 && direction === -1) {
+                        direction = 1; // Change to right direction
+                    }
+
+                    // Move in the current direction by one step
+                    currentIndex += direction;
+
+                    // Ensure currentIndex stays within bounds (important for resize)
+                    currentIndex = Math.max(0, Math.min(currentIndex, lastIndex));
+
+                    updateCarousel();
+                }
+
+                // Pause autoplay on hover or drag
+                function pauseAutoplay() {
+                    clearInterval(autoplayInterval);
+                }
+
+                // Resume autoplay
+                function resumeAutoplay() {
+                    // Clear any existing interval before starting a new one
+                    clearInterval(autoplayInterval);
+                    autoplayInterval = setInterval(autoAdvance, slideChangeInterval); // Use the defined interval
+                }
 
                 // Handle next button click
                 nextButton.addEventListener('click', () => {
@@ -1443,65 +1582,719 @@
                     });
                 });
 
-                // Update carousel position and active dot
-                function updateCarousel() {
-                    // Calculate slide width based on viewport
-                    let slideWidth = 100;
-                    if (window.innerWidth >= 1024) { // lg breakpoint
-                        slideWidth = 100 / 3; // Show 3 slides on large screens
-                    } else if (window.innerWidth >= 768) { // md breakpoint
-                        slideWidth = 50; // Show 2 slides on medium screens
-                    }
-
-                    // Update transform
-                    const offset = -currentIndex * slideWidth;
-                    testimonialsContainer.style.transform = `translateX(${offset}%)`;
-
-                    // Update dots
-                    dots.forEach((dot, index) => {
-                        dot.classList.toggle('opacity-100', index === currentIndex);
-                        dot.classList.toggle('opacity-40', index !== currentIndex);
-                    });
-                }
-
-                // Auto-advance carousel with direction change
-                let autoplayInterval = setInterval(autoAdvance, 5000);
-
-                // Function to auto-advance with direction change
-                function autoAdvance() {
-                    // If we've reached the end, change direction
-                    if (currentIndex === totalSlides - 1 && direction === 1) {
-                        direction = -1; // Change to left direction
-                    }
-                    // If we've reached the beginning, change direction
-                    else if (currentIndex === 0 && direction === -1) {
-                        direction = 1; // Change to right direction
-                    }
-
-                    // Move in the current direction
-                    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
-                    updateCarousel();
-                }
-
-                // Pause autoplay on hover
-                testimonialsContainer.parentElement.addEventListener('mouseenter', () => {
-                    clearInterval(autoplayInterval);
-                });
-
-                // Resume autoplay when mouse leaves
-                testimonialsContainer.parentElement.addEventListener('mouseleave', () => {
-                    autoplayInterval = setInterval(autoAdvance, 5000);
-                });
-
                 // Update carousel on window resize
                 window.addEventListener('resize', updateCarousel);
+
+                // ---- Drag Functionality ----
+
+                // Variables for drag functionality
+                let isDragging = false;
+                let startPosition = 0;
+                let currentTranslate = 0;
+                let prevTranslate = 0;
+                let animationID = 0;
+                let dragThreshold = 0.15; // Percentage of slide width needed to trigger slide change
+
+                // Get position of mouse or touch event
+                function getPositionX(event) {
+                    return event.type.includes('mouse')
+                        ? event.pageX
+                        : event.touches[0].clientX;
+                }
+
+                // Start drag
+                function dragStart(event) {
+                    pauseAutoplay();
+                    startPosition = getPositionX(event);
+                    isDragging = true;
+                    animationID = requestAnimationFrame(animation);
+                    testimonialsContainer.style.cursor = 'grabbing';
+
+                    // Prevent default behavior only for mouse events to avoid issues on touch devices
+                    if (event.type === 'mousedown') {
+                        event.preventDefault();
+                    }
+                }
+
+                // During drag
+                function drag(event) {
+                    if (isDragging) {
+                        const currentPosition = getPositionX(event);
+                        const containerWidth = testimonialsContainer.parentElement.offsetWidth;
+
+                        // Calculate how far we've dragged as a percentage of container width
+                        const dragDistance = currentPosition - startPosition;
+                        const dragPercentage = (dragDistance / containerWidth) * 100;
+
+                        // Update current translate value
+                        currentTranslate = prevTranslate + dragPercentage;
+
+                        // Apply the transform
+                        testimonialsContainer.style.transform = `translateX(${currentTranslate}%)`;
+                    }
+                }
+
+                // End drag
+                function dragEnd() {
+                    cancelAnimationFrame(animationID);
+                    isDragging = false;
+                    testimonialsContainer.style.cursor = 'grab';
+
+                    // Calculate if we should move to next/prev slide or snap back
+                    const movedPercentage = currentTranslate - prevTranslate;
+                    const containerWidth = testimonialsContainer.parentElement.offsetWidth;
+                    const slideWidthPixels = slides[0].offsetWidth; // Get actual slide width in pixels
+                    const dragThresholdPixels = slideWidthPixels * dragThreshold; // Threshold in pixels
+                    const movedPixels = (movedPercentage / 100) * containerWidth;
+
+                    // Determine the number of visible slides based on screen width
+                    let visibleSlides = 1;
+                    if (window.innerWidth >= 1024) { // lg breakpoint
+                        visibleSlides = 3;
+                    } else if (window.innerWidth >= 768) { // md breakpoint
+                        visibleSlides = 2;
+                    }
+                    const lastIndex = totalSlides - visibleSlides;
+
+                    if (movedPixels < -dragThresholdPixels) {
+                        // Dragged left enough to advance
+                        direction = 1;
+                        currentIndex = Math.min(currentIndex + 1, lastIndex);
+                    } else if (movedPixels > dragThresholdPixels) {
+                        // Dragged right enough to go back
+                        direction = -1;
+                        currentIndex = Math.max(currentIndex - 1, 0);
+                    }
+
+                    // Update carousel to snap to the correct position
+                    updateCarousel();
+                    resumeAutoplay(); // Resume autoplay after drag ends
+                }
+
+                // Animation loop for smooth dragging
+                function animation() {
+                    if (isDragging) {
+                        requestAnimationFrame(animation);
+                    }
+                }
+
+                // Add event listeners for mouse and touch events
+                testimonialsContainer.addEventListener('mousedown', dragStart);
+                testimonialsContainer.addEventListener('touchstart', dragStart);
+
+                window.addEventListener('mousemove', drag);
+                window.addEventListener('touchmove', drag);
+
+                window.addEventListener('mouseup', dragEnd);
+                window.addEventListener('touchend', dragEnd);
+                window.addEventListener('mouseleave', dragEnd);
+
+                // Set initial cursor style
+                testimonialsContainer.style.cursor = 'grab';
+
+                // Prevent context menu on long press
+                testimonialsContainer.addEventListener('contextmenu', e => {
+                    if (e.target.closest('.testimonial-slide')) {
+                        e.preventDefault();
+                    }
+                });
             }
 
-            // --- Formspree Handling (Optional: Add confirmation message) ---
-            // Basic Formspree forms redirect by default. If you want an AJAX submission
-            // with a success message without leaving the page, you'd need more JS.
-            // For now, the standard HTML form submission to Formspree is handled
-            // by the browser due to the action and method attributes.
+            // --- Formspree Handling with Advanced Security ---
+            const contactForm = document.getElementById('contactForm');
+
+            if (contactForm) {
+                // Generate secure CSRF token with more entropy
+                const generateCSRFToken = () => {
+                    // Create a more secure random token with higher entropy
+                    const array = new Uint8Array(32); // 256 bits of randomness
+                    window.crypto.getRandomValues(array);
+                    const randomString = Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('') +
+                                        Date.now().toString(36);
+
+                    // Store token in session storage with expiration
+                    const tokenData = {
+                        token: randomString,
+                        expires: Date.now() + (30 * 60 * 1000) // 30 minutes expiration
+                    };
+                    sessionStorage.setItem('csrf_token', JSON.stringify(tokenData));
+                    return randomString;
+                };
+
+                // Set CSRF token on page load
+                document.getElementById('_csrf_token').value = generateCSRFToken();
+
+                // Initialize character counters for all fields
+                const initializeCharCounters = () => {
+                    // Name field counter
+                    const nameField = document.getElementById('name');
+                    const nameCharCount = document.getElementById('name-char-count');
+                    if (nameField && nameCharCount) {
+                        nameCharCount.textContent = nameField.value.length;
+                    }
+
+                    // Email field counter
+                    const emailField = document.getElementById('email');
+                    const emailCharCount = document.getElementById('email-char-count');
+                    if (emailField && emailCharCount) {
+                        emailCharCount.textContent = emailField.value.length;
+                    }
+
+                    // Phone field counter
+                    const phoneField = document.getElementById('phone');
+                    const phoneCharCount = document.getElementById('phone-char-count');
+                    if (phoneField && phoneCharCount) {
+                        phoneCharCount.textContent = phoneField.value.length;
+                    }
+
+                    // Message field counter
+                    const messageField = document.getElementById('message');
+                    const messageCharCount = document.getElementById('message-char-count');
+                    const messageCharWarning = document.getElementById('message-char-warning');
+                    if (messageField && messageCharCount) {
+                        messageCharCount.textContent = messageField.value.length;
+
+                        // Show warning if close to limit
+                        if (messageField.value.length > 90) {
+                            messageCharCount.classList.add('text-red-500');
+                            if (messageCharWarning) messageCharWarning.classList.remove('hidden');
+                        }
+                    }
+                };
+
+                // Run initialization
+                initializeCharCounters();
+
+                // Security settings
+                const securitySettings = {
+                    submissionCooldown: 10000, // 10 seconds between submissions
+                    maxAttempts: 5, // Max failed attempts before temporary lockout
+                    lockoutTime: 60000, // 1 minute lockout after max attempts
+                    fieldValidationDelay: 300, // Debounce delay for validation (ms)
+                };
+
+                // Security state
+                const securityState = {
+                    lastSubmissionTime: 0,
+                    failedAttempts: 0,
+                    lockedUntil: 0,
+                    validationTimers: {} // For debouncing validations
+                };
+
+                // Advanced input sanitization function with type-specific handling
+                const sanitizeInput = (input, type) => {
+                    if (typeof input !== 'string') return '';
+
+                    // Trim whitespace first
+                    let sanitized = input.trim();
+
+                    // Apply type-specific sanitization
+                    switch (type) {
+                        case 'letters-only':
+                            // Remove anything that's not a letter or space
+                            sanitized = sanitized.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ\s]/g, '');
+                            break;
+
+                        case 'numbers-only':
+                            // Remove anything that's not a number
+                            sanitized = sanitized.replace(/[^0-9]/g, '');
+                            break;
+
+                        case 'email':
+                            // Basic email sanitization (more validation happens separately)
+                            sanitized = sanitized.replace(/[^\w@.-]/g, '').toLowerCase();
+                            break;
+
+                        case 'alphanumeric-only':
+                            // Remove anything that's not a letter, number, or space
+                            sanitized = sanitized.replace(/[^A-Za-z0-9\sÀ-ÖØ-öø-ÿ]/g, '');
+                            break;
+
+                        case 'text-content':
+                            // More aggressive sanitization for general text
+                            sanitized = sanitized
+                                .replace(/</g, '&lt;')
+                                .replace(/>/g, '&gt;')
+                                .replace(/"/g, '&quot;')
+                                .replace(/'/g, '&#x27;')
+                                .replace(/\//g, '&#x2F;')
+                                .replace(/\\/g, '&#x5C;')
+                                .replace(/`/g, '&#96;')
+                                .replace(/\$/g, '&#36;')
+                                .replace(/{/g, '&#123;')
+                                .replace(/}/g, '&#125;');
+                            break;
+
+                        default:
+                            // Default sanitization for any other field type
+                            sanitized = sanitized
+                                .replace(/</g, '&lt;')
+                                .replace(/>/g, '&gt;')
+                                .replace(/"/g, '&quot;')
+                                .replace(/'/g, '&#x27;')
+                                .replace(/\//g, '&#x2F;')
+                                .replace(/\\/g, '&#x5C;');
+                    }
+
+                    // Apply length restrictions if specified
+                    const maxLength = parseInt(field?.dataset?.maxLength || '0', 10);
+                    if (maxLength > 0 && sanitized.length > maxLength) {
+                        sanitized = sanitized.substring(0, maxLength);
+                    }
+
+                    return sanitized;
+                };
+
+                // Check if a string contains only letters and spaces
+                const containsOnlyLetters = (str) => {
+                    return /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/.test(str);
+                };
+
+                // Check if a string contains only numbers
+                const containsOnlyNumbers = (str) => {
+                    return /^[0-9]+$/.test(str);
+                };
+
+                // Check if a string contains only letters, numbers and spaces
+                const containsOnlyAlphanumeric = (str) => {
+                    return /^[A-Za-z0-9\sÀ-ÖØ-öø-ÿ]+$/.test(str);
+                };
+
+                // Enhanced email validation beyond the basic HTML5 pattern
+                const isValidEmail = (email) => {
+                    // Basic format check
+                    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return false;
+
+                    // Length check
+                    if (email.length > 40) return false;
+
+                    // Check for valid TLD (2-4 characters)
+                    const tld = email.split('.').pop();
+                    if (!tld || tld.length < 2 || tld.length > 4) return false;
+
+                    return true;
+                };
+
+                // Debounced validation to prevent excessive processing
+                const debouncedValidate = (field) => {
+                    const fieldId = field.id;
+
+                    // Clear any existing timer for this field
+                    if (securityState.validationTimers[fieldId]) {
+                        clearTimeout(securityState.validationTimers[fieldId]);
+                    }
+
+                    // Set a new timer
+                    securityState.validationTimers[fieldId] = setTimeout(() => {
+                        validateField(field);
+                    }, securitySettings.fieldValidationDelay);
+                };
+
+                // Enhanced real-time validation for each field
+                const validateField = (field) => {
+                    // Skip validation for optional empty fields
+                    if (!field.required && field.value === '') {
+                        hideError(field);
+                        return true;
+                    }
+
+                    const value = field.value.trim();
+                    const validationType = field.dataset.validationType;
+                    const maxLength = parseInt(field.dataset.maxLength || '0', 10);
+
+                    // Check for empty required fields
+                    if (field.required && value === '') {
+                        showError(field, 'Este campo es obligatorio');
+                        return false;
+                    }
+
+                    // Check length restrictions
+                    if (maxLength > 0 && value.length > maxLength) {
+                        showError(field, `Este campo no puede exceder ${maxLength} caracteres`);
+                        return false;
+                    }
+
+                    // Type-specific validation
+                    if (validationType) {
+                        switch (validationType) {
+                            case 'letters-only':
+                                if (!containsOnlyLetters(value)) {
+                                    showError(field, 'Este campo solo puede contener letras y espacios');
+                                    return false;
+                                }
+                                break;
+
+                            case 'numbers-only':
+                                if (!containsOnlyNumbers(value)) {
+                                    showError(field, 'Este campo solo puede contener números');
+                                    return false;
+                                }
+                                break;
+
+                            case 'alphanumeric-only':
+                                if (!containsOnlyAlphanumeric(value)) {
+                                    showError(field, 'Este campo solo puede contener letras, números y espacios');
+                                    return false;
+                                }
+                                break;
+
+                            case 'email':
+                                if (!isValidEmail(value)) {
+                                    showError(field, 'Por favor ingresa un correo electrónico válido');
+                                    return false;
+                                }
+                                break;
+                        }
+                    }
+
+                    // If we got here, check standard HTML5 validity
+                    const isValid = field.checkValidity();
+
+                    if (!isValid) {
+                        showError(field, field.dataset.errorMessage || 'Este campo es inválido');
+                        return false;
+                    } else {
+                        hideError(field);
+                        return true;
+                    }
+                };
+
+                // Show error message for a field
+                const showError = (field, message) => {
+                    const errorElement = document.getElementById(`${field.id}-error`);
+                    if (errorElement) {
+                        errorElement.textContent = message;
+                        errorElement.classList.remove('hidden');
+                        field.classList.add('border-red-500');
+                        field.classList.remove('border-gray-200');
+                    }
+                };
+
+                // Hide error message for a field
+                const hideError = (field) => {
+                    const errorElement = document.getElementById(`${field.id}-error`);
+                    if (errorElement) {
+                        errorElement.classList.add('hidden');
+                        field.classList.remove('border-red-500');
+                        field.classList.add('border-gray-200');
+                    }
+                };
+
+                // Add input event listeners to all form fields for real-time validation
+                const formFields = contactForm.querySelectorAll('input, select, textarea');
+                formFields.forEach(field => {
+                    if (field.id !== 'website' && field.id !== '_csrf_token') { // Skip honeypot and CSRF fields
+                        // Input event with debounced validation
+                        field.addEventListener('input', () => {
+                            // Apply immediate sanitization based on field type
+                            const validationType = field.dataset.validationType;
+
+                            // Update character counters for all fields
+                            updateCharacterCount(field);
+
+                            // Debounce validation to prevent excessive processing
+                            debouncedValidate(field);
+
+                            // Apply real-time sanitization for certain field types
+                            if (validationType === 'letters-only' || validationType === 'numbers-only' || validationType === 'alphanumeric-only') {
+                                const sanitizedValue = sanitizeInput(field.value, validationType);
+                                if (sanitizedValue !== field.value) {
+                                    field.value = sanitizedValue;
+                                }
+                            }
+                        });
+
+                        // Validate on blur (when field loses focus)
+                        field.addEventListener('blur', () => {
+                            validateField(field);
+                        });
+
+                        // Prevent paste for sensitive fields
+                        if (field.id === 'name' || field.id === 'phone') {
+                            field.addEventListener('paste', (e) => {
+                                e.preventDefault();
+                                showError(field, 'Por favor ingresa este dato manualmente por seguridad');
+                            });
+                        }
+
+                        // Prevent drag and drop for all fields
+                        field.addEventListener('drop', (e) => {
+                            e.preventDefault();
+                        });
+                    }
+                });
+
+                // Function to update character count for a field
+                const updateCharacterCount = (field) => {
+                    const fieldId = field.id;
+                    const counterId = `${fieldId}-char-count`;
+                    const counter = document.getElementById(counterId);
+
+                    if (counter) {
+                        const currentLength = field.value.length;
+                        counter.textContent = currentLength;
+
+                        // Get max length from data attribute or field attribute
+                        const maxLength = parseInt(field.dataset.maxLength || field.maxLength || '0', 10);
+
+                        // Visual feedback when approaching limit
+                        if (maxLength > 0) {
+                            const warningThreshold = Math.floor(maxLength * 0.85);
+
+                            if (currentLength >= warningThreshold) {
+                                counter.classList.add('text-red-500', 'font-bold');
+
+                                // Show warning message if available
+                                const warningElement = document.getElementById(`${fieldId}-char-warning`);
+                                if (warningElement) {
+                                    warningElement.classList.remove('hidden');
+                                }
+                            } else {
+                                counter.classList.remove('text-red-500', 'font-bold');
+
+                                // Hide warning message if available
+                                const warningElement = document.getElementById(`${fieldId}-char-warning`);
+                                if (warningElement) {
+                                    warningElement.classList.add('hidden');
+                                }
+                            }
+                        }
+                    }
+                };
+
+                // Check if form is locked due to too many failed attempts
+                const isFormLocked = () => {
+                    const now = Date.now();
+                    return securityState.lockedUntil > now;
+                };
+
+                // Get remaining lockout time in seconds
+                const getRemainingLockoutTime = () => {
+                    const now = Date.now();
+                    const remainingMs = Math.max(0, securityState.lockedUntil - now);
+                    return Math.ceil(remainingMs / 1000);
+                };
+
+                // Verify CSRF token validity
+                const isValidCSRFToken = () => {
+                    const storedTokenData = sessionStorage.getItem('csrf_token');
+                    if (!storedTokenData) return false;
+
+                    try {
+                        const tokenData = JSON.parse(storedTokenData);
+                        const now = Date.now();
+
+                        // Check if token has expired
+                        if (tokenData.expires < now) return false;
+
+                        // Check if token matches the one in the form
+                        const formToken = document.getElementById('_csrf_token').value;
+                        return formToken === tokenData.token;
+                    } catch (e) {
+                        return false;
+                    }
+                };
+
+                // Enhanced form submission handler with advanced security
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    // Check if form is locked due to too many failed attempts
+                    if (isFormLocked()) {
+                        const remainingSeconds = getRemainingLockoutTime();
+                        showFormError(`Demasiados intentos fallidos. Por favor espera ${remainingSeconds} segundos antes de intentar nuevamente.`);
+                        return;
+                    }
+
+                    // Check submission cooldown to prevent spam
+                    const now = Date.now();
+                    if (now - securityState.lastSubmissionTime < securitySettings.submissionCooldown) {
+                        showFormError('Por favor espera unos segundos antes de enviar otro mensaje.');
+                        return;
+                    }
+
+                    // Verify CSRF token
+                    if (!isValidCSRFToken()) {
+                        // Generate a new token and show error
+                        document.getElementById('_csrf_token').value = generateCSRFToken();
+                        showFormError('La sesión ha expirado. Por favor intenta nuevamente.');
+                        return;
+                    }
+
+                    // Validate honeypot (should be empty)
+                    const honeypot = document.getElementById('website');
+                    if (honeypot && honeypot.value !== '') {
+                        // Bot detected - silently reject without showing error
+                        console.log('Bot submission detected');
+
+                        // Increment failed attempts
+                        securityState.failedAttempts++;
+
+                        // Show fake success to the bot but don't actually submit
+                        showFormSuccess();
+                        return;
+                    }
+
+                    // Validate all fields with enhanced validation
+                    let isFormValid = true;
+                    const invalidFields = [];
+
+                    formFields.forEach(field => {
+                        if (field.id !== 'website' && field.id !== '_csrf_token') {
+                            const fieldValid = validateField(field);
+                            if (!fieldValid) {
+                                invalidFields.push(field.id);
+                            }
+                            isFormValid = isFormValid && fieldValid;
+                        }
+                    });
+
+                    if (!isFormValid) {
+                        // Increment failed attempts
+                        securityState.failedAttempts++;
+
+                        // Check if we should lock the form
+                        if (securityState.failedAttempts >= securitySettings.maxAttempts) {
+                            securityState.lockedUntil = now + securitySettings.lockoutTime;
+                            showFormError(`Demasiados intentos fallidos. El formulario estará bloqueado por ${securitySettings.lockoutTime / 1000} segundos.`);
+                            return;
+                        }
+
+                        showFormError('Por favor corrige los errores en el formulario antes de enviar.');
+                        return;
+                    }
+
+                    // Show loading state
+                    const submitButton = document.getElementById('submit-button');
+                    const loadingSpinner = document.getElementById('loading-spinner');
+                    submitButton.disabled = true;
+                    loadingSpinner.classList.remove('hidden');
+
+                    try {
+                        // Sanitize all inputs before submission with type-specific sanitization
+                        const formData = new FormData(contactForm);
+                        const sanitizedData = new FormData();
+
+                        for (const [key, value] of formData.entries()) {
+                            if (typeof value === 'string') {
+                                if (key === '_csrf_token' || key === '_gotcha') {
+                                    // Don't sanitize these special fields
+                                    sanitizedData.append(key, value);
+                                } else {
+                                    // Get the field element to determine its validation type
+                                    const field = document.getElementById(key);
+                                    const validationType = field?.dataset?.validationType || 'default';
+
+                                    // Apply type-specific sanitization
+                                    sanitizedData.append(key, sanitizeInput(value, validationType));
+                                }
+                            } else {
+                                sanitizedData.append(key, value);
+                            }
+                        }
+
+                        // Add timestamp to prevent replay attacks
+                        sanitizedData.append('_timestamp', Date.now().toString());
+
+                        // Submit the form using fetch API with timeout
+                        const controller = new AbortController();
+                        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+
+                        const response = await fetch(contactForm.action, {
+                            method: 'POST',
+                            body: sanitizedData,
+                            headers: {
+                                'Accept': 'application/json'
+                            },
+                            signal: controller.signal
+                        });
+
+                        clearTimeout(timeoutId);
+
+                        const result = await response.json();
+
+                        if (response.ok) {
+                            // Success - reset security state
+                            securityState.failedAttempts = 0;
+
+                            // Clear form and show success message
+                            contactForm.reset();
+                            showFormSuccess();
+
+                            // Reset character counters
+                            initializeCharCounters();
+
+                            // Generate new CSRF token for next submission
+                            document.getElementById('_csrf_token').value = generateCSRFToken();
+
+                            // Update last submission time
+                            securityState.lastSubmissionTime = Date.now();
+                        } else {
+                            // Error from server
+                            securityState.failedAttempts++;
+                            throw new Error(result.error || 'Hubo un error al enviar el formulario');
+                        }
+                    } catch (error) {
+                        console.error('Form submission error:', error);
+
+                        // Increment failed attempts
+                        securityState.failedAttempts++;
+
+                        // Check if we should lock the form
+                        if (securityState.failedAttempts >= securitySettings.maxAttempts) {
+                            securityState.lockedUntil = now + securitySettings.lockoutTime;
+                            showFormError(`Demasiados intentos fallidos. El formulario estará bloqueado por ${securitySettings.lockoutTime / 1000} segundos.`);
+                        } else {
+                            showFormError('Hubo un error al enviar el mensaje. Por favor intenta nuevamente.');
+                        }
+                    } finally {
+                        // Reset button state
+                        submitButton.disabled = false;
+                        loadingSpinner.classList.add('hidden');
+                    }
+                });
+
+                // Show form success message
+                const showFormSuccess = () => {
+                    const formStatus = document.getElementById('form-status');
+                    const formSuccess = document.getElementById('form-success');
+                    const formError = document.getElementById('form-error');
+
+                    formStatus.classList.remove('hidden');
+                    formSuccess.classList.remove('hidden');
+                    formError.classList.add('hidden');
+
+                    // Scroll to success message
+                    formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        formStatus.classList.add('hidden');
+                        formSuccess.classList.add('hidden');
+                    }, 5000);
+                };
+
+                // Show form error message
+                const showFormError = (message) => {
+                    const formStatus = document.getElementById('form-status');
+                    const formSuccess = document.getElementById('form-success');
+                    const formError = document.getElementById('form-error');
+
+                    formStatus.classList.remove('hidden');
+                    formSuccess.classList.add('hidden');
+                    formError.classList.remove('hidden');
+                    formError.querySelector('span').textContent = message;
+
+                    // Scroll to error message
+                    formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Hide error message after 5 seconds
+                    setTimeout(() => {
+                        formStatus.classList.add('hidden');
+                        formError.classList.add('hidden');
+                    }, 5000);
+                };
+            }
 
         }); // End DOMContentLoaded
     </script>

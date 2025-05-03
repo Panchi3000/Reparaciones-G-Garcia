@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin"> <!-- Added Referrer Policy -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff"> <!-- Added Security Header -->
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN"> <!-- Added Security Header -->
     <title>
       5 Signos Claros de que tu Equipo Podría Tener un Virus - Reparaciones G
       García
@@ -71,11 +74,42 @@
       .custom-checkbox { appearance: none; -webkit-appearance: none; width: 1.25rem; height: 1.25rem; border: 2px solid #d1d5db; border-radius: 0.25rem; outline: none; cursor: pointer; position: relative; transition: all 0.2s; vertical-align: middle; }
       .custom-checkbox:checked { background-color: #1e40af; border-color: #1e40af; }
       .custom-checkbox:checked::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%) rotate(45deg); /* Adjusted for better checkmark centering */ width: 0.3rem; height: 0.6rem; border-bottom: 2px solid white; border-right: 2px solid white; }
+
+      /* Added styles from index.html */
+      /* Fixed background for entire page */
+      body {
+          background-image: url('https://readdy.ai/api/search-image?query=abstract%20technology%20circuit%20board%20pattern%20with%20blue%20gradient%2C%20high%20tech%20digital%20background%2C%20modern%20technology%20concept%2C%20clean%20and%20minimal%20design%2C%20perfect%20for%20tech%20service%20background&width=1920&height=1080&seq=1&orientation=landscape');
+          background-attachment: fixed;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+      }
+      /* Glassmorphism effect for elements */
+      .glass-effect {
+          backdrop-filter: blur(8px);
+          background-color: rgba(255, 255, 255, 0.15);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+      /* Section backgrounds with transparency */
+      section {
+          position: relative; /* Needed for potential z-index stacking if required */
+      }
+      section.bg-white {
+          background-color: rgba(255, 255, 255, 0.92) !important;
+      }
+      section.bg-gray-50 {
+          background-color: rgba(249, 250, 251, 0.92) !important;
+      }
+      section.bg-blue-50 {
+          background-color: rgba(239, 246, 255, 0.92) !important;
+      }
+      /* End Added styles */
     </style>
   </head>
-  <body class="bg-gray-50">
+  <body>
     <!-- Header Corregido -->
-    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-lg">
+    <header class="fixed w-full z-50 glass-effect shadow-lg">
       <div class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
           <!-- Logo (Left Aligned) -->
@@ -111,9 +145,12 @@
     </header>
     <!-- Fin Header Corregido -->
 
+    <!-- White Header Background Strip (Only visible at top) -->
+    <div id="header-bg-strip" class="fixed top-0 left-0 w-full h-[72px] bg-white z-40 transition-opacity duration-300"></div>
+
     <!-- Article Header -->
-    <section
-      class="pt-32 pb-16 bg-gradient-to-r from-primary/90 to-primary/70 text-white"
+    <div
+      class="relative pt-32 pb-16 bg-gradient-to-r from-primary/90 to-primary/70 text-white"
     >
       <div class="container mx-auto px-6">
         <div class="max-w-4xl mx-auto">
@@ -171,15 +208,15 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- Main Content -->
-    <section class="py-12">
-      <div class="container mx-auto px-6">
+    <section class="bg-white">
+      <div class="container mx-auto px-6 py-12">
         <div class="flex flex-col lg:flex-row gap-12">
           <!-- Article Content -->
           <div class="lg:w-2/3">
-            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
+            <div class="rounded-xl shadow-md overflow-hidden mb-8">
               <img
                 src="https://readdy.ai/api/search-image?query=computer%2520virus%2520detection%252C%2520cybersecurity%2520concept%252C%2520malware%2520protection%252C%2520digital%2520security%2520visualization%252C%2520professional%2520tech%2520image%252C%2520detailed%2520high%2520quality%2520image%2520showing%2520computer%2520screen%2520with%2520virus%2520alert%252C%2520digital%2520threat%2520visualization&width=1200&height=600&seq=3&orientation=landscape"
                 alt="Pantalla de computadora mostrando alerta de virus"
@@ -427,7 +464,7 @@
                     </ul>
                     <a
                       href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer"
-                      class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-button font-semibold hover:bg-primary/90 transition duration-300 whitespace-nowrap"
+                      class="inline-flex items-center justify-center px-6 py-3 bg-green-500 text-white rounded-button font-semibold hover:bg-green-600 transition duration-300 whitespace-nowrap"
                     >
                       <i class="ri-whatsapp-line mr-2" aria-hidden="true"></i>
                       Consulta gratis por WhatsApp
@@ -528,19 +565,19 @@
                 <div class="border-t border-gray-200 pt-6 mt-8">
                   <h4 class="font-semibold mb-4">Comparte este artículo:</h4>
                   <div class="flex space-x-3">
-                    <a href="#" class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition" aria-label="Compartir en Facebook">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://reparaciones-g-garcia.netlify.app/signos-virus.html" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition" aria-label="Compartir en Facebook">
                       <i class="ri-facebook-fill" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition" aria-label="Compartir en Twitter/X">
+                    <a href="https://twitter.com/intent/tweet?url=https://reparaciones-g-garcia.netlify.app/signos-virus.html&text=%C2%A1Echa%20un%20vistazo%20a%20estos%205%20signos%20de%20virus%20en%20tu%20PC%21%20" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition" aria-label="Compartir en Twitter/X">
                       <i class="ri-twitter-x-fill" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition" aria-label="Compartir en WhatsApp">
+                    <a href="https://api.whatsapp.com/send?text=%C2%A1Echa%20un%20vistazo%20a%20estos%205%20signos%20de%20virus%20en%20tu%20PC%21%20https://reparaciones-g-garcia.netlify.app/signos-virus.html" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition" aria-label="Compartir en WhatsApp">
                       <i class="ri-whatsapp-fill" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition" aria-label="Compartir en LinkedIn">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://reparaciones-g-garcia.netlify.app/signos-virus.html" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition" aria-label="Compartir en LinkedIn">
                       <i class="ri-linkedin-fill" aria-hidden="true"></i>
                     </a>
-                     <a href="#" class="w-10 h-10 bg-gray-200 text-gray-700 rounded-full flex items-center justify-center hover:bg-gray-300 transition" aria-label="Compartir por Email">
+                     <a href="mailto:?subject=Mira%20este%20art%C3%ADculo%20sobre%20signos%20de%20virus&body=%C2%A1Echa%20un%20vistazo%20a%20estos%205%20signos%20de%20virus%20en%20tu%20PC%21%20https://reparaciones-g-garcia.netlify.app/signos-virus.html" class="w-10 h-10 bg-gray-200 text-gray-700 rounded-full flex items-center justify-center hover:bg-gray-300 transition" aria-label="Compartir por Email">
                       <i class="ri-mail-line" aria-hidden="true"></i>
                     </a>
                   </div>
@@ -733,17 +770,6 @@
               <h3 class="text-lg font-bold mb-4">Recursos útiles</h3>
               <ul class="space-y-4">
                 <li>
-                  <a href="#" class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-blue-50 transition group">
-                    <div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
-                      <i class="ri-shield-check-line ri-lg" aria-hidden="true"></i>
-                    </div>
-                    <div>
-                      <span class="font-medium group-hover:text-primary transition">Guía de Seguridad PDF</span>
-                      <span class="text-sm text-gray-500 block">Descarga gratuita</span>
-                    </div>
-                  </a>
-                </li>
-                <li>
                   <a href="index.html#contacto" class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-blue-50 transition group">
                     <div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
                       <i class="ri-tools-line ri-lg" aria-hidden="true"></i>
@@ -768,26 +794,7 @@
               </ul>
             </div>
 
-            <!-- Newsletter -->
-            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
-              <h3 class="text-lg font-bold mb-2">
-                Suscríbete a nuestro boletín
-              </h3>
-              <p class="text-gray-600 mb-4">
-                Recibe consejos de mantenimiento y ofertas especiales
-                directamente en tu correo.
-              </p>
-              <form>
-                <div class="mb-3">
-                  <input type="email" placeholder="Tu correo electrónico" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary" required />
-                </div>
-                <button type="submit" class="w-full bg-primary text-white py-2 rounded-button font-semibold hover:bg-primary/90 transition duration-300 whitespace-nowrap">
-                  Suscribirme
-                </button>
-              </form>
-            </div>
-
-             <!-- CTA Box Sticky -->
+             <!-- CTA Box Sticky (Reverted positioning) -->
             <div class="bg-primary rounded-xl shadow-md p-6 text-white sticky top-[calc(100vh-250px)]">
               <h3 class="text-xl font-bold mb-3">
                 ¿Equipo infectado o lento?
@@ -811,84 +818,102 @@
 
     <!-- Footer -->
     <footer class="bg-[#1e2937] text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12">
-                <!-- Company Info -->
-                <div class="lg:col-span-1">
-                     <a href="index.html" class="text-white font-['Pacifico'] text-2xl mb-4 inline-block">Reparaciones G García</a>
-                    <p class="text-gray-300 mb-4">Tu aliado tecnológico en CDMX. Más de 10 años ofreciendo servicio técnico confiable para equipos Windows. Diagnóstico gratuito y garantía.</p>
-                </div>
-                <!-- Navigation -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Navegación</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html#inicio" class="text-gray-300 hover:text-white transition-colors">Inicio</a></li>
-                        <li><a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Servicios</a></li>
-                         <li><a href="index.html#proceso" class="text-gray-300 hover:text-white transition-colors">Proceso</a></li>
-                        <li><a href="index.html#nosotros" class="text-gray-300 hover:text-white transition-colors">Nosotros</a></li>
-                        <li><a href="index.html#testimonios" class="text-gray-300 hover:text-white transition-colors">Testimonios</a></li>
-                         <li><a href="index.html#blog" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="index.html#faqs" class="text-gray-300 hover:text-white transition-colors">FAQs</a></li>
-                        <li><a href="index.html#contacto" class="text-gray-300 hover:text-white transition-colors">Contacto</a></li>
-                    </ul>
-                </div>
-                <!-- Services -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Servicios Populares</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center gap-2">
-                            <i class="ri-tools-line text-primary" aria-hidden="true"></i>
-                            <a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Reparación de Hardware</a>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="ri-window-line text-primary" aria-hidden="true"></i>
-                            <a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Solución de Software</a>
-                        </li>
-                         <li class="flex items-center gap-2">
-                            <i class="ri-speed-up-line text-primary" aria-hidden="true"></i>
-                            <a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Optimización de PC</a>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="ri-virus-line text-primary" aria-hidden="true"></i>
-                            <a href="index.html#contacto" class="text-gray-300 hover:text-white transition-colors">Eliminación de Virus</a>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="ri-home-smile-line text-primary" aria-hidden="true"></i>
-                            <a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Servicio a Domicilio CDMX</a>
-                        </li>
-                    </ul>
-                </div>
-                 <!-- Contact Info -->
-                 <div>
-                    <h3 class="text-xl font-bold mb-4">Contacto Rápido</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-2">
-                            <i class="ri-phone-line text-primary" aria-hidden="true"></i>
-                            <a href="tel:5645371808" class="text-gray-300 hover:text-white transition-colors">56 4537 1808</a>
-                        </li>
-                         <li class="flex items-center gap-2">
-                            <i class="ri-whatsapp-line text-primary" aria-hidden="true"></i>
-                            <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">WhatsApp Directo</a>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="ri-mail-line text-primary" aria-hidden="true"></i>
-                            <a href="mailto:redventasremotasautomatizadas@gmail.com" class="text-gray-300 hover:text-white transition-colors break-all">Enviar Correo</a>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="ri-map-pin-line text-primary mt-1" aria-hidden="true"></i>
-                            <span class="text-gray-300">Álvaro Obregón, CDMX (Servicio a Domicilio)</span>
-                        </li>
-                    </ul>
+      <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12">
+              <!-- Company Info -->
+              <div class="lg:col-span-1">
+                   <a href="index.html" class="text-white font-['Pacifico'] text-2xl mb-4 inline-block">Reparaciones G García</a>
+                  <p class="text-gray-300 mb-4">Tu aliado tecnológico en CDMX. Más de 10 años ofreciendo servicio técnico confiable para equipos Windows. Diagnóstico gratuito y garantía.</p>
+              </div>
+              <!-- Navigation -->
+              <div>
+                  <h3 class="text-xl font-bold mb-4">Navegación</h3>
+                  <ul class="space-y-2">
+                      <li><a href="index.html#inicio" class="text-gray-300 hover:text-white transition-colors">Inicio</a></li>
+                      <li><a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Servicios</a></li>
+                       <li><a href="index.html#proceso" class="text-gray-300 hover:text-white transition-colors">Proceso</a></li>
+                      <li><a href="index.html#nosotros" class="text-gray-300 hover:text-white transition-colors">Nosotros</a></li>
+                      <li><a href="index.html#testimonios" class="text-gray-300 hover:text-white transition-colors">Testimonios</a></li>
+                       <li><a href="index.html#blog" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+                      <li><a href="index.html#faqs" class="text-gray-300 hover:text-white transition-colors">FAQs</a></li>
+                      <li><a href="index.html#contacto" class="text-gray-300 hover:text-white transition-colors">Contacto</a></li>
+                  </ul>
+              </div>
+              <!-- Services -->
+              <div>
+                  <h3 class="text-xl font-bold mb-4">Servicios Populares</h3>
+                  <ul class="space-y-2">
+                      <li class="flex items-center gap-2">
+                          <i class="ri-tools-line text-primary" aria-hidden="true"></i>
+                          <a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Reparación de Hardware</a>
+                      </li>
+                      <li class="flex items-center gap-2">
+                          <i class="ri-window-line text-primary" aria-hidden="true"></i>
+                          <a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Solución de Software</a>
+                      </li>
+                       <li class="flex items-center gap-2">
+                          <i class="ri-speed-up-line text-primary" aria-hidden="true"></i>
+                          <a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Optimización de PC</a>
+                      </li>
+                      <li class="flex items-center gap-2">
+                          <i class="ri-virus-line text-primary" aria-hidden="true"></i>
+                          <a href="index.html#contacto" class="text-gray-300 hover:text-white transition-colors">Eliminación de Virus</a>
+                      </li>
+                      <li class="flex items-center gap-2">
+                          <i class="ri-home-smile-line text-primary" aria-hidden="true"></i>
+                          <a href="index.html#servicios" class="text-gray-300 hover:text-white transition-colors">Servicio a Domicilio CDMX</a>
+                      </li>
+                  </ul>
+              </div>
+               <!-- Contact Info -->
+               <div>
+                  <h3 class="text-xl font-bold mb-4">Contacto Rápido</h3>
+                  <ul class="space-y-3">
+                      <li class="flex items-center gap-2">
+                          <i class="ri-phone-line text-primary" aria-hidden="true"></i>
+                          <a href="tel:5645371808" class="text-gray-300 hover:text-white transition-colors">56 4537 1808</a>
+                      </li>
+                       <li class="flex items-center gap-2">
+                          <i class="ri-whatsapp-line text-primary" aria-hidden="true"></i>
+                          <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">WhatsApp Directo</a>
+                      </li>
+                      <li class="flex items-center gap-2">
+                          <i class="ri-mail-line text-primary" aria-hidden="true"></i>
+                          <a href="mailto:redventasremotasautomatizadas@gmail.com" class="text-gray-300 hover:text-white transition-colors break-all">Enviar Correo</a>
+                      </li>
+                      <li class="flex items-start gap-2">
+                          <i class="ri-map-pin-line text-primary mt-1" aria-hidden="true"></i>
+                          <span class="text-gray-300">Álvaro Obregón, CDMX (Servicio a Domicilio)</span>
+                      </li>
+                  </ul>
+               </div>
+          </div>
+           <!-- Copyright -->
+          <div class="mt-12 pt-8 border-t border-gray-700 text-center">
+              <p class="text-gray-400 text-sm">
+                  © 2024 Reparaciones G García, Expertos en Reparación de Computadoras en CDMX. Todos los derechos reservados.
+              </p>
+          </div>
+
+                        <!-- Google Maps Embed -->
+            <div class="mt-12 pt-8 border-t border-gray-700">
+                 <h3 class="text-xl font-bold mb-4 text-center">Nuestra Ubicación para Entrega/Recogida en Taller</h3>
+                 <div class="h-[300px] rounded-lg overflow-hidden shadow-lg">
+                     <iframe
+                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7528.996375408529!2d-99.20201876176229!3d19.372214784371938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d201e0ebc1517d%3A0x10c129ee40dfbe34!2s%22Reparaciones%20G%20Garc%C3%ADa%22!5e0!3m2!1ses!2smx!4v1745858787254!5m2!1ses!2smx"
+                         width="100%"
+                         height="100%"
+                         style="border:0;"
+                         allowfullscreen=""
+                         loading="lazy"
+                         referrerpolicy="no-referrer-when-downgrade"
+                         title="Mapa de ubicación de Reparaciones G García">
+                    </iframe>
                  </div>
+                 <p class="text-sm text-gray-400 mt-4 text-center">Dirección: Calle Rosa Venus 164, Molino de Rosas, Álvaro Obregón, 01470 CDMX</p>
             </div>
-             <!-- Copyright -->
-            <div class="mt-12 pt-8 border-t border-gray-700 text-center">
-                <p class="text-gray-400 text-sm">
-                    © 2024 Reparaciones G García, Expertos en Reparación de Computadoras en CDMX. Todos los derechos reservados.
-                </p>
-            </div>
-        </div>
-      </footer>
+      </div>
+    </footer>
 
     <!-- Back to top button -->
     <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90" aria-label="Volver arriba">
@@ -899,19 +924,39 @@
       document.addEventListener("DOMContentLoaded", function () {
         // Back to top button
         const backToTopButton = document.getElementById("back-to-top");
-        if(backToTopButton) {
+        const headerBgStrip = document.getElementById("header-bg-strip"); // Added
+
+        if(backToTopButton || headerBgStrip) { // Modified condition
             window.addEventListener("scroll", function () {
+                // Back to top button visibility
                 if (window.pageYOffset > 300) {
-                    backToTopButton.classList.remove("opacity-0", "invisible");
-                    backToTopButton.classList.add("opacity-100", "visible");
+                    if(backToTopButton) {
+                        backToTopButton.classList.remove("opacity-0", "invisible");
+                        backToTopButton.classList.add("opacity-100", "visible");
+                    }
                 } else {
-                    backToTopButton.classList.remove("opacity-100", "visible");
-                    backToTopButton.classList.add("opacity-0", "invisible");
+                    if(backToTopButton) {
+                        backToTopButton.classList.remove("opacity-100", "visible");
+                        backToTopButton.classList.add("opacity-0", "invisible");
+                    }
+                }
+
+                // Header background strip visibility (Added)
+                if (headerBgStrip) {
+                    if (window.pageYOffset < 10) { // Only show white strip at the very top
+                        headerBgStrip.style.opacity = "1";
+                    } else {
+                        headerBgStrip.style.opacity = "0";
+                    }
                 }
             });
-            backToTopButton.addEventListener("click", function () {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            });
+
+            // Back to top button click handler
+            if (backToTopButton) {
+                backToTopButton.addEventListener("click", function () {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+            }
         }
 
         // Rating stars functionality
