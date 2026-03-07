@@ -224,7 +224,7 @@
         "image": "https://reparaciones-g-garcia.netlify.app/images/og-image.png",
         "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "5.0",
+            "ratingValue": "4.9",
             "reviewCount": "48",
             "bestRating": "5"
         },
@@ -371,16 +371,24 @@
                 </nav>
                 <!-- Contact Info & Mobile Menu Button -->
                 <div class="flex items-center space-x-4">
-                    <!-- Phone Number (Hidden on small screens) -->
-                    <div class="hidden md:flex items-center">
-                        <div class="w-10 h-10 flex items-center justify-center text-primary">
+                    <!-- Phone Number (Visible en todas las pantallas) -->
+                    <div class="flex items-center">
+                        <a href="tel:5645371808"
+                            class="md:hidden w-10 h-10 flex items-center justify-center text-primary"
+                            aria-label="Llamar al 56 4537 1808">
                             <i class="ri-phone-line ri-lg" aria-hidden="true"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs text-gray-500">Llámanos</p>
-                            <a href="tel:5645371808"
-                                class="text-sm font-semibold text-gray-800 hover:text-primary transition-colors">56 4537
-                                1808</a>
+                        </a>
+                        <div class="hidden md:flex items-center">
+                            <div class="w-10 h-10 flex items-center justify-center text-primary">
+                                <i class="ri-phone-line ri-lg" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500">Llámanos</p>
+                                <a href="tel:5645371808"
+                                    class="text-sm font-semibold text-gray-800 hover:text-primary transition-colors">56
+                                    4537
+                                    1808</a>
+                            </div>
                         </div>
                     </div>
                     <!-- WhatsApp Button -->
@@ -703,7 +711,8 @@
                     compatibilidad y calidad en cada reparación.
                 </p>
                 <!-- Brand Logos Grid -->
-                <p class="text-sm text-gray-500 text-center font-semibold mb-3">🚀Servicio a Computadoras y Consolas 💻🎮</p>
+                <p class="text-sm text-gray-500 text-center font-semibold mb-3">🚀Servicio a Computadoras y Consolas
+                    💻🎮</p>
                 <div class="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-5 gap-6 place-items-center py-4">
                     <!-- HP -->
                     <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300"
@@ -1891,7 +1900,7 @@
 
     <!-- Back to top button -->
     <button id="back-to-top"
-        class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90"
+        class="fixed bottom-6 left-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90 z-40"
         aria-label="Volver arriba">
         <i class="ri-arrow-up-line ri-lg" aria-hidden="true"></i>
     </button>
@@ -1899,7 +1908,7 @@
     <!-- Floating WhatsApp Button (Sticky, siempre visible) -->
     <a href="https://wa.me/5215645371808?text=Hola%2C%20necesito%20ayuda%20con%20mi%20equipo%20%F0%9F%92%BB"
         target="_blank" rel="noopener noreferrer" id="whatsapp-float"
-        class="fixed bottom-6 left-6 z-50 bg-green-500 text-white rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 flex items-center gap-3 group hover:shadow-green-500/40"
+        class="fixed bottom-6 right-6 z-50 bg-green-500 text-white rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 flex items-center gap-3 group hover:shadow-green-500/40"
         style="padding: 14px 20px; animation: pulse-whatsapp 2s infinite;">
         <i class="ri-whatsapp-line text-2xl" aria-hidden="true"></i>
         <span class="text-sm font-semibold hidden sm:inline">¿Necesitas ayuda? 💬</span>
