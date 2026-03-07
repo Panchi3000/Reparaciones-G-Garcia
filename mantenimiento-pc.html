@@ -34,28 +34,8 @@
   <meta name="twitter:description"
     content="Guía completa de mantenimiento PC: limpieza, software, actualizaciones y backups. Expertos en CDMX.">
   <meta name="twitter:image" content="https://reparaciones-g-garcia.netlify.app/images/og-image.png">
-  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { primary: "#1e40af", secondary: "#3b82f6" },
-          borderRadius: {
-            none: "0px",
-            sm: "4px",
-            DEFAULT: "8px",
-            md: "12px",
-            lg: "16px",
-            xl: "20px",
-            "2xl": "24px",
-            "3xl": "32px",
-            full: "9999px",
-            button: "8px",
-          },
-        },
-      },
-    };
-  </script>
+  <!-- Tailwind CSS (compilado y minificado) -->
+  <link rel="stylesheet" href="dist/output.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
@@ -75,7 +55,7 @@
     body {
       font-family: 'Montserrat', sans-serif;
       color: #333;
-      background-image: url('images/tech-background.png');
+      background-image: url('images/tech-background.webp');
       background-attachment: fixed;
       background-size: cover;
       background-position: center;
@@ -303,7 +283,7 @@
         <!-- Article Content -->
         <div class="lg:w-2/3">
           <div class="rounded-xl shadow-md overflow-hidden mb-8">
-            <img src="images/blog-technician-article.png" alt="Técnico trabajando en el mantenimiento de una laptop"
+            <img src="images/blog-technician-article.webp" alt="Técnico trabajando en el mantenimiento de una laptop"
               class="w-full h-80 object-cover object-top" />
 
             <!-- Table of Contents (Improved Styling) -->
@@ -387,7 +367,7 @@
                     que salga líquido propelente.</p>
                 </div>
 
-                <img src="images/blog-cleaning-pc.png" alt="Limpieza interna de PC con aire comprimido"
+                <img src="images/blog-cleaning-pc.webp" alt="Limpieza interna de PC con aire comprimido"
                   class="w-full rounded-lg" loading="lazy" />
 
                 <h2 id="software">2. Mantenimiento del Software</h2>
@@ -550,7 +530,7 @@
                   tus datos críticos (documentos, fotos, videos) fuera de tu computadora principal.
                 </p>
 
-                <img src="images/blog-data-backup.png" alt="Concepto de respaldo de datos en disco externo y nube"
+                <img src="images/blog-data-backup.webp" alt="Concepto de respaldo de datos en disco externo y nube"
                   class="w-full rounded-lg" loading="lazy" />
 
                 <h2 id="profesional">¿Cuándo considerar Mantenimiento Profesional?</h2>
