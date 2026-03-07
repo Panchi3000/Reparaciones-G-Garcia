@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RCNDGSTTM8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-RCNDGSTTM8');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin"> <!-- Added Referrer Policy -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff"> <!-- Added Security Header -->
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN"> <!-- Added Security Header -->
-    <title>Reparaciones G García - Servicio Técnico de PC en CDMX</title>
+    <title>Reparación de Computadoras y Laptops en CDMX | Reparaciones G García</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description"
+        content="Reparación de laptops y computadoras en CDMX ✅ Servicio técnico a domicilio en Álvaro Obregón, Del Valle, Polanco, Coyoacán y más. Diagnóstico GRATUITO, precios transparentes y garantía por escrito. ☎️ 56 4537 1808">
+    <link rel="canonical" href="https://reparaciones-g-garcia.netlify.app/">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://reparaciones-g-garcia.netlify.app/">
+    <meta property="og:title" content="Reparación de Computadoras y Laptops en CDMX | Reparaciones G García">
+    <meta property="og:description"
+        content="Servicio técnico profesional a domicilio en CDMX. Diagnóstico gratuito, reparación de hardware y software, eliminación de virus y recuperación de datos. +10 años de experiencia. ☎️ 56 4537 1808">
+    <meta property="og:image" content="https://reparaciones-g-garcia.netlify.app/images/og-image.png">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="Reparaciones G García">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Reparación de Computadoras y Laptops en CDMX | Reparaciones G García">
+    <meta name="twitter:description"
+        content="Servicio técnico profesional a domicilio en CDMX. Diagnóstico gratuito, precios transparentes y garantía. ☎️ 56 4537 1808">
+    <meta name="twitter:image" content="https://reparaciones-g-garcia.netlify.app/images/og-image.png">
+    <!-- Additional SEO Meta -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Reparaciones G García">
+    <meta name="geo.region" content="MX-CMX">
+    <meta name="geo.placename" content="Ciudad de México">
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
@@ -15,6 +48,10 @@
             theme: {
                 extend: {
                     colors: { primary: "#1e40af", secondary: "#3b82f6" },
+                    fontFamily: {
+                        pacifico: ['Pacifico', 'cursive'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    },
                     borderRadius: {
                         none: "0px",
                         sm: "4px",
@@ -40,24 +77,31 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
     <style>
         /* Placeholder for RemixIcon content if needed, handled by library */
-        :where([class^="ri-"])::before { content: "\f3c2"; /* Placeholder, actual content handled by RemixIcon CSS */ }
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+            /* Placeholder, actual content handled by RemixIcon CSS */
+        }
+
         /* Set default body font */
         body {
             font-family: 'Montserrat', sans-serif;
         }
+
         /* Fixed background for entire page */
         body {
-            background-image: url('https://readdy.ai/api/search-image?query=abstract%20technology%20circuit%20board%20pattern%20with%20blue%20gradient%2C%20high%20tech%20digital%20background%2C%20modern%20technology%20concept%2C%20clean%20and%20minimal%20design%2C%20perfect%20for%20tech%20service%20background&width=1920&height=1080&seq=1&orientation=landscape');
+            background-image: url('images/tech-background.png');
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
+
         /* Hero background pattern */
         .hero-pattern {
             background-color: rgba(30, 64, 175, 0.85);
             position: relative;
         }
+
         /* Glassmorphism effect for elements */
         .glass-effect {
             backdrop-filter: blur(8px);
@@ -65,37 +109,231 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
+
         /* Section backgrounds with transparency */
         section {
             position: relative;
         }
+
         section.bg-white {
             background-color: rgba(255, 255, 255, 0.92) !important;
         }
+
         section.bg-gray-50 {
             background-color: rgba(249, 250, 251, 0.92) !important;
         }
+
         section.bg-blue-50 {
             background-color: rgba(239, 246, 255, 0.92) !important;
         }
+
         /* Remove default focus outline for cleaner look (Tailwind handles focus rings) */
         input:focus {
             outline: none;
         }
+
         /* Smooth scrolling adjustment for fixed header */
         html {
-             scroll-padding-top: 80px; /* Adjust based on your actual fixed header height */
+            scroll-padding-top: 80px;
+            /* Adjust based on your actual fixed header height */
         }
+
         /* Basic animation */
         @keyframes fade-in {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .animate-fade-in {
             animation: fade-in 0.8s ease-out forwards;
         }
+
+        /* Avatar initials for testimonials */
+        .avatar-initials {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: white;
+            flex-shrink: 0;
+            margin-right: 1rem;
+        }
+
+        /* Urgency badge pulse animation */
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+            }
+        }
+
+        .pulse-badge {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
     </style>
+
+    <!-- Schema.org JSON-LD: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://reparaciones-g-garcia.netlify.app/#business",
+        "name": "Reparaciones G García",
+        "description": "Servicio técnico profesional de reparación de computadoras y laptops en la Ciudad de México. Diagnóstico gratuito, servicio a domicilio, eliminación de virus, cambio de SSD y recuperación de datos.",
+        "url": "https://reparaciones-g-garcia.netlify.app/",
+        "telephone": "+52-56-4537-1808",
+        "email": "reparacionesggarcia@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle Rosa Venus 164, Molino de Rosas",
+            "addressLocality": "Álvaro Obregón",
+            "addressRegion": "CDMX",
+            "postalCode": "01470",
+            "addressCountry": "MX"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 19.3605,
+            "longitude": -99.2167
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+                "opens": "09:00",
+                "closes": "19:00"
+            }
+        ],
+        "priceRange": "$$",
+        "image": "https://reparaciones-g-garcia.netlify.app/og-image.png",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "48",
+            "bestRating": "5"
+        },
+        "areaServed": [
+            { "@type": "City", "name": "Ciudad de México" },
+            { "@type": "AdministrativeArea", "name": "Álvaro Obregón" },
+            { "@type": "AdministrativeArea", "name": "Benito Juárez" },
+            { "@type": "AdministrativeArea", "name": "Coyoacán" },
+            { "@type": "AdministrativeArea", "name": "Cuauhtémoc" },
+            { "@type": "AdministrativeArea", "name": "Miguel Hidalgo" },
+            { "@type": "AdministrativeArea", "name": "Tlalpan" },
+            { "@type": "AdministrativeArea", "name": "Azcapotzalco" },
+            { "@type": "AdministrativeArea", "name": "Iztacalco" }
+        ],
+        "sameAs": [
+            "https://maps.app.goo.gl/1Y3uVj6VBXWXyhTQ9"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios de Reparación",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Reparación de Hardware",
+                        "description": "Cambio de SSD, mantenimiento térmico, refacciones con garantía"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Solución de Software",
+                        "description": "Formateo con respaldo, eliminación de virus, recuperación de datos"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Mantenimiento Preventivo",
+                        "description": "Pólizas de mantenimiento, optimización de arranque, limpieza de registros"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Servicio a Domicilio CDMX",
+                        "description": "Reparación y diagnóstico a domicilio en toda la Ciudad de México"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Schema.org JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Ofrecen diagnóstico gratuito?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "¡Sí! Ofrecemos un diagnóstico completamente gratuito en nuestro taller. Si prefieres el servicio a domicilio, el diagnóstico también es gratuito si decides realizar la reparación con nosotros. Queremos que sepas qué tiene tu equipo antes de comprometerte."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cuánto cuesta una reparación de computadora?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El costo varía según el problema y las piezas necesarias. Después del diagnóstico gratuito, te daremos un presupuesto exacto y transparente. Nuestros precios son competitivos y justos para un servicio técnico de PC de calidad en CDMX."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Tienen servicio de reparación a domicilio?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí, ofrecemos reparación de computadoras a domicilio en gran parte de la CDMX sin costo adicional por el traslado. Es ideal para problemas de software, optimización o diagnósticos iniciales. Reparaciones complejas de hardware pueden requerir llevar el equipo al taller."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cuánto tiempo tardan las reparaciones?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Depende de la complejidad y la disponibilidad de piezas. Muchas reparaciones de software y optimizaciones se completan el mismo día o en 24 horas. Reparaciones de hardware pueden tomar de 1 a 3 días hábiles. Siempre te daremos un tiempo estimado."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué garantía ofrecen?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ofrecemos garantía tanto en la mano de obra como en las piezas nuevas que instalamos. La duración de la garantía varía según el componente, pero siempre respaldamos nuestro trabajo para tu tranquilidad."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
+
 <body class="bg-gray-50">
 
     <!-- Header with Glassmorphism Effect -->
@@ -103,17 +341,25 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <a href="index.html" class="text-primary font-['Pacifico'] text-3xl tracking-wide">Reparaciones G García</a>
+                <a href="index.html" class="text-primary font-pacifico text-3xl tracking-wide">Reparaciones G García</a>
                 <!-- Desktop Navigation -->
                 <nav class="hidden lg:flex items-center space-x-8">
-                    <a href="#inicio" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Inicio</a>
-                    <a href="#servicios" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Servicios</a>
-                    <a href="#proceso" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Proceso</a>
-                    <a href="#nosotros" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Nosotros</a>
-                    <a href="#testimonios" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Testimonios</a>
-                    <a href="#blog" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Blog</a>
-                    <a href="#faqs" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">FAQs</a>
-                    <a href="#contacto" class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Contacto</a>
+                    <a href="#inicio"
+                        class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Inicio</a>
+                    <a href="#servicios"
+                        class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Servicios</a>
+                    <a href="#proceso"
+                        class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Proceso</a>
+                    <a href="#nosotros"
+                        class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Nosotros</a>
+                    <a href="#testimonios"
+                        class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Testimonios</a>
+                    <a href="#blog"
+                        class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Blog</a>
+                    <a href="#faqs"
+                        class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">FAQs</a>
+                    <a href="#contacto"
+                        class="text-gray-800 hover:text-primary font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300">Contacto</a>
                 </nav>
                 <!-- Contact Info & Mobile Menu Button -->
                 <div class="flex items-center space-x-4">
@@ -124,16 +370,20 @@
                         </div>
                         <div>
                             <p class="text-xs text-gray-500">Llámanos</p>
-                            <p class="text-sm font-semibold">56 4537 1808</p>
+                            <a href="tel:5645371808"
+                                class="text-sm font-semibold text-gray-800 hover:text-primary transition-colors">56 4537
+                                1808</a>
                         </div>
                     </div>
                     <!-- WhatsApp Button -->
-                    <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-button flex items-center whitespace-nowrap transition duration-300 shadow-md hover:shadow-lg">
+                    <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer"
+                        class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-button flex items-center whitespace-nowrap transition duration-300 shadow-md hover:shadow-lg">
                         <i class="ri-whatsapp-line mr-2" aria-hidden="true"></i>
                         Contactar por WhatsApp
                     </a>
                     <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-button" class="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors duration-200">
+                    <button id="mobile-menu-button"
+                        class="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors duration-200">
                         <i class="ri-menu-line ri-lg" aria-label="Abrir menú"></i>
                     </button>
                 </div>
@@ -145,19 +395,26 @@
     <div id="mobile-menu" class="fixed inset-0 bg-black/50 z-50 hidden">
         <div class="bg-white h-full w-4/5 max-w-sm p-6 transform transition-transform duration-300 -translate-x-full">
             <div class="flex justify-between items-center mb-8">
-                <a href="index.html" class="text-primary font-['Pacifico'] text-2xl">Reparaciones G García</a>
+                <a href="index.html" class="text-primary font-pacifico text-2xl">Reparaciones G García</a>
                 <button id="close-menu" class="p-2 text-gray-700 hover:text-primary">
                     <i class="ri-close-line text-2xl"></i>
                 </button>
             </div>
             <nav class="flex flex-col space-y-4">
-                <a href="#inicio" class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Inicio</a>
-                <a href="#servicios" class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Servicios</a>
-                <a href="#proceso" class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Proceso</a>
-                <a href="#nosotros" class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Nosotros</a>
-                <a href="#testimonios" class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Testimonios</a>
-                <a href="#blog" class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Blog</a>
-                <a href="#faqs" class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">FAQs</a>
+                <a href="#inicio"
+                    class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Inicio</a>
+                <a href="#servicios"
+                    class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Servicios</a>
+                <a href="#proceso"
+                    class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Proceso</a>
+                <a href="#nosotros"
+                    class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Nosotros</a>
+                <a href="#testimonios"
+                    class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Testimonios</a>
+                <a href="#blog"
+                    class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">Blog</a>
+                <a href="#faqs"
+                    class="text-gray-800 hover:text-primary font-semibold py-2 border-b border-gray-100">FAQs</a>
                 <a href="#contacto" class="text-gray-800 hover:text-primary font-semibold py-2">Contacto</a>
             </nav>
             <div class="mt-8 pt-8 border-t border-gray-100">
@@ -166,7 +423,8 @@
                     <i class="ri-phone-line mr-3 text-primary"></i>
                     <span>56 4537 1808</span>
                 </a>
-                <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="flex items-center text-gray-700 hover:text-primary">
+                <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer"
+                    class="flex items-center text-gray-700 hover:text-primary">
                     <i class="ri-whatsapp-line mr-3 text-primary"></i>
                     <span>WhatsApp</span>
                 </a>
@@ -175,7 +433,8 @@
     </div>
 
     <!-- White Header Background Strip (Only visible at top) -->
-    <div id="header-bg-strip" class="fixed top-0 left-0 w-full h-[72px] bg-white z-40 transition-opacity duration-300"></div>
+    <div id="header-bg-strip" class="fixed top-0 left-0 w-full h-[72px] bg-white z-40 transition-opacity duration-300">
+    </div>
 
     <!-- Hero Section -->
     <section id="inicio" class="relative min-h-[90vh] flex items-center overflow-hidden pt-20">
@@ -186,40 +445,60 @@
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <!-- Text Content -->
                 <div class="w-full lg:w-1/2 text-white">
-                    <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-8 animate-fade-in">
-                        ¿Tu PC Windows Necesita Reparación? <br>
-                        <span class="text-blue-200">Expertos en Servicio Técnico</span>
+                    <h1 class="text-4xl lg:text-6xl font-bold leading-tight mb-4 animate-fade-in font-montserrat">
+                        Reparación de Computadoras y Laptops en CDMX
                     </h1>
-                    <p class="text-xl md:text-2xl mb-8 text-blue-100">
-                        Reparación Experta de PC y Laptops con 10 Años Sirviendo a la Ciudad de México.
+                    <h2 class="text-2xl lg:text-3xl font-bold mb-6 animate-fade-in font-montserrat">
+                        ¿Tu PC te dejó tirado? 😱 <span class="text-blue-200">¡Te lo dejamos como nuevo!</span>
+                    </h2>
+                    <!-- Urgency Badge -->
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span
+                            class="pulse-badge inline-flex items-center bg-green-500/90 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            <i class="ri-flashlight-line mr-2" aria-hidden="true"></i>
+                            Técnico hoy mismo — Respuesta en menos de 1 hora
+                        </span>
+                        <span
+                            class="inline-flex items-center bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm">
+                            <i class="ri-checkbox-circle-fill mr-2 text-green-300" aria-hidden="true"></i>
+                            +1,200 equipos reparados en CDMX
+                        </span>
+                    </div>
+                    <p class="text-xl md:text-2xl mb-8 text-blue-100 font-montserrat">
+                        Sabemos lo frustrante que es quedarse sin equipo. Diagnóstico exacto, servicio a domicilio en
+                        toda la CDMX y técnicos listos para ayudarte hoy mismo.
                     </p>
                     <!-- Highlight Box -->
-                    <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg mb-8 border border-white border-opacity-20">
+                    <div
+                        class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg mb-8 border border-white border-opacity-20 font-montserrat">
                         <p class="mb-4">
-                            Olvídate del estrés tecnológico. En Reparaciones G García, ofrecemos diagnóstico gratuito, soluciones rápidas y garantía en reparación de computadoras en CDMX, optimización, eliminación de virus y venta de equipos Windows.
+                            Olvídate del estrés tecnológico. En Reparaciones G García ofrecemos soluciones rápidas en
+                            hardware y software para sistemas Windows. Diagnóstico GRATUITO y garantía por escrito.
                         </p>
                         <p>
-                            Servicio en toda la CDMX, incluyendo Álvaro Obregón, Polanco, Coyoacán, Roma Norte, Del Valle y más.
+                            Servicio en toda la CDMX, incluyendo Álvaro Obregón, Polanco, Coyoacán, Roma Norte, Del
+                            Valle y más.
                         </p>
                     </div>
                     <!-- Call to Action Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contacto" class="bg-white text-primary hover:bg-blue-50 px-6 py-3 rounded-button font-semibold flex items-center justify-center whitespace-nowrap transition duration-300">
-                            <i class="ri-tools-line mr-2" aria-hidden="true"></i>
-                            Solicita tu Diagnóstico Gratuito
+                        <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer"
+                            class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-button font-semibold flex items-center justify-center whitespace-nowrap transition duration-300 shadow-lg font-montserrat text-lg">
+                            <i class="ri-whatsapp-line mr-2 ri-lg" aria-hidden="true"></i>
+                            Cotiza Gratis por WhatsApp 🟢
                         </a>
-                        <a href="#contacto" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-button font-semibold flex items-center justify-center whitespace-nowrap border border-blue-400 transition duration-300">
-                            <i class="ri-customer-service-2-line mr-2" aria-hidden="true"></i>
-                            Habla con un Técnico
+                        <a href="#contacto"
+                            class="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-button font-semibold flex items-center justify-center whitespace-nowrap border border-white/30 transition duration-300 font-montserrat backdrop-blur-sm">
+                            <i class="ri-tools-line mr-2" aria-hidden="true"></i>
+                            Quiero que revisen mi equipo
                         </a>
                     </div>
                 </div>
                 <!-- Image -->
                 <div class="w-full md:w-2/5 mt-12 md:mt-0 flex justify-center">
-                    <img src="https://readdy.ai/api/search-image?query=professional%20IT%20technician%20working%20on%20computer%20repair%2C%20blue%20tones%2C%20modern%20workspace%2C%20high-quality%20professional%20service%2C%20detailed%20computer%20components%2C%20clean%20workspace%2C%20professional%20tools%2C%20high-tech%20environment&width=600&height=600&seq=2&orientation=squarish"
-                         alt="Técnico profesional de TI trabajando en la reparación de una computadora"
-                         class="rounded-xl shadow-2xl transform hover:scale-105 transition duration-500 max-w-md w-full"
-                         loading="lazy">
+                    <img src="images/hero-technician.png"
+                        alt="Técnico profesional reparando computadoras y laptops en CDMX - Reparaciones G García"
+                        class="rounded-xl shadow-2xl transform hover:scale-105 transition duration-500 max-w-md w-full">
                 </div>
             </div>
         </div>
@@ -231,75 +510,112 @@
             <!-- Section Header -->
             <div class="text-center mb-20">
                 <span class="text-primary font-semibold text-lg mb-4 block">NUESTROS SERVICIOS</span>
-                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">Soluciones Profesionales para tu Equipo</h2>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">Soluciones Profesionales para tu Equipo
+                </h2>
                 <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-                    Expertos en diagnóstico y reparación de equipos Windows. Servicio integral con garantía y atención personalizada en toda la CDMX.
+                    Expertos en diagnóstico y reparación de equipos Windows. Servicio integral con garantía y atención
+                    personalizada en toda la CDMX.
                 </p>
             </div>
             <!-- Special Offer: Home Service -->
-            <div class="bg-primary text-white rounded-xl p-8 mb-16 shadow-lg transform hover:scale-[1.01] transition duration-300">
+            <div
+                class="bg-primary text-white rounded-xl p-8 mb-16 shadow-lg transform hover:scale-[1.01] transition duration-300">
                 <div class="text-center">
-                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Reparación a Domicilio en CDMX ¡Sin Costo Adicional!</h3>
-                    <p class="mb-6">Olvídate de cargar tu equipo. Vamos a tu casa u oficina para realizar el diagnóstico y la reparación. Comodidad y eficiencia garantizadas.</p>
-                    <a href="#contacto" class="inline-block bg-white text-primary hover:bg-blue-50 px-6 py-3 rounded-button font-semibold whitespace-nowrap transition duration-300">
-                        Agenda tu Visita Ahora
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4 font-montserrat">Reparación a Domicilio en CDMX
+                        ¡Vamos hasta ti!</h3>
+                    <p class="mb-6 font-montserrat">Olvídate de desconectar cables y cargar tu equipo. Nuestros técnicos
+                        van a tu casa u oficina para solucionar el problema. Comodidad, seguridad y eficiencia
+                        garantizadas.</p>
+                    <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer"
+                        class="inline-block bg-green-500 text-white hover:bg-green-600 px-6 py-3 rounded-button font-semibold whitespace-nowrap transition duration-300 shadow-md">
+                        <i class="ri-whatsapp-line mr-2" aria-hidden="true"></i>Agenda tu Visita Ahora
                     </a>
                 </div>
             </div>
             <!-- Service Cards -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1: Hardware Repair -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition duration-300 flex flex-col">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto flex-shrink-0">
+                <div
+                    class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition duration-300 flex flex-col">
+                    <div
+                        class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto flex-shrink-0">
                         <i class="ri-tools-fill text-primary ri-2x" aria-hidden="true"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-center mb-4">Reparación de Hardware</h3>
-                    <p class="text-gray-600 mb-6 text-center flex-grow">
-                        Solucionamos fallas de disco duro, memoria RAM, sobrecalentamiento, pantallas rotas y más. Diagnosticamos con precisión el problema y realizamos una reparación duradera y confiable para tu equipo.
+                    <h3 class="text-xl font-bold text-center mb-4 font-montserrat">Hardware y Actualizaciones (SSD)</h3>
+                    <p class="text-gray-600 mb-6 text-left flex-grow font-montserrat text-sm">
+                        <span class="font-bold text-primary block mb-2">🚀 Dale nueva vida a tu PC:</span>
+                        • <span class="font-semibold">Cambio a Disco Sólido (SSD):</span> Tu equipo prenderá en segundos
+                        y los programas volarán.<br>
+                        • <span class="font-semibold">Mantenimiento Térmico:</span> Limpieza profunda y cambio de pasta
+                        térmica (evita que se apague por calor).<br>
+                        • <span class="font-semibold">Refacciones:</span> Baterías, teclados, pantallas y RAM con
+                        garantía instalada.
                     </p>
                     <div class="flex flex-col gap-3 mt-auto">
-                        <a href="#contacto" class="w-full bg-primary text-white py-2 rounded-button whitespace-nowrap transition duration-300 hover:bg-primary/90 text-center">
+                        <a href="#contacto"
+                            class="w-full bg-primary text-white py-2 rounded-button whitespace-nowrap transition duration-300 hover:bg-primary/90 text-center">
                             Solicitar Reparación
                         </a>
-                        <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="w-full border border-primary text-primary py-2 rounded-button text-center whitespace-nowrap transition duration-300 hover:bg-blue-50 flex items-center justify-center">
+                        <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer"
+                            class="w-full border border-primary text-primary py-2 rounded-button text-center whitespace-nowrap transition duration-300 hover:bg-blue-50 flex items-center justify-center">
                             <i class="ri-whatsapp-line mr-2" aria-hidden="true"></i>
                             Consulta por WhatsApp
                         </a>
                     </div>
                 </div>
                 <!-- Card 2: Software Solutions -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition duration-300 flex flex-col">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto flex-shrink-0">
+                <div
+                    class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition duration-300 flex flex-col">
+                    <div
+                        class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto flex-shrink-0">
                         <i class="ri-window-fill text-primary ri-2x" aria-hidden="true"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-center mb-4">Solución de Software</h3>
-                    <p class="text-gray-600 mb-6 text-center flex-grow">
-                        ¿Pantalla azul, Windows corrupto, programas que no responden? Realizamos un análisis detallado para identificar y resolver problemas de software, restaurando la funcionalidad completa de tu sistema operativo y aplicaciones.
+                    <h3 class="text-xl font-bold text-center mb-4 font-montserrat">Software y Respaldos</h3>
+                    <p class="text-gray-600 mb-6 text-left flex-grow font-montserrat text-sm">
+                        <span class="font-bold text-primary block mb-2">🛡️ Tu información a salvo:</span>
+                        • <span class="font-semibold">Formateo con Respaldo:</span> Instalación limpia de Windows sin
+                        perder tus archivos importantes.<br>
+                        • <span class="font-semibold">Eliminación de Virus:</span> Limpiamos ransomware, troyanos o
+                        pop-ups molestos.<br>
+                        • <span class="font-semibold">Recuperación de Datos:</span> Rescatamos información de discos
+                        duros y USB que no leen.
                     </p>
                     <div class="flex flex-col gap-3 mt-auto">
-                        <a href="#contacto" class="w-full bg-primary text-white py-2 rounded-button whitespace-nowrap transition duration-300 hover:bg-primary/90 text-center">
-                             Arreglar Software
+                        <a href="#contacto"
+                            class="w-full bg-primary text-white py-2 rounded-button whitespace-nowrap transition duration-300 hover:bg-primary/90 text-center">
+                            Arreglar Software
                         </a>
-                        <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="w-full border border-primary text-primary py-2 rounded-button text-center whitespace-nowrap transition duration-300 hover:bg-blue-50 flex items-center justify-center">
+                        <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer"
+                            class="w-full border border-primary text-primary py-2 rounded-button text-center whitespace-nowrap transition duration-300 hover:bg-blue-50 flex items-center justify-center">
                             <i class="ri-whatsapp-line mr-2" aria-hidden="true"></i>
                             Consulta por WhatsApp
                         </a>
                     </div>
                 </div>
                 <!-- Card 3: PC Optimization -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition duration-300 flex flex-col">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto flex-shrink-0">
+                <div
+                    class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition duration-300 flex flex-col">
+                    <div
+                        class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto flex-shrink-0">
                         <i class="ri-speed-up-fill text-primary ri-2x" aria-hidden="true"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-center mb-4">Optimización de PC</h3>
-                    <p class="text-gray-600 mb-6 text-center flex-grow">
-                        ¿Tu computadora tarda una eternidad en arrancar o abrir programas? Realizamos una limpieza profunda, optimizamos el inicio y configuramos tu sistema para un rendimiento óptimo. Te damos consejos para mantener tu PC rápida.
+                    <h3 class="text-xl font-bold text-center mb-4 font-montserrat">Mantenimiento Preventivo</h3>
+                    <p class="text-gray-600 mb-6 text-left flex-grow font-montserrat text-sm">
+                        <span class="font-bold text-primary block mb-2">⚙️ Evita fallas costosas:</span>
+                        • <span class="font-semibold">Equipo de Oficina:</span> Pólizas de mantenimiento para empresas o
+                        despachos.<br>
+                        • <span class="font-semibold">Laptops Lentas:</span> Limpieza de registros y optimización de
+                        arranque desde $350.<br>
+                        • <span class="font-semibold">Gamer / Diseño:</span> Mantenimiento a tarjetas de video y
+                        ventiladores.
                     </p>
                     <div class="flex flex-col gap-3 mt-auto">
-                        <a href="#contacto" class="w-full bg-primary text-white py-2 rounded-button whitespace-nowrap transition duration-300 hover:bg-primary/90 text-center">
+                        <a href="#contacto"
+                            class="w-full bg-primary text-white py-2 rounded-button whitespace-nowrap transition duration-300 hover:bg-primary/90 text-center">
                             Agendar Optimización
                         </a>
-                        <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="w-full border border-primary text-primary py-2 rounded-button text-center whitespace-nowrap transition duration-300 hover:bg-blue-50 flex items-center justify-center">
+                        <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer"
+                            class="w-full border border-primary text-primary py-2 rounded-button text-center whitespace-nowrap transition duration-300 hover:bg-blue-50 flex items-center justify-center">
                             <i class="ri-whatsapp-line mr-2" aria-hidden="true"></i>
                             Consulta por WhatsApp
                         </a>
@@ -314,9 +630,12 @@
         <div class="container mx-auto px-4">
             <!-- Section Header -->
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Más de 10 Años de Experiencia en Reparación de PC en CDMX</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Más de 10 Años de Experiencia en Reparación de PC en
+                    CDMX</h2>
                 <p class="text-gray-600 max-w-3xl mx-auto mb-8">
-                    Reparaciones G García nació hace más de una década en Álvaro Obregón, CDMX, por la pasión de Gustavo García hacia la tecnología. Hemos crecido gracias a la confianza de cientos de clientes, ofreciendo un servicio técnico de PC confiable, honesto y rápido para sistemas Windows.
+                    Reparaciones G García nació hace más de una década en Álvaro Obregón, CDMX, por la pasión de Gustavo
+                    García hacia la tecnología. Hemos crecido gracias a la confianza de cientos de clientes, ofreciendo
+                    un servicio técnico de PC confiable, honesto y rápido para sistemas Windows.
                 </p>
                 <p class="text-primary font-semibold mb-12">Garantía en Repuestos y Mano de Obra</p>
             </div>
@@ -326,14 +645,16 @@
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
                     <h3 class="text-xl font-bold mb-4 text-primary">Nuestra Misión</h3>
                     <p class="text-gray-600">
-                        Facilitar la vida digital de nuestros clientes en CDMX con soluciones informáticas expertas, rápidas y un servicio excepcional.
+                        Facilitar la vida digital de nuestros clientes en CDMX con soluciones informáticas expertas,
+                        rápidas y un servicio excepcional.
                     </p>
                 </div>
                 <!-- Visión Card -->
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
                     <h3 class="text-xl font-bold mb-4 text-primary">Nuestra Visión</h3>
                     <p class="text-gray-600">
-                        Ser el servicio técnico de PC Windows de mayor confianza en la Ciudad de México, reconocidos por nuestra integridad, calidad y compromiso.
+                        Ser el servicio técnico de PC Windows de mayor confianza en la Ciudad de México, reconocidos por
+                        nuestra integridad, calidad y compromiso.
                     </p>
                 </div>
             </div>
@@ -341,56 +662,66 @@
             <div class="bg-white p-8 rounded-xl shadow-md">
                 <h3 class="text-2xl font-bold text-center mb-6">Trabajamos con las Mejores Marcas</h3>
                 <p class="text-gray-600 text-center mb-8">
-                    Contamos con experiencia y acceso a repuestos para las principales marcas del mercado, asegurando compatibilidad y calidad en cada reparación.
+                    Contamos con experiencia y acceso a repuestos para las principales marcas del mercado, asegurando
+                    compatibilidad y calidad en cada reparación.
                 </p>
                 <!-- Brand Logos Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-6 place-items-center py-4">
+                <div
+                    class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-6 place-items-center py-4">
                     <!-- HP -->
-                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300" title="HP">
+                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                        title="HP">
                         <div class="w-20 h-20 bg-white rounded-lg shadow-md flex items-center justify-center p-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png" alt="HP" class="max-h-12 max-w-full">
+                            <span class="text-2xl font-bold text-blue-700">hp</span>
                         </div>
                     </div>
                     <!-- Acer -->
-                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Acer">
+                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                        title="Acer">
                         <div class="w-20 h-20 bg-white rounded-lg shadow-md flex items-center justify-center p-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Acer_2011.svg/2560px-Acer_2011.svg.png" alt="Acer" class="max-h-12 max-w-full">
+                            <span class="text-lg font-bold text-green-700 italic">Acer</span>
                         </div>
                     </div>
                     <!-- Asus -->
-                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Asus">
+                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                        title="Asus">
                         <div class="w-20 h-20 bg-white rounded-lg shadow-md flex items-center justify-center p-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/ASUS_Logo.svg/2560px-ASUS_Logo.svg.png" alt="Asus" class="max-h-12 max-w-full">
+                            <span class="text-lg font-bold text-gray-800 tracking-wider">ASUS</span>
                         </div>
                     </div>
                     <!-- Dell -->
-                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Dell">
+                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                        title="Dell">
                         <div class="w-20 h-20 bg-white rounded-lg shadow-md flex items-center justify-center p-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Dell_Logo.png/1200px-Dell_Logo.png" alt="Dell" class="max-h-12 max-w-full">
+                            <span class="text-xl font-bold text-blue-600">DELL</span>
                         </div>
                     </div>
                     <!-- Apple -->
-                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Apple">
+                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                        title="Apple">
                         <div class="w-20 h-20 bg-white rounded-lg shadow-md flex items-center justify-center p-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png" alt="Apple" class="max-h-12 max-w-full">
+                            <i class="ri-apple-fill text-2xl text-gray-800"></i>
                         </div>
                     </div>
                     <!-- Samsung -->
-                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Samsung">
+                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                        title="Samsung">
                         <div class="w-20 h-20 bg-white rounded-lg shadow-md flex items-center justify-center p-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png" alt="Samsung" class="max-h-12 max-w-full">
+                            <span class="text-sm font-bold text-blue-800 tracking-wide">SAMSUNG</span>
                         </div>
                     </div>
                     <!-- Microsoft -->
-                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Microsoft">
+                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                        title="Microsoft">
                         <div class="w-20 h-20 bg-white rounded-lg shadow-md flex items-center justify-center p-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png" alt="Microsoft" class="max-h-12 max-w-full">
+                            <span class="text-xs font-bold text-gray-700">Microsoft</span>
                         </div>
                     </div>
                     <!-- Lenovo -->
-                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Lenovo">
+                    <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                        title="Lenovo">
                         <div class="w-20 h-20 bg-white rounded-lg shadow-md flex items-center justify-center p-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lenovo_logo_2015.svg/2560px-Lenovo_logo_2015.svg.png" alt="Lenovo" class="max-h-12 max-w-full">
+                            <span class="text-sm font-bold text-red-600">Lenovo</span>
                         </div>
                     </div>
                 </div>
@@ -405,13 +736,15 @@
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Por Qué Elegir Nuestro Servicio Técnico?</h2>
                 <p class="text-gray-600 max-w-3xl mx-auto">
-                    Con más de 10 años de experiencia, ofrecemos soluciones confiables y garantizadas para todos tus problemas informáticos.
+                    Con más de 10 años de experiencia, ofrecemos soluciones confiables y garantizadas para todos tus
+                    problemas informáticos.
                 </p>
             </div>
             <!-- Features Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Feature 1: Warranty -->
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100">
+                <div
+                    class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100">
                     <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                         <i class="ri-shield-check-line text-primary ri-2x" aria-hidden="true"></i>
                     </div>
@@ -421,7 +754,8 @@
                     </p>
                 </div>
                 <!-- Feature 2: Fast Service -->
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100">
+                <div
+                    class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100">
                     <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                         <i class="ri-time-line text-primary ri-2x" aria-hidden="true"></i>
                     </div>
@@ -431,17 +765,19 @@
                     </p>
                 </div>
                 <!-- Feature 3: Home Service -->
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100">
+                <div
+                    class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100">
                     <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                         <i class="ri-home-smile-line text-primary ri-2x" aria-hidden="true"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-center mb-2">Servicio a Domicilio</h3>
-                    <p class="text-gray-600 text-center">
-                        Nos desplazamos a tu domicilio u oficina sin costo adicional en toda la CDMX.
+                    <h3 class="text-xl font-bold text-center mb-2 font-montserrat">Servicio a Domicilio</h3>
+                    <p class="text-gray-600 text-center font-montserrat text-sm">
+                        Nos desplazamos a tu domicilio u oficina en toda la CDMX para mayor seguridad de tu información.
                     </p>
                 </div>
                 <!-- Feature 4: Transparent Pricing -->
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100">
+                <div
+                    class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100">
                     <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                         <i class="ri-money-dollar-circle-line text-primary ri-2x" aria-hidden="true"></i>
                     </div>
@@ -454,69 +790,121 @@
         </div>
     </section>
 
+    <!-- Garantía de Privacidad y Confianza -->
+    <section class="py-12 bg-gradient-to-r from-blue-900 to-primary">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
+                    <i class="ri-shield-keyhole-line text-3xl text-white" aria-hidden="true"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">🔒 Tu Información es 100% Privada</h2>
+                <p class="text-blue-100 text-lg mb-6 max-w-2xl mx-auto">
+                    Sabemos que tu equipo guarda archivos personales e información importante.
+                    <strong class="text-white">Garantizamos que NO revisamos, copiamos ni compartimos tus
+                        archivos.</strong>
+                    Respetamos tus componentes originales y tu privacidad es nuestra prioridad.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+                    <div class="flex items-center gap-2 text-white">
+                        <i class="ri-checkbox-circle-fill text-green-400 text-xl" aria-hidden="true"></i>
+                        <span class="text-sm font-medium">Archivos 100% privados</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white">
+                        <i class="ri-checkbox-circle-fill text-green-400 text-xl" aria-hidden="true"></i>
+                        <span class="text-sm font-medium">Piezas originales respetadas</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white">
+                        <i class="ri-checkbox-circle-fill text-green-400 text-xl" aria-hidden="true"></i>
+                        <span class="text-sm font-medium">Sin costos ocultos</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white">
+                        <i class="ri-checkbox-circle-fill text-green-400 text-xl" aria-hidden="true"></i>
+                        <span class="text-sm font-medium">Garantía por escrito</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Proceso Section (Simplified) -->
     <section id="proceso" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <!-- Section Header -->
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestro Proceso de Reparación: Simple y Transparente</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestro Proceso de Reparación: Simple y Transparente
+                </h2>
                 <p class="text-gray-600 max-w-3xl mx-auto">
-                    Te explicamos paso a paso cómo trabajamos para solucionar los problemas de tu equipo de manera profesional y eficiente.
+                    Te explicamos paso a paso cómo trabajamos para solucionar los problemas de tu equipo de manera
+                    profesional y eficiente.
                 </p>
             </div>
             <!-- Steps List -->
             <div class="max-w-4xl mx-auto space-y-8">
                 <!-- Step 1: Diagnosis -->
-                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition duration-300 flex items-start gap-6">
-                    <div class="w-12 h-12 bg-primary rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-xl">
+                <div
+                    class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition duration-300 flex items-start gap-6">
+                    <div
+                        class="w-12 h-12 bg-primary rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-xl">
                         1
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold mb-3">Diagnóstico Preciso</h3>
-                        <p class="text-gray-600">
-                            Contáctanos por WhatsApp, teléfono o visita nuestro taller. Realizamos un diagnóstico gratuito para identificar la falla exacta de tu PC o laptop.
+                        <h3 class="text-xl font-bold mb-3 font-montserrat">Diagnóstico Preciso</h3>
+                        <p class="text-gray-600 font-montserrat">
+                            Contáctanos por WhatsApp, teléfono o visita nuestro taller. Realizamos un diagnóstico
+                            experto para identificar la falla exacta de tu PC o laptop sin adivinanzas.
                         </p>
                     </div>
                 </div>
                 <!-- Step 2: Quote -->
-                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition duration-300 flex items-start gap-6">
-                    <div class="w-12 h-12 bg-primary rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-xl">
+                <div
+                    class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition duration-300 flex items-start gap-6">
+                    <div
+                        class="w-12 h-12 bg-primary rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-xl">
                         2
                     </div>
                     <div>
                         <h3 class="text-xl font-bold mb-3">Presupuesto Claro</h3>
                         <p class="text-gray-600">
-                            Te presentamos un presupuesto detallado y transparente, explicando las piezas necesarias y el costo total. Sin costos ocultos ni sorpresas.
+                            Te presentamos un presupuesto detallado y transparente, explicando las piezas necesarias y
+                            el costo total. Sin costos ocultos ni sorpresas.
                         </p>
                     </div>
                 </div>
                 <!-- Step 3: Expert Repair -->
-                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition duration-300 flex items-start gap-6">
-                    <div class="w-12 h-12 bg-primary rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-xl">
+                <div
+                    class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition duration-300 flex items-start gap-6">
+                    <div
+                        class="w-12 h-12 bg-primary rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-xl">
                         3
                     </div>
                     <div>
                         <h3 class="text-xl font-bold mb-3">Reparación Experta</h3>
                         <p class="text-gray-600">
-                            Una vez aprobado el presupuesto, nuestros técnicos expertos proceden con la reparación utilizando componentes de calidad y las mejores prácticas. Te mantenemos informado del avance.
+                            Una vez aprobado el presupuesto, nuestros técnicos expertos proceden con la reparación
+                            utilizando componentes de calidad y las mejores prácticas. Te mantenemos informado del
+                            avance.
                         </p>
                     </div>
                 </div>
                 <!-- Step 4: Delivery & Warranty -->
-                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition duration-300 flex items-start gap-6">
-                     <div class="w-12 h-12 bg-primary rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-xl">
+                <div
+                    class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition duration-300 flex items-start gap-6">
+                    <div
+                        class="w-12 h-12 bg-primary rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-xl">
                         4
                     </div>
                     <div>
                         <h3 class="text-xl font-bold mb-3">Entrega y Garantía</h3>
                         <p class="text-gray-600">
-                            Realizamos pruebas finales para asegurar el correcto funcionamiento. Te entregamos tu equipo reparado en taller o a domicilio con nuestra garantía en repuestos y mano de obra.
+                            Realizamos pruebas finales para asegurar el correcto funcionamiento. Te entregamos tu equipo
+                            reparado en taller o a domicilio con nuestra garantía en repuestos y mano de obra.
                         </p>
                     </div>
                 </div>
                 <!-- Call to Action Button -->
                 <div class="text-center mt-12">
-                    <a href="#contacto" class="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-button font-semibold hover:bg-primary/90 transition duration-300 whitespace-nowrap">
+                    <a href="#contacto"
+                        class="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-button font-semibold hover:bg-primary/90 transition duration-300 whitespace-nowrap">
                         <i class="ri-tools-line mr-2" aria-hidden="true"></i>
                         Iniciar mi Reparación
                     </a>
@@ -534,12 +922,15 @@
                 <p class="text-gray-600 max-w-3xl mx-auto">
                     Conoce las experiencias de nuestros clientes y cómo hemos solucionado sus problemas tecnológicos.
                 </p>
-                <!-- Google Rating Badge (Fixed, Non-clickable) -->
+                <!-- Google Rating Badge (Clickable) -->
                 <div class="mt-8 flex justify-center">
-                    <div class="flex items-center bg-white px-8 py-4 rounded-lg shadow-md border border-gray-100">
+                    <a href="https://maps.app.goo.gl/1Y3uVj6VBXWXyhTQ9" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center bg-white px-8 py-4 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition duration-300 cursor-pointer"
+                        title="Ver nuestras reseñas en Google Maps">
                         <!-- Google Logo -->
                         <div class="flex items-center mr-6 pr-6 border-r border-gray-200">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="Google" class="h-8">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png"
+                                alt="Google" class="h-8">
                         </div>
                         <!-- Rating Info -->
                         <div class="flex flex-col">
@@ -559,14 +950,15 @@
                                 <span class="text-gray-600 font-medium">Basado en 48 reseñas verificadas</span>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
 
             <!-- Testimonial Carousel -->
             <div class="testimonial-carousel relative max-w-6xl mx-auto">
                 <!-- Navigation Controls -->
-                <button id="prev-testimonial" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-md z-10 hover:bg-gray-50 transition-colors duration-200 -ml-4 lg:-ml-6 focus:outline-none focus:ring-2 focus:ring-primary/50">
+                <button id="prev-testimonial"
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-md z-10 hover:bg-gray-50 transition-colors duration-200 -ml-4 lg:-ml-6 focus:outline-none focus:ring-2 focus:ring-primary/50">
                     <i class="ri-arrow-left-s-line text-primary text-xl"></i>
                 </button>
 
@@ -575,11 +967,16 @@
                     <div id="testimonials-container" class="flex transition-transform duration-500 ease-in-out">
                         <!-- Testimonial 1 -->
                         <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
+                            <div
+                                class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
                                 <div class="flex flex-col mb-6">
                                     <!-- Customer Info -->
                                     <div class="flex items-center mb-3">
-                                        <img src="https://i.pravatar.cc/150?img=47" alt="Valeria R." class="w-12 h-12 rounded-full object-cover mr-4 flex-shrink-0">
+                                        <div class="avatar-initials"
+                                            style="background: linear-gradient(135deg, #3b82f6, #1e40af);"
+                                            aria-label="Vale Ramírez">
+                                            VR
+                                        </div>
                                         <div>
                                             <h4 class="font-semibold text-lg">Vale Ramírez</h4>
                                             <p class="text-sm text-gray-500">Copilco, CDMX</p>
@@ -587,15 +984,21 @@
                                     </div>
                                     <!-- Service Tag -->
                                     <div class="flex">
-                                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Reparación Hardware</span>
+                                        <span
+                                            class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Reparación
+                                            Hardware</span>
                                     </div>
                                 </div>
                                 <!-- Testimonial Content -->
                                 <div class="mb-6 flex-grow">
-                                    <p class="text-gray-600 italic mb-4">"No mms, mi lap ya no prendía y tenía que entregar mi tesis al otro día. Ya me andaba dando el patatus."</p>
+                                    <p class="text-gray-600 italic mb-4">"No mms, mi lap ya no prendía y tenía que
+                                        entregar mi tesis al otro día. Ya me andaba dando el patatus."</p>
                                     <div class="space-y-2">
-                                        <p class="text-gray-700"><span class="font-semibold">Solución:</span> Vieron que era el conector de carga todo madreado y lo arreglaron súper rápido.</p>
-                                        <p class="text-gray-700"><span class="font-semibold">Resultado:</span> "Entregué mi tesis a tiempo y no reprobé. Mil gracias, están bien chidos y no cobran caro."</p>
+                                        <p class="text-gray-700"><span class="font-semibold">Solución:</span> Vieron que
+                                            era el conector de carga todo madreado y lo arreglaron súper rápido.</p>
+                                        <p class="text-gray-700"><span class="font-semibold">Resultado:</span> "Entregué
+                                            mi tesis a tiempo y no reprobé. Mil gracias, están bien chidos y no cobran
+                                            caro."</p>
                                     </div>
                                 </div>
                                 <!-- Rating -->
@@ -614,11 +1017,16 @@
 
                         <!-- Testimonial 2 -->
                         <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
+                            <div
+                                class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
                                 <div class="flex flex-col mb-6">
                                     <!-- Customer Info -->
                                     <div class="flex items-center mb-3">
-                                        <img src="https://i.pravatar.cc/150?img=25" alt="Mariana Rodríguez" class="w-12 h-12 rounded-full object-cover mr-4 flex-shrink-0">
+                                        <div class="avatar-initials"
+                                            style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);"
+                                            aria-label="Mariana Rdz">
+                                            MR
+                                        </div>
                                         <div>
                                             <h4 class="font-semibold text-lg">Mariana Rdz</h4>
                                             <p class="text-sm text-gray-500">Polanco</p>
@@ -626,13 +1034,16 @@
                                     </div>
                                     <!-- Service Tag -->
                                     <div class="flex">
-                                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Optimización</span>
+                                        <span
+                                            class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Optimización</span>
                                     </div>
                                 </div>
                                 <!-- Testimonial Content -->
                                 <div class="mb-6 flex-grow">
                                     <p class="text-gray-600 italic">
-                                        "Vinieron a mi oficina porque mi compu estaba más lenta que la fila del IMSS 😅 Después de que le hicieron no sé qué cosas, ahora prende rapidísimo y ya no se traba. Súper recomendados, además llegaron a tiempo."
+                                        "Vinieron a mi oficina porque mi compu estaba más lenta que la fila del IMSS 😅
+                                        Después de que le hicieron no sé qué cosas, ahora prende rapidísimo y ya no se
+                                        traba. Súper recomendados, además llegaron a tiempo."
                                     </p>
                                 </div>
                                 <!-- Rating -->
@@ -651,11 +1062,16 @@
 
                         <!-- Testimonial 3 -->
                         <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
+                            <div
+                                class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
                                 <div class="flex flex-col mb-6">
                                     <!-- Customer Info -->
                                     <div class="flex items-center mb-3">
-                                        <img src="https://i.pravatar.cc/150?img=68" alt="Roberto Gutiérrez" class="w-12 h-12 rounded-full object-cover mr-4 flex-shrink-0">
+                                        <div class="avatar-initials"
+                                            style="background: linear-gradient(135deg, #10b981, #047857);"
+                                            aria-label="Roberto Gtz">
+                                            RG
+                                        </div>
                                         <div>
                                             <h4 class="font-semibold text-lg">Roberto Gtz</h4>
                                             <p class="text-sm text-gray-500">Del Valle</p>
@@ -663,13 +1079,17 @@
                                     </div>
                                     <!-- Service Tag -->
                                     <div class="flex">
-                                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Eliminación Virus</span>
+                                        <span
+                                            class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Eliminación
+                                            Virus</span>
                                     </div>
                                 </div>
                                 <!-- Testimonial Content -->
                                 <div class="mb-6 flex-grow">
                                     <p class="text-gray-600 italic">
-                                        "Mi compu tenía un virus bien gacho, ya ni podía abrir mis archivos. El chavo que vino no solo quitó el virus, también me rescató todos mis documentos. Buen precio y buena onda el servicio."
+                                        "Mi equipo estaba bloqueado por un virus y no podía abrir mis archivos. El
+                                        técnico que nos visitó no solo eliminó la amenaza, sino que logró recuperar
+                                        todos mis documentos importantes. Muy profesionales."
                                     </p>
                                 </div>
                                 <!-- Rating -->
@@ -688,11 +1108,16 @@
 
                         <!-- Testimonial 4 -->
                         <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
+                            <div
+                                class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
                                 <div class="flex flex-col mb-6">
                                     <!-- Customer Info -->
                                     <div class="flex items-center mb-3">
-                                        <img src="https://i.pravatar.cc/150?img=53" alt="Carlos Méndez" class="w-12 h-12 rounded-full object-cover mr-4 flex-shrink-0">
+                                        <div class="avatar-initials"
+                                            style="background: linear-gradient(135deg, #f59e0b, #d97706);"
+                                            aria-label="Carlos M.">
+                                            CM
+                                        </div>
                                         <div>
                                             <h4 class="font-semibold text-lg">Carlos M.</h4>
                                             <p class="text-sm text-gray-500">Condesa</p>
@@ -700,13 +1125,17 @@
                                     </div>
                                     <!-- Service Tag -->
                                     <div class="flex">
-                                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Actualización PC</span>
+                                        <span
+                                            class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Actualización
+                                            PC</span>
                                     </div>
                                 </div>
                                 <!-- Testimonial Content -->
                                 <div class="mb-6 flex-grow">
                                     <p class="text-gray-600 italic">
-                                        "5 estrellas. Le pusieron nuevas piezas a mi PC dinosaurio y quedó al 100. El técnico me explicó todo bien clarito y hasta me dio consejos para que me dure más. Buen jale."
+                                        "Instalaron un disco sólido en mi laptop de hace 5 años y ahora funciona como
+                                        nueva. El técnico me explicó el proceso con mucha claridad y me dio consejos de
+                                        mantenimiento. Excelente inversión."
                                     </p>
                                 </div>
                                 <!-- Rating -->
@@ -725,11 +1154,16 @@
 
                         <!-- Testimonial 5 -->
                         <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
+                            <div
+                                class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
                                 <div class="flex flex-col mb-6">
                                     <!-- Customer Info -->
                                     <div class="flex items-center mb-3">
-                                        <img src="https://i.pravatar.cc/150?img=32" alt="Laura Torres" class="w-12 h-12 rounded-full object-cover mr-4 flex-shrink-0">
+                                        <div class="avatar-initials"
+                                            style="background: linear-gradient(135deg, #ec4899, #be185d);"
+                                            aria-label="Lau Torres">
+                                            LT
+                                        </div>
                                         <div>
                                             <h4 class="font-semibold text-lg">Lau Torres</h4>
                                             <p class="text-sm text-gray-500">Nápoles</p>
@@ -737,13 +1171,17 @@
                                     </div>
                                     <!-- Service Tag -->
                                     <div class="flex">
-                                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Recuperación Datos</span>
+                                        <span
+                                            class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Recuperación
+                                            Datos</span>
                                     </div>
                                 </div>
                                 <!-- Testimonial Content -->
                                 <div class="mb-6 flex-grow">
                                     <p class="text-gray-600 italic">
-                                        "Casi me da algo cuando se me descompuso el disco duro con TODAS las fotos de mis hijos desde bebés. Estos chavos son unos magos, recuperaron casi todo. No manchen, me salvaron la vida. Gracias x1000."
+                                        "Tuve una falla crítica en el disco duro donde guardaba información vital. El
+                                        equipo de G García actuó rápido y lograron recuperar mis datos. Su nivel de
+                                        especialización es altísimo, los recomiendo ampliamente."
                                     </p>
                                 </div>
                                 <!-- Rating -->
@@ -762,11 +1200,16 @@
 
                         <!-- Testimonial 6 -->
                         <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
+                            <div
+                                class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
                                 <div class="flex flex-col mb-6">
                                     <!-- Customer Info -->
                                     <div class="flex items-center mb-3">
-                                        <img src="https://i.pravatar.cc/150?img=12" alt="Miguel Ángel Sánchez" class="w-12 h-12 rounded-full object-cover mr-4 flex-shrink-0">
+                                        <div class="avatar-initials"
+                                            style="background: linear-gradient(135deg, #06b6d4, #0e7490);"
+                                            aria-label="Mike Sánchez">
+                                            MS
+                                        </div>
                                         <div>
                                             <h4 class="font-semibold text-lg">Mike Sánchez</h4>
                                             <p class="text-sm text-gray-500">Roma Norte</p>
@@ -774,13 +1217,17 @@
                                     </div>
                                     <!-- Service Tag -->
                                     <div class="flex">
-                                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Servicio a Domicilio</span>
+                                        <span
+                                            class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Servicio
+                                            a Domicilio</span>
                                     </div>
                                 </div>
                                 <!-- Testimonial Content -->
                                 <div class="mb-6 flex-grow">
                                     <p class="text-gray-600 italic">
-                                        "Neta que buen servicio a domicilio. El vato llegó a la hora (raro en CDMX jaja) y arregló mi laptop en chinga. Precio justo y sin rollos. Los recomiendo con los ojos cerrados."
+                                        "Contraté el servicio a domicilio para nuestra oficina. Fueron sumamente
+                                        puntuales, diagnosticaron el problema rápidamente y el costo fue muy
+                                        transparente. Da gusto encontrar proveedores técnicos tan serios en CDMX."
                                     </p>
                                 </div>
                                 <!-- Rating -->
@@ -799,11 +1246,16 @@
 
                         <!-- Testimonial 7 -->
                         <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
+                            <div
+                                class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100 flex flex-col h-full">
                                 <div class="flex flex-col mb-6">
                                     <!-- Customer Info -->
                                     <div class="flex items-center mb-3">
-                                        <img src="https://i.pravatar.cc/150?img=5" alt="Sofía Ramírez" class="w-12 h-12 rounded-full object-cover mr-4 flex-shrink-0">
+                                        <div class="avatar-initials"
+                                            style="background: linear-gradient(135deg, #f43f5e, #e11d48);"
+                                            aria-label="Sofi Ram">
+                                            SR
+                                        </div>
                                         <div>
                                             <h4 class="font-semibold text-lg">Sofi Ram</h4>
                                             <p class="text-sm text-gray-500">Tlalpan</p>
@@ -811,13 +1263,16 @@
                                     </div>
                                     <!-- Service Tag -->
                                     <div class="flex">
-                                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Mantenimiento</span>
+                                        <span
+                                            class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Mantenimiento</span>
                                     </div>
                                 </div>
                                 <!-- Testimonial Content -->
                                 <div class="mb-6 flex-grow">
                                     <p class="text-gray-600 italic">
-                                        "Llevo mi compu cada 6 meses para mantenimiento y nunca me ha dado lata. Siempre me la entregan rápido y limpia por dentro y por fuera. Me caen bien porque no te hablan con tecnicismos que ni entiendes. Buenos precios."
+                                        "Llevo mi compu cada 6 meses para mantenimiento y nunca me ha dado lata. Siempre
+                                        me la entregan rápido y limpia por dentro y por fuera. Me caen bien porque no te
+                                        hablan con tecnicismos que ni entiendes. Buenos precios."
                                     </p>
                                 </div>
                                 <!-- Rating -->
@@ -837,27 +1292,37 @@
                 </div>
 
                 <!-- Next Button -->
-                <button id="next-testimonial" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-md z-10 hover:bg-gray-50 transition-colors duration-200 -mr-4 lg:-mr-6 focus:outline-none focus:ring-2 focus:ring-primary/50">
+                <button id="next-testimonial"
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-md z-10 hover:bg-gray-50 transition-colors duration-200 -mr-4 lg:-mr-6 focus:outline-none focus:ring-2 focus:ring-primary/50">
                     <i class="ri-arrow-right-s-line text-primary text-xl"></i>
                 </button>
 
                 <!-- Dots Navigation -->
                 <div class="flex justify-center mt-8 space-x-2">
-                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-100" data-index="0" aria-label="Ver testimonio 1"></button>
-                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="1" aria-label="Ver testimonio 2"></button>
-                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="2" aria-label="Ver testimonio 3"></button>
-                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="3" aria-label="Ver testimonio 4"></button>
-                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="4" aria-label="Ver testimonio 5"></button>
-                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="5" aria-label="Ver testimonio 6"></button>
-                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="6" aria-label="Ver testimonio 7"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-100" data-index="0"
+                        aria-label="Ver testimonio 1"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="1"
+                        aria-label="Ver testimonio 2"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="2"
+                        aria-label="Ver testimonio 3"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="3"
+                        aria-label="Ver testimonio 4"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="4"
+                        aria-label="Ver testimonio 5"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="5"
+                        aria-label="Ver testimonio 6"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-40" data-index="6"
+                        aria-label="Ver testimonio 7"></button>
                 </div>
             </div>
 
             <!-- Add Review CTA -->
             <div class="text-center mt-12">
                 <div class="inline-block">
-                    <p class="text-gray-600 mb-4">¿Has utilizado nuestros servicios? Nos encantaría conocer tu experiencia</p>
-                    <a href="https://maps.app.goo.gl/1Y3uVj6VBXWXyhTQ9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-button font-semibold hover:bg-primary/90 transition duration-300 shadow-md">
+                    <p class="text-gray-600 mb-4">¿Has utilizado nuestros servicios? Nos encantaría conocer tu
+                        experiencia</p>
+                    <a href="https://maps.app.goo.gl/1Y3uVj6VBXWXyhTQ9" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-button font-semibold hover:bg-primary/90 transition duration-300 shadow-md">
                         <i class="ri-edit-line mr-2" aria-hidden="true"></i>
                         Deja tu Opinión en Google
                     </a>
@@ -880,52 +1345,80 @@
             <div class="max-w-3xl mx-auto space-y-4">
                 <!-- FAQ Item 1 -->
                 <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-button w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                    <button
+                        class="faq-button w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
                         <span class="font-semibold text-lg">¿Ofrecen diagnóstico gratuito?</span>
-                        <i class="ri-arrow-down-s-line text-2xl text-primary transition-transform duration-300" aria-hidden="true"></i>
+                        <i class="ri-arrow-down-s-line text-2xl text-primary transition-transform duration-300"
+                            aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer px-6 pt-0 pb-4 bg-gray-50 hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                        <p class="text-gray-600">¡Sí! Ofrecemos un diagnóstico completamente gratuito en nuestro taller. Si prefieres el servicio a domicilio, el diagnóstico también es gratuito si decides realizar la reparación con nosotros. Queremos que sepas qué tiene tu equipo antes de comprometerte.</p>
+                    <div
+                        class="faq-answer px-6 pt-0 pb-4 bg-gray-50 hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="text-gray-600">¡Sí! Ofrecemos un diagnóstico completamente gratuito en nuestro taller.
+                            Si prefieres el servicio a domicilio, el diagnóstico también es gratuito si decides realizar
+                            la reparación con nosotros. Queremos que sepas qué tiene tu equipo antes de comprometerte.
+                        </p>
                     </div>
                 </div>
                 <!-- FAQ Item 2 -->
                 <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-button w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                    <button
+                        class="faq-button w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
                         <span class="font-semibold text-lg">¿Cuánto cuesta una reparación de computadora?</span>
-                        <i class="ri-arrow-down-s-line text-2xl text-primary transition-transform duration-300" aria-hidden="true"></i>
+                        <i class="ri-arrow-down-s-line text-2xl text-primary transition-transform duration-300"
+                            aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer px-6 pt-0 pb-4 bg-gray-50 hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                        <p class="text-gray-600">El costo varía según el problema y las piezas necesarias. Después del diagnóstico gratuito, te daremos un presupuesto exacto y transparente. Nuestros precios son competitivos y justos para un servicio técnico de PC de calidad en CDMX.</p>
+                    <div
+                        class="faq-answer px-6 pt-0 pb-4 bg-gray-50 hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="text-gray-600">El costo varía según el problema y las piezas necesarias. Después del
+                            diagnóstico gratuito, te daremos un presupuesto exacto y transparente. Nuestros precios son
+                            competitivos y justos para un servicio técnico de PC de calidad en CDMX.</p>
                     </div>
                 </div>
                 <!-- FAQ Item 3 -->
                 <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-button w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                    <button
+                        class="faq-button w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
                         <span class="font-semibold text-lg">¿Tienen servicio de reparación a domicilio?</span>
-                        <i class="ri-arrow-down-s-line text-2xl text-primary transition-transform duration-300" aria-hidden="true"></i>
+                        <i class="ri-arrow-down-s-line text-2xl text-primary transition-transform duration-300"
+                            aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer px-6 pt-0 pb-4 bg-gray-50 hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                        <p class="text-gray-600">Sí, ofrecemos reparación de computadoras a domicilio en gran parte de la CDMX sin costo adicional por el traslado. Es ideal para problemas de software, optimización o diagnósticos iniciales. Reparaciones complejas de hardware pueden requerir llevar el equipo al taller.</p>
+                    <div
+                        class="faq-answer px-6 pt-0 pb-4 bg-gray-50 hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="text-gray-600">Sí, ofrecemos reparación de computadoras a domicilio en gran parte de
+                            la CDMX sin costo adicional por el traslado. Es ideal para problemas de software,
+                            optimización o diagnósticos iniciales. Reparaciones complejas de hardware pueden requerir
+                            llevar el equipo al taller.</p>
                     </div>
                 </div>
                 <!-- FAQ Item 4 -->
                 <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-button w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                    <button
+                        class="faq-button w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
                         <span class="font-semibold text-lg">¿Cuánto tiempo tardan las reparaciones?</span>
-                        <i class="ri-arrow-down-s-line text-2xl text-primary transition-transform duration-300" aria-hidden="true"></i>
+                        <i class="ri-arrow-down-s-line text-2xl text-primary transition-transform duration-300"
+                            aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer px-6 pt-0 pb-4 bg-gray-50 hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                        <p class="text-gray-600">Depende de la complejidad y la disponibilidad de piezas. Muchas reparaciones de software y optimizaciones se completan el mismo día o en 24 horas. Reparaciones de hardware pueden tomar de 1 a 3 días hábiles. Siempre te daremos un tiempo estimado.</p>
+                    <div
+                        class="faq-answer px-6 pt-0 pb-4 bg-gray-50 hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="text-gray-600">Depende de la complejidad y la disponibilidad de piezas. Muchas
+                            reparaciones de software y optimizaciones se completan el mismo día o en 24 horas.
+                            Reparaciones de hardware pueden tomar de 1 a 3 días hábiles. Siempre te daremos un tiempo
+                            estimado.</p>
                     </div>
                 </div>
                 <!-- FAQ Item 5 -->
                 <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-button w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
+                    <button
+                        class="faq-button w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center">
                         <span class="font-semibold text-lg">¿Qué garantía ofrecen?</span>
-                        <i class="ri-arrow-down-s-line text-2xl text-primary transition-transform duration-300" aria-hidden="true"></i>
+                        <i class="ri-arrow-down-s-line text-2xl text-primary transition-transform duration-300"
+                            aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer px-6 pt-0 pb-4 bg-gray-50 hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                        <p class="text-gray-600">Ofrecemos garantía tanto en la mano de obra como en las piezas nuevas que instalamos. La duración de la garantía varía según el componente, pero siempre respaldamos nuestro trabajo para tu tranquilidad.</p>
+                    <div
+                        class="faq-answer px-6 pt-0 pb-4 bg-gray-50 hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="text-gray-600">Ofrecemos garantía tanto en la mano de obra como en las piezas nuevas
+                            que instalamos. La duración de la garantía varía según el componente, pero siempre
+                            respaldamos nuestro trabajo para tu tranquilidad.</p>
                     </div>
                 </div>
             </div>
@@ -939,15 +1432,17 @@
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Contacta con Nosotros</h2>
                 <p class="text-gray-600 max-w-3xl mx-auto">
-                    Estamos listos para ayudarte con cualquier problema informático. ¡Solicita tu diagnóstico gratuito!
+                    Estamos listos para ayudarte con cualquier problema informático. ¡Contáctanos hoy!
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <!-- Contact Form -->
                 <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-2xl font-bold mb-6">Envíanos un mensaje</h3>
+                    <h3 class="text-2xl font-bold mb-2">Solicita tu Diagnóstico</h3>
+                    <p class="text-gray-500 text-sm mb-6">Te respondemos en menos de 1 hora ⚡</p>
                     <!-- FORMULARIO OPTIMIZADO PARA FORMSPREE CON SEGURIDAD AVANZADA -->
-                    <form action="https://formspree.io/f/xldbeagy" method="POST" class="space-y-6" id="contactForm" novalidate>
+                    <form action="https://formspree.io/f/xldbeagy" method="POST" class="space-y-6" id="contactForm"
+                        novalidate>
                         <!-- Token CSRF (generado dinámicamente por JavaScript) -->
                         <input type="hidden" name="_csrf_token" id="_csrf_token">
 
@@ -957,66 +1452,44 @@
                             <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
                         </div>
 
-                        <!-- Name Input with validation - SOLO 40 LETRAS -->
+                        <!-- Name Input -->
                         <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre completo</label>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
                             <input type="text" id="name" name="name" required
-                                   class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 placeholder-gray-400"
-                                   placeholder="Ingresa tu nombre completo"
-                                   minlength="2" maxlength="40" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$"
-                                   autocomplete="name" spellcheck="false" autocorrect="off"
-                                   data-error-message="Por favor ingresa un nombre válido (solo letras y espacios, máximo 40 caracteres)"
-                                   data-validation-type="letters-only" data-max-length="40">
+                                class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 placeholder-gray-400"
+                                placeholder="Tu nombre" minlength="2" maxlength="80" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$"
+                                autocomplete="name" spellcheck="false" autocorrect="off"
+                                data-error-message="Por favor ingresa un nombre válido"
+                                data-validation-type="letters-only" data-max-length="80">
                             <div class="text-red-500 text-sm mt-1 hidden" id="name-error"></div>
-                            <div class="flex justify-between">
-                                <div class="text-xs text-gray-500 mt-1">Solo letras, máximo 40 caracteres</div>
-                                <div class="text-xs text-gray-500 mt-1"><span id="name-char-count">0</span>/40</div>
-                            </div>
                         </div>
 
-                        <!-- Email Input with validation - MÁXIMO 40 CARACTERES -->
+                        <!-- WhatsApp/Teléfono Input - OBLIGATORIO -->
                         <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico</label>
-                            <input type="email" id="email" name="email" required
-                                   class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 placeholder-gray-400"
-                                   placeholder="tu@email.com"
-                                   pattern="^[a-zA-Z0-9._%+-]{1,30}@[a-zA-Z0-9.-]{1,8}\.[a-zA-Z]{2,4}$" maxlength="40"
-                                   autocomplete="email" spellcheck="false" autocorrect="off"
-                                   data-error-message="Por favor ingresa un correo electrónico válido (máximo 40 caracteres)"
-                                   data-validation-type="email" data-max-length="40">
-                            <div class="text-red-500 text-sm mt-1 hidden" id="email-error"></div>
-                            <div class="flex justify-between">
-                                <div class="text-xs text-gray-500 mt-1">Máximo 40 caracteres</div>
-                                <div class="text-xs text-gray-500 mt-1"><span id="email-char-count">0</span>/40</div>
-                            </div>
-                        </div>
-
-                        <!-- Phone Input with validation - SOLO NÚMEROS -->
-                        <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono (Opcional)</label>
-                            <input type="tel" id="phone" name="phone"
-                                   class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 placeholder-gray-400"
-                                   placeholder="5645371808"
-                                   pattern="^[0-9]{8,15}$" maxlength="15" inputmode="numeric"
-                                   autocomplete="tel" spellcheck="false" autocorrect="off"
-                                   data-error-message="Por favor ingresa solo números (8-15 dígitos)"
-                                   data-validation-type="numbers-only">
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+                                <i class="ri-whatsapp-line text-green-500 mr-1" aria-hidden="true"></i>WhatsApp /
+                                Teléfono
+                            </label>
+                            <input type="tel" id="phone" name="phone" required
+                                class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 placeholder-gray-400"
+                                placeholder="Ej: 5645371808" pattern="^[0-9]{8,15}$" maxlength="15" inputmode="numeric"
+                                autocomplete="tel" spellcheck="false" autocorrect="off"
+                                data-error-message="Por favor ingresa tu número de WhatsApp o teléfono (8-15 dígitos)"
+                                data-validation-type="numbers-only">
                             <div class="text-red-500 text-sm mt-1 hidden" id="phone-error"></div>
-                            <div class="flex justify-between">
-                                <div class="text-xs text-gray-500 mt-1">Solo números, sin espacios ni caracteres especiales</div>
-                                <div class="text-xs text-gray-500 mt-1"><span id="phone-char-count">0</span>/15</div>
-                            </div>
+                            <div class="text-xs text-gray-500 mt-1">Para responderte rápidamente por WhatsApp</div>
                         </div>
 
                         <!-- Service Select with validation -->
                         <div>
-                            <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Servicio que necesitas</label>
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Servicio que
+                                necesitas</label>
                             <div class="relative">
                                 <select id="service" name="service" required
-                                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg appearance-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 pr-8"
-                                        data-error-message="Por favor selecciona un servicio">
+                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg appearance-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 pr-8"
+                                    data-error-message="Por favor selecciona un servicio">
                                     <option value="">Selecciona un servicio</option>
-                                    <option value="Diagnóstico Gratuito">Diagnóstico Gratuito</option>
+                                    <option value="Diagnóstico de Equipo">Diagnóstico de Equipo</option>
                                     <option value="Reparación Hardware">Reparación de Hardware</option>
                                     <option value="Solución Software">Solución de Software</option>
                                     <option value="Optimización PC">Optimización de PC</option>
@@ -1032,21 +1505,20 @@
                             <div class="text-red-500 text-sm mt-1 hidden" id="service-error"></div>
                         </div>
 
-                        <!-- Message Textarea with validation - MÁXIMO 104 CARACTERES, SOLO LETRAS, NÚMEROS Y ESPACIOS -->
+                        <!-- Message Textarea with validation -->
                         <div>
                             <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
                             <textarea id="message" name="message" rows="4" required
-                                      class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 placeholder-gray-400"
-                                      placeholder="Describe brevemente el problema de tu equipo..."
-                                      minlength="10" maxlength="104" spellcheck="true"
-                                      pattern="^[A-Za-z0-9\sÀ-ÖØ-öø-ÿ]+$"
-                                      data-error-message="Por favor ingresa un mensaje usando solo letras, números y espacios (máximo 104 caracteres)"
-                                      data-validation-type="alphanumeric-only" data-max-length="104"></textarea>
+                                class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200 text-gray-900 placeholder-gray-400"
+                                placeholder="Describe con detalle el problema de tu equipo..." minlength="10"
+                                maxlength="800" spellcheck="true"
+                                data-error-message="Por favor ingresa un mensaje válido (máximo 800 caracteres)"
+                                data-validation-type="text-content" data-max-length="800"></textarea>
                             <div class="text-red-500 text-sm mt-1 hidden" id="message-error"></div>
                             <div class="flex justify-between">
-                                <div class="text-xs text-gray-500 mt-1">Solo letras, números y espacios (máximo 104 caracteres)</div>
+                                <div class="text-xs text-gray-500 mt-1">Máximo 800 caracteres</div>
                                 <div class="text-xs text-gray-500 mt-1">
-                                    <span id="message-char-count" class="font-medium">0</span>/104
+                                    <span id="message-char-count" class="font-medium">0</span>/800
                                     <span id="message-char-warning" class="hidden text-red-500 ml-1">(límite)</span>
                                 </div>
                             </div>
@@ -1054,21 +1526,31 @@
 
                         <!-- Form Status Messages -->
                         <div id="form-status" class="hidden">
-                            <div id="form-success" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative">
-                                <span class="block sm:inline">¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.</span>
+                            <div id="form-success"
+                                class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative">
+                                <span class="block sm:inline">¡Mensaje enviado con éxito! Nos pondremos en contacto
+                                    contigo pronto.</span>
                             </div>
-                            <div id="form-error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
-                                <span class="block sm:inline">Hubo un error al enviar el mensaje. Por favor intenta nuevamente.</span>
+                            <div id="form-error"
+                                class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+                                <span class="block sm:inline">Hubo un error al enviar el mensaje. Por favor intenta
+                                    nuevamente.</span>
                             </div>
                         </div>
 
                         <!-- Submit Button with loading state -->
-                        <button type="submit" id="submit-button" class="w-full bg-primary text-white py-3 rounded-button font-semibold hover:bg-primary/90 transition duration-300 whitespace-nowrap flex items-center justify-center">
+                        <button type="submit" id="submit-button"
+                            class="w-full bg-primary text-white py-3 rounded-button font-semibold hover:bg-primary/90 transition duration-300 whitespace-nowrap flex items-center justify-center">
                             <span>Enviar Mensaje</span>
                             <span id="loading-spinner" class="ml-2 hidden">
-                                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4">
+                                    </circle>
+                                    <path class="opacity-75" fill="currentColor"
+                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                    </path>
                                 </svg>
                             </span>
                         </button>
@@ -1083,7 +1565,8 @@
                         <div class="space-y-4">
                             <!-- Phone -->
                             <div class="flex items-start">
-                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <div
+                                    class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                                     <i class="ri-phone-line text-primary" aria-hidden="true"></i>
                                 </div>
                                 <div>
@@ -1093,27 +1576,32 @@
                             </div>
                             <!-- WhatsApp -->
                             <div class="flex items-start">
-                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <div
+                                    class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                                     <i class="ri-whatsapp-line text-primary" aria-hidden="true"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-semibold">WhatsApp</h4>
-                                     <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-primary">56 4537 1808</a>
+                                    <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer"
+                                        class="text-gray-600 hover:text-primary">56 4537 1808</a>
                                 </div>
                             </div>
                             <!-- Email -->
                             <div class="flex items-start">
-                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <div
+                                    class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                                     <i class="ri-mail-line text-primary" aria-hidden="true"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-semibold">Correo Electrónico</h4>
-                                    <a href="mailto:redventasremotasautomatizadas@gmail.com" class="text-gray-600 hover:text-primary break-all">redventasremotasautomatizadas@gmail.com</a>
+                                    <a href="mailto:reparacionesggarcia@gmail.com"
+                                        class="text-gray-600 hover:text-primary break-all">reparacionesggarcia@gmail.com</a>
                                 </div>
                             </div>
                             <!-- Hours -->
                             <div class="flex items-start">
-                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <div
+                                    class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                                     <i class="ri-time-line text-primary" aria-hidden="true"></i>
                                 </div>
                                 <div>
@@ -1122,15 +1610,19 @@
                                     <p class="text-gray-600">Domingo: Cerrado</p>
                                 </div>
                             </div>
-                             <!-- Location -->
-                             <div class="flex items-start">
-                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                            <!-- Location -->
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                                     <i class="ri-map-pin-line text-primary" aria-hidden="true"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-semibold">Ubicación Taller</h4>
-                                    <p class="text-gray-600">Calle Rosa Venus 164, Molino de Rosas, Álvaro Obregón, 01470 CDMX</p>
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Rosa+Venus+164,+Molino+de+Rosas,+Álvaro+Obregón,+01470+CDMX" target="_blank" rel="noopener noreferrer" class="text-sm text-primary hover:underline">Ver en Google Maps</a>
+                                    <p class="text-gray-600">Calle Rosa Venus 164, Molino de Rosas, Álvaro Obregón,
+                                        01470 CDMX</p>
+                                    <a href="https://maps.app.goo.gl/srcjG6n4CJ3WiqiL8" target="_blank"
+                                        rel="noopener noreferrer" class="text-sm text-primary hover:underline">Ver en
+                                        Google Maps</a>
                                 </div>
                             </div>
                         </div>
@@ -1139,18 +1631,28 @@
                     <div class="bg-white p-8 rounded-xl shadow-md">
                         <h3 class="text-2xl font-bold mb-6">Zonas de Servicio a Domicilio</h3>
                         <p class="text-gray-600 mb-4">
-                            Ofrecemos servicio a domicilio sin costo extra en las principales alcaldías de la Ciudad de México:
+                            Ofrecemos servicio a domicilio sin costo extra en las principales alcaldías de la Ciudad de
+                            México:
                         </p>
                         <ul class="grid grid-cols-2 gap-x-4 gap-y-2">
-                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2" aria-hidden="true"></i> Álvaro Obregón</li>
-                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2" aria-hidden="true"></i> Benito Juárez</li>
-                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2" aria-hidden="true"></i> Coyoacán</li>
-                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2" aria-hidden="true"></i> Cuauhtémoc</li>
-                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2" aria-hidden="true"></i> Miguel Hidalgo</li>
-                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2" aria-hidden="true"></i> Tlalpan</li>
-                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2" aria-hidden="true"></i> Azcapotzalco</li>
-                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2" aria-hidden="true"></i> Iztacalco</li>
-                            <li class="flex items-center col-span-2"><i class="ri-add-circle-line text-primary mr-2" aria-hidden="true"></i> ¡Y zonas aledañas! (Consulta cobertura)</li>
+                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"
+                                    aria-hidden="true"></i> Álvaro Obregón</li>
+                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"
+                                    aria-hidden="true"></i> Benito Juárez</li>
+                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"
+                                    aria-hidden="true"></i> Coyoacán</li>
+                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"
+                                    aria-hidden="true"></i> Cuauhtémoc</li>
+                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"
+                                    aria-hidden="true"></i> Miguel Hidalgo</li>
+                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"
+                                    aria-hidden="true"></i> Tlalpan</li>
+                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"
+                                    aria-hidden="true"></i> Azcapotzalco</li>
+                            <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"
+                                    aria-hidden="true"></i> Iztacalco</li>
+                            <li class="flex items-center col-span-2"><i class="ri-add-circle-line text-primary mr-2"
+                                    aria-hidden="true"></i> ¡Y zonas aledañas! (Consulta cobertura)</li>
                         </ul>
                     </div>
                 </div>
@@ -1165,39 +1667,48 @@
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Blog y Consejos de Mantenimiento</h2>
                 <p class="text-gray-600 max-w-3xl mx-auto">
-                    Mantente informado y cuida tu equipo con nuestros consejos prácticos sobre mantenimiento y reparación de computadoras en CDMX.
+                    Mantente informado y cuida tu equipo con nuestros consejos prácticos sobre mantenimiento y
+                    reparación de computadoras en CDMX.
                 </p>
             </div>
             <!-- Blog Posts Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
                 <!-- Blog Post 1 -->
-                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden flex flex-col">
-                    <img src="https://readdy.ai/api/search-image?query=computer%20maintenance%20and%20cleaning%2C%20professional%20workspace%2C%20tools%20for%20PC%20repair%2C%20clean%20and%20organized%20setup%2C%20high%20quality%20professional%20image&width=600&height=400&seq=1&orientation=landscape"
-                         alt="Herramientas y entorno limpio para mantenimiento de PC" class="w-full h-48 object-cover" loading="lazy">
+                <div
+                    class="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden flex flex-col">
+                    <img src="images/blog-maintenance.png" alt="Herramientas y entorno limpio para mantenimiento de PC"
+                        class="w-full h-48 object-cover" loading="lazy">
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-3 text-gray-900 hover:text-primary transition duration-300">
                             <a href="mantenimiento-pc.html">Cómo Mantener tu PC en Buen Estado y Prevenir Fallos</a>
                         </h3>
                         <p class="text-gray-600 mb-4 flex-grow">
-                            Descubre rutinas sencillas de limpieza física y de software, la importancia de las actualizaciones y cómo evitar el sobrecalentamiento para alargar la vida útil de tu computadora...
+                            Descubre rutinas sencillas de limpieza física y de software, la importancia de las
+                            actualizaciones y cómo evitar el sobrecalentamiento para alargar la vida útil de tu
+                            computadora...
                         </p>
-                        <a href="mantenimiento-pc.html" class="text-primary font-semibold hover:text-primary/80 transition duration-300 inline-flex items-center mt-auto">
+                        <a href="mantenimiento-pc.html"
+                            class="text-primary font-semibold hover:text-primary/80 transition duration-300 inline-flex items-center mt-auto">
                             Leer más <i class="ri-arrow-right-line ml-2" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
                 <!-- Blog Post 2 -->
-                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden flex flex-col">
-                    <img src="https://readdy.ai/api/search-image?query=computer%20virus%20detection%2C%20cybersecurity%20concept%2C%20malware%20protection%2C%20digital%20security%20visualization%2C%20professional%20tech%20image&width=600&height=400&seq=2&orientation=landscape"
-                         alt="Concepto visual de detección de virus y ciberseguridad" class="w-full h-48 object-cover" loading="lazy">
+                <div
+                    class="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden flex flex-col">
+                    <img src="images/blog-virus.png" alt="Concepto visual de detección de virus y ciberseguridad"
+                        class="w-full h-48 object-cover" loading="lazy">
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-3 text-gray-900 hover:text-primary transition duration-300">
                             <a href="signos-virus.html">5 Signos Claros de que tu Equipo Podría Tener un Virus</a>
                         </h3>
                         <p class="text-gray-600 mb-4 flex-grow">
-                            ¿Tu PC está lenta, muestra ventanas emergentes extrañas o se comporta de forma inusual? Aprende a identificar las señales comunes de una infección por malware y qué hacer al respecto...
+                            ¿Tu PC está lenta, muestra ventanas emergentes extrañas o se comporta de forma inusual?
+                            Aprende a identificar las señales comunes de una infección por malware y qué hacer al
+                            respecto...
                         </p>
-                        <a href="signos-virus.html" class="text-primary font-semibold hover:text-primary/80 transition duration-300 inline-flex items-center mt-auto">
+                        <a href="signos-virus.html"
+                            class="text-primary font-semibold hover:text-primary/80 transition duration-300 inline-flex items-center mt-auto">
                             Leer más <i class="ri-arrow-right-line ml-2" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -1205,7 +1716,8 @@
             </div>
             <!-- View All Button -->
             <div class="text-center">
-                <a href="#blog" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-button font-semibold hover:bg-primary/90 transition duration-300">
+                <a href="#blog"
+                    class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-button font-semibold hover:bg-primary/90 transition duration-300">
                     Ver Todos los Artículos
                 </a>
             </div>
@@ -1219,20 +1731,25 @@
                 <!-- Company Info -->
                 <div class="lg:col-span-1">
                     <h3 class="text-xl font-bold mb-4">Reparaciones G García</h3>
-                    <p class="text-gray-300 mb-4">Tu aliado tecnológico en CDMX. Más de 10 años ofreciendo servicio técnico confiable para equipos Windows. Diagnóstico gratuito y garantía.</p>
+                    <p class="text-gray-300 mb-4">Tu aliado tecnológico en CDMX. Más de 10 años ofreciendo servicio
+                        técnico confiable para equipos Windows. Diagnóstico gratuito y garantía.</p>
                 </div>
                 <!-- Navigation Links -->
                 <div>
                     <h3 class="text-xl font-bold mb-4">Navegación</h3>
                     <ul class="space-y-2">
                         <li><a href="#inicio" class="text-gray-300 hover:text-white transition-colors">Inicio</a></li>
-                        <li><a href="#servicios" class="text-gray-300 hover:text-white transition-colors">Servicios</a></li>
-                         <li><a href="#proceso" class="text-gray-300 hover:text-white transition-colors">Proceso</a></li>
-                        <li><a href="#nosotros" class="text-gray-300 hover:text-white transition-colors">Nosotros</a></li>
-                        <li><a href="#testimonios" class="text-gray-300 hover:text-white transition-colors">Testimonios</a></li>
-                         <li><a href="#blog" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#servicios" class="text-gray-300 hover:text-white transition-colors">Servicios</a>
+                        </li>
+                        <li><a href="#proceso" class="text-gray-300 hover:text-white transition-colors">Proceso</a></li>
+                        <li><a href="#nosotros" class="text-gray-300 hover:text-white transition-colors">Nosotros</a>
+                        </li>
+                        <li><a href="#testimonios"
+                                class="text-gray-300 hover:text-white transition-colors">Testimonios</a></li>
+                        <li><a href="#blog" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
                         <li><a href="#faqs" class="text-gray-300 hover:text-white transition-colors">FAQs</a></li>
-                        <li><a href="#contacto" class="text-gray-300 hover:text-white transition-colors">Contacto</a></li>
+                        <li><a href="#contacto" class="text-gray-300 hover:text-white transition-colors">Contacto</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- Popular Services Links -->
@@ -1241,87 +1758,111 @@
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2">
                             <i class="ri-tools-line text-primary" aria-hidden="true"></i>
-                            <a href="#servicios" class="text-gray-300 hover:text-white transition-colors">Reparación de Hardware</a>
+                            <a href="#servicios" class="text-gray-300 hover:text-white transition-colors">Reparación de
+                                Hardware</a>
                         </li>
                         <li class="flex items-center gap-2">
                             <i class="ri-window-line text-primary" aria-hidden="true"></i>
-                            <a href="#servicios" class="text-gray-300 hover:text-white transition-colors">Solución de Software</a>
+                            <a href="#servicios" class="text-gray-300 hover:text-white transition-colors">Solución de
+                                Software</a>
                         </li>
-                         <li class="flex items-center gap-2">
+                        <li class="flex items-center gap-2">
                             <i class="ri-speed-up-line text-primary" aria-hidden="true"></i>
-                            <a href="#servicios" class="text-gray-300 hover:text-white transition-colors">Optimización de PC</a>
+                            <a href="#servicios" class="text-gray-300 hover:text-white transition-colors">Optimización
+                                de PC</a>
                         </li>
                         <li class="flex items-center gap-2">
                             <i class="ri-virus-line text-primary" aria-hidden="true"></i>
-                            <a href="#contacto" class="text-gray-300 hover:text-white transition-colors">Eliminación de Virus</a>
+                            <a href="#contacto" class="text-gray-300 hover:text-white transition-colors">Eliminación de
+                                Virus</a>
                         </li>
                         <li class="flex items-center gap-2">
                             <i class="ri-home-smile-line text-primary" aria-hidden="true"></i>
-                            <a href="#servicios" class="text-gray-300 hover:text-white transition-colors">Servicio a Domicilio CDMX</a>
+                            <a href="#servicios" class="text-gray-300 hover:text-white transition-colors">Servicio a
+                                Domicilio CDMX</a>
                         </li>
                     </ul>
                 </div>
-                 <!-- Quick Contact Info -->
-                 <div>
+                <!-- Quick Contact Info -->
+                <div>
                     <h3 class="text-xl font-bold mb-4">Contacto Rápido</h3>
                     <ul class="space-y-3">
                         <li class="flex items-center gap-2">
                             <i class="ri-phone-line text-primary" aria-hidden="true"></i>
-                            <a href="tel:5645371808" class="text-gray-300 hover:text-white transition-colors">56 4537 1808</a>
+                            <a href="tel:5645371808" class="text-gray-300 hover:text-white transition-colors">56 4537
+                                1808</a>
                         </li>
-                         <li class="flex items-center gap-2">
+                        <li class="flex items-center gap-2">
                             <i class="ri-whatsapp-line text-primary" aria-hidden="true"></i>
-                            <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">WhatsApp Directo</a>
+                            <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-300 hover:text-white transition-colors">WhatsApp Directo</a>
                         </li>
                         <li class="flex items-center gap-2">
                             <i class="ri-mail-line text-primary" aria-hidden="true"></i>
-                            <a href="mailto:redventasremotasautomatizadas@gmail.com" class="text-gray-300 hover:text-white transition-colors break-all">Enviar Correo</a>
+                            <a href="mailto:reparacionesggarcia@gmail.com"
+                                class="text-gray-300 hover:text-white transition-colors break-all">reparacionesggarcia@gmail.com</a>
                         </li>
                         <li class="flex items-start gap-2">
                             <i class="ri-map-pin-line text-primary mt-1" aria-hidden="true"></i>
                             <span class="text-gray-300">Álvaro Obregón, CDMX (Servicio a Domicilio)</span>
                         </li>
                     </ul>
-                 </div>
+                </div>
             </div>
 
             <!-- Google Maps Embed -->
             <div class="mt-12 pt-8 border-t border-gray-700">
-                 <h3 class="text-xl font-bold mb-4 text-center">Nuestra Ubicación para Entrega/Recogida en Taller</h3>
-                 <div class="h-[300px] rounded-lg overflow-hidden shadow-lg">
-                     <iframe
-                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7528.996375408529!2d-99.20201876176229!3d19.372214784371938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d201e0ebc1517d%3A0x10c129ee40dfbe34!2s%22Reparaciones%20G%20Garc%C3%ADa%22!5e0!3m2!1ses!2smx!4v1745858787254!5m2!1ses!2smx"
-                         width="100%"
-                         height="100%"
-                         style="border:0;"
-                         allowfullscreen=""
-                         loading="lazy"
-                         referrerpolicy="no-referrer-when-downgrade"
-                         title="Mapa de ubicación de Reparaciones G García">
+                <h3 class="text-xl font-bold mb-4 text-center">Nuestra Ubicación para Entrega/Recogida en Taller</h3>
+                <div class="h-[300px] rounded-lg overflow-hidden shadow-lg">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7528.996375408529!2d-99.20201876176229!3d19.372214784371938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d201e0ebc1517d%3A0x10c129ee40dfbe34!2s%22Reparaciones%20G%20Garc%C3%ADa%22!5e0!3m2!1ses!2smx!4v1745858787254!5m2!1ses!2smx"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" title="Mapa de ubicación de Reparaciones G García">
                     </iframe>
-                 </div>
-                 <p class="text-sm text-gray-400 mt-4 text-center">Dirección: Calle Rosa Venus 164, Molino de Rosas, Álvaro Obregón, 01470 CDMX</p>
+                </div>
+                <p class="text-sm text-gray-400 mt-4 text-center">Dirección: Calle Rosa Venus 164, Molino de Rosas,
+                    Álvaro Obregón, 01470 CDMX</p>
             </div>
 
             <!-- Copyright -->
             <div class="mt-12 pt-8 border-t border-gray-700 text-center">
                 <p class="text-gray-400 text-sm">
-                    © 2024 Reparaciones G García, Expertos en Reparación de Computadoras en CDMX. Todos los derechos reservados.
+                    © 2026 Reparaciones G García, Expertos en Reparación de Computadoras en CDMX. Todos los derechos
+                    reservados. | <a href="aviso-privacidad.html" class="hover:text-white transition-colors">Aviso de
+                        Privacidad</a>
                 </p>
             </div>
         </div>
     </footer>
 
     <!-- Back to top button -->
-    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90" aria-label="Volver arriba">
+    <button id="back-to-top"
+        class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90"
+        aria-label="Volver arriba">
         <i class="ri-arrow-up-line ri-lg" aria-hidden="true"></i>
     </button>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer"
-       class="fixed bottom-24 right-6 z-40 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 flex items-center justify-center">
-        <i class="ri-whatsapp-line text-2xl"></i>
+    <!-- Floating WhatsApp Button (Sticky, siempre visible) -->
+    <a href="https://wa.me/5215645371808?text=Hola%2C%20necesito%20ayuda%20con%20mi%20equipo%20%F0%9F%92%BB"
+        target="_blank" rel="noopener noreferrer" id="whatsapp-float"
+        class="fixed bottom-6 left-6 z-50 bg-green-500 text-white rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 flex items-center gap-3 group hover:shadow-green-500/40"
+        style="padding: 14px 20px; animation: pulse-whatsapp 2s infinite;">
+        <i class="ri-whatsapp-line text-2xl" aria-hidden="true"></i>
+        <span class="text-sm font-semibold hidden sm:inline">¿Necesitas ayuda? 💬</span>
     </a>
+    <style>
+        @keyframes pulse-whatsapp {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+            }
+        }
+    </style>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -1375,7 +1916,7 @@
                             otherAnswer.style.maxHeight = null; // Collapse
                             otherAnswer.classList.add("hidden"); // Hide content
                             otherAnswer.classList.remove('pt-4'); // Remove padding when closed
-                            if(otherIcon) otherIcon.style.transform = "rotate(0deg)"; // Reset icon
+                            if (otherIcon) otherIcon.style.transform = "rotate(0deg)"; // Reset icon
                         }
                     });
 
@@ -1386,18 +1927,18 @@
                         // Force reflow before setting maxHeight for transition to work
                         answer.offsetHeight;
                         answer.style.maxHeight = answer.scrollHeight + "px"; // Expand to full height
-                        if(icon) icon.style.transform = "rotate(180deg)"; // Rotate icon
+                        if (icon) icon.style.transform = "rotate(180deg)"; // Rotate icon
                     } else {
-                         answer.style.maxHeight = null; // Collapse
-                         answer.classList.remove('pt-4'); // Remove padding before hiding
-                         // Add hidden class after the transition finishes for accessibility
-                         setTimeout(() => {
+                        answer.style.maxHeight = null; // Collapse
+                        answer.classList.remove('pt-4'); // Remove padding before hiding
+                        // Add hidden class after the transition finishes for accessibility
+                        setTimeout(() => {
                             // Double check it's still meant to be closed before hiding
                             if (!answer.style.maxHeight || answer.style.maxHeight === '0px') {
                                 answer.classList.add("hidden");
                             }
                         }, 500); // Duration should match CSS transition duration
-                         if(icon) icon.style.transform = "rotate(0deg)"; // Reset icon
+                        if (icon) icon.style.transform = "rotate(0deg)"; // Reset icon
                     }
                 });
             });
@@ -1424,9 +1965,9 @@
                                 behavior: "smooth",
                             });
 
-                             // Optional: Close mobile menu if open after clicking a link
-                             // const mobileMenuButton = document.querySelector('.lg\\:hidden button'); // More specific selector if needed
-                             // Add logic here to check if a mobile menu is open and close it
+                            // Optional: Close mobile menu if open after clicking a link
+                            // const mobileMenuButton = document.querySelector('.lg\\:hidden button'); // More specific selector if needed
+                            // Add logic here to check if a mobile menu is open and close it
                         }
                     }
                 });
@@ -1710,7 +2251,7 @@
                     const array = new Uint8Array(32); // 256 bits of randomness
                     window.crypto.getRandomValues(array);
                     const randomString = Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('') +
-                                        Date.now().toString(36);
+                        Date.now().toString(36);
 
                     // Store token in session storage with expiration
                     const tokenData = {
@@ -2095,162 +2636,51 @@
                     }
                 };
 
-                // Enhanced form submission handler with advanced security
+                // Standard form submission handler for Formspree
                 contactForm.addEventListener('submit', async (e) => {
                     e.preventDefault();
-
-                    // Check if form is locked due to too many failed attempts
-                    if (isFormLocked()) {
-                        const remainingSeconds = getRemainingLockoutTime();
-                        showFormError(`Demasiados intentos fallidos. Por favor espera ${remainingSeconds} segundos antes de intentar nuevamente.`);
-                        return;
-                    }
-
-                    // Check submission cooldown to prevent spam
-                    const now = Date.now();
-                    if (now - securityState.lastSubmissionTime < securitySettings.submissionCooldown) {
-                        showFormError('Por favor espera unos segundos antes de enviar otro mensaje.');
-                        return;
-                    }
-
-                    // Verify CSRF token
-                    if (!isValidCSRFToken()) {
-                        // Generate a new token and show error
-                        document.getElementById('_csrf_token').value = generateCSRFToken();
-                        showFormError('La sesión ha expirado. Por favor intenta nuevamente.');
-                        return;
-                    }
-
-                    // Validate honeypot (should be empty)
-                    const honeypot = document.getElementById('website');
-                    if (honeypot && honeypot.value !== '') {
-                        // Bot detected - silently reject without showing error
-                        console.log('Bot submission detected');
-
-                        // Increment failed attempts
-                        securityState.failedAttempts++;
-
-                        // Show fake success to the bot but don't actually submit
-                        showFormSuccess();
-                        return;
-                    }
-
-                    // Validate all fields with enhanced validation
-                    let isFormValid = true;
-                    const invalidFields = [];
-
-                    formFields.forEach(field => {
-                        if (field.id !== 'website' && field.id !== '_csrf_token') {
-                            const fieldValid = validateField(field);
-                            if (!fieldValid) {
-                                invalidFields.push(field.id);
-                            }
-                            isFormValid = isFormValid && fieldValid;
-                        }
-                    });
-
-                    if (!isFormValid) {
-                        // Increment failed attempts
-                        securityState.failedAttempts++;
-
-                        // Check if we should lock the form
-                        if (securityState.failedAttempts >= securitySettings.maxAttempts) {
-                            securityState.lockedUntil = now + securitySettings.lockoutTime;
-                            showFormError(`Demasiados intentos fallidos. El formulario estará bloqueado por ${securitySettings.lockoutTime / 1000} segundos.`);
-                            return;
-                        }
-
-                        showFormError('Por favor corrige los errores en el formulario antes de enviar.');
-                        return;
-                    }
 
                     // Show loading state
                     const submitButton = document.getElementById('submit-button');
                     const loadingSpinner = document.getElementById('loading-spinner');
                     submitButton.disabled = true;
-                    loadingSpinner.classList.remove('hidden');
+                    if (loadingSpinner) loadingSpinner.classList.remove('hidden');
 
                     try {
-                        // Sanitize all inputs before submission with type-specific sanitization
+                        // Use simple FormData as expected by Formspree
                         const formData = new FormData(contactForm);
-                        const sanitizedData = new FormData();
 
-                        for (const [key, value] of formData.entries()) {
-                            if (typeof value === 'string') {
-                                if (key === '_csrf_token' || key === '_gotcha') {
-                                    // Don't sanitize these special fields
-                                    sanitizedData.append(key, value);
-                                } else {
-                                    // Get the field element to determine its validation type
-                                    const field = document.getElementById(key);
-                                    const validationType = field?.dataset?.validationType || 'default';
-
-                                    // Apply type-specific sanitization
-                                    sanitizedData.append(key, sanitizeInput(value, validationType));
-                                }
-                            } else {
-                                sanitizedData.append(key, value);
-                            }
-                        }
-
-                        // Add timestamp to prevent replay attacks
-                        sanitizedData.append('_timestamp', Date.now().toString());
-
-                        // Submit the form using fetch API with timeout
-                        const controller = new AbortController();
-                        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
-
+                        // Submit the form using fetch API 
                         const response = await fetch(contactForm.action, {
                             method: 'POST',
-                            body: sanitizedData,
+                            body: formData,
                             headers: {
                                 'Accept': 'application/json'
-                            },
-                            signal: controller.signal
+                            }
                         });
-
-                        clearTimeout(timeoutId);
 
                         const result = await response.json();
 
                         if (response.ok) {
-                            // Success - reset security state
-                            securityState.failedAttempts = 0;
-
                             // Clear form and show success message
                             contactForm.reset();
                             showFormSuccess();
 
-                            // Reset character counters
-                            initializeCharCounters();
-
-                            // Generate new CSRF token for next submission
-                            document.getElementById('_csrf_token').value = generateCSRFToken();
-
-                            // Update last submission time
-                            securityState.lastSubmissionTime = Date.now();
+                            // Reset character count if function exists
+                            if (typeof initializeCharCounters === 'function') {
+                                initializeCharCounters();
+                            }
                         } else {
                             // Error from server
-                            securityState.failedAttempts++;
                             throw new Error(result.error || 'Hubo un error al enviar el formulario');
                         }
                     } catch (error) {
                         console.error('Form submission error:', error);
-
-                        // Increment failed attempts
-                        securityState.failedAttempts++;
-
-                        // Check if we should lock the form
-                        if (securityState.failedAttempts >= securitySettings.maxAttempts) {
-                            securityState.lockedUntil = now + securitySettings.lockoutTime;
-                            showFormError(`Demasiados intentos fallidos. El formulario estará bloqueado por ${securitySettings.lockoutTime / 1000} segundos.`);
-                        } else {
-                            showFormError('Hubo un error al enviar el mensaje. Por favor intenta nuevamente.');
-                        }
+                        showFormError('Hubo un error al enviar el mensaje. Por favor intenta nuevamente.');
                     } finally {
                         // Reset button state
                         submitButton.disabled = false;
-                        loadingSpinner.classList.add('hidden');
+                        if (loadingSpinner) loadingSpinner.classList.add('hidden');
                     }
                 });
 
@@ -2299,4 +2729,5 @@
         }); // End DOMContentLoaded
     </script>
 </body>
+
 </html>

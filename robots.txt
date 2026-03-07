@@ -1,0 +1,9 @@
+# Reparaciones G García - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://reparaciones-g-garcia.netlify.app/sitemap.xml
+
+# Bloquear acceso a carpetas no públicas
+Disallow: /.netlify/
