@@ -217,7 +217,8 @@
             { "@type": "AdministrativeArea", "name": "Iztacalco" }
         ],
         "sameAs": [
-            "https://maps.app.goo.gl/1Y3uVj6VBXWXyhTQ9"
+            "https://maps.app.goo.gl/1Y3uVj6VBXWXyhTQ9",
+            "https://www.facebook.com/p/Reparaciones-G-Garc%C3%ADa-61576588618998/"
         ],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -494,12 +495,22 @@
                             Mixcoac, San Ángel, Del Valle y colonias aledañas.
                         </p>
                     </div>
-                    <!-- Call to Action Buttons -->
+                    <!-- Availability Badge (CRO Cambio 2) -->
+                    <div class="flex items-center gap-2 mb-4 text-white/90" id="availability-badge">
+                        <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse" id="availability-dot"></span>
+                        <span class="text-sm font-medium" id="availability-text">🟢 Disponible ahora — Respuesta promedio: ~15 min por WhatsApp</span>
+                    </div>
+                    <!-- Call to Action Buttons (CRO Cambio 1: Added Llamar Ahora) -->
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="https://wa.me/5215645371808" target="_blank" rel="noopener noreferrer"
                             class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-button font-semibold flex items-center justify-center whitespace-nowrap transition duration-300 shadow-lg font-montserrat text-lg">
                             <i class="ri-whatsapp-line mr-2 ri-lg" aria-hidden="true"></i>
                             Cotiza por WhatsApp 🟢
+                        </a>
+                        <a href="tel:5645371808"
+                            class="bg-white text-primary px-6 py-3 rounded-button font-semibold flex items-center justify-center whitespace-nowrap transition duration-300 shadow-lg font-montserrat text-lg border-2 border-white hover:bg-primary hover:text-white hover:border-primary">
+                            <i class="ri-phone-fill mr-2 ri-lg" aria-hidden="true"></i>
+                            Llamar Ahora ☎️
                         </a>
                         <a href="#contacto"
                             class="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-button font-semibold flex items-center justify-center whitespace-nowrap border border-white/30 transition duration-300 font-montserrat backdrop-blur-sm">
@@ -1524,6 +1535,20 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <!-- Contact Form -->
                 <div class="bg-white p-8 rounded-xl shadow-md">
+                    <!-- CRO Cambio 5: CTA WhatsApp rápido antes del formulario -->
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 text-center">
+                        <p class="text-gray-700 font-medium mb-2">
+                            ¿Necesitas respuesta rápida?
+                            <span class="text-green-600 font-bold">WhatsApp es más rápido:</span>
+                        </p>
+                        <a href="https://wa.me/5215645371808?text=Hola%2C%20necesito%20ayuda%20con%20mi%20equipo%20%F0%9F%92%BB"
+                           target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-button font-semibold transition duration-300 shadow-md">
+                            <i class="ri-whatsapp-line mr-2 ri-lg" aria-hidden="true"></i>
+                            Escríbenos por WhatsApp →
+                        </a>
+                        <p class="text-xs text-gray-500 mt-2">Respuesta promedio: ~15 minutos</p>
+                    </div>
                     <h3 class="text-2xl font-bold mb-2">Solicita tu Diagnóstico</h3>
                     <p class="text-gray-500 text-sm mb-6">Te respondemos en menos de 1 hora ⚡</p>
                     <!-- FORMULARIO OPTIMIZADO PARA FORMSPREE CON SEGURIDAD AVANZADA -->
@@ -1954,6 +1979,33 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+
+            // --- CRO Cambio 2: Availability Badge with Business Hours Logic ---
+            function updateAvailabilityBadge() {
+                const dot = document.getElementById('availability-dot');
+                const text = document.getElementById('availability-text');
+                if (!dot || !text) return;
+
+                // Get current time in Mexico City timezone (UTC-6)
+                const now = new Date();
+                const mexicoTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Mexico_City' }));
+                const day = mexicoTime.getDay(); // 0=Sunday, 1=Monday, ..., 6=Saturday
+                const hour = mexicoTime.getHours();
+
+                // Business hours: Mon-Sat (1-6), 9:00-19:00
+                const isBusinessDay = day >= 1 && day <= 6;
+                const isBusinessHour = hour >= 9 && hour < 19;
+
+                if (isBusinessDay && isBusinessHour) {
+                    dot.className = 'w-3 h-3 bg-green-400 rounded-full animate-pulse';
+                    text.textContent = '\ud83d\udfe2 Disponible ahora \u2014 Respuesta promedio: ~15 min por WhatsApp';
+                } else {
+                    dot.className = 'w-3 h-3 bg-yellow-400 rounded-full';
+                    text.textContent = '\ud83d\udfe1 Fuera de horario \u2014 D\u00e9janos tu mensaje, te respondemos ma\u00f1ana a primera hora';
+                }
+            }
+            updateAvailabilityBadge();
+            setInterval(updateAvailabilityBadge, 60000); // Update every minute
 
             // --- Back to top button and Header Background Strip ---
             const backToTopButton = document.getElementById("back-to-top");
